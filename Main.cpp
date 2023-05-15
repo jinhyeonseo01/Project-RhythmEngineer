@@ -183,7 +183,7 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 			ConsoleDebug::console->consoleActive = false;
 
 			//UnregisterClass(className, hInstMain);
-			DestroyWindow(hWnd);
+			PostQuitMessage(0);
 			break;
 		}
 		default:
