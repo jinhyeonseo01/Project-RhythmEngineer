@@ -32,27 +32,27 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(230,1
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(229,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(228,39): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(228,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(236,72): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(236,58): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,15): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,15): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,34): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,34): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(255,24): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(255,24): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(255,52): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(255,52): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(256,24): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(256,24): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(256,52): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(256,52): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(260,15): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(260,5): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(272,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(272,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(235,72): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(235,58): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(252,15): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(252,15): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(252,34): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(252,34): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(253,24): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(253,24): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(253,52): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(253,52): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,24): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,24): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,52): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(254,52): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(258,15): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(258,5): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(270,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(270,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(269,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(269,7): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(283,29): warning C4477: 'swprintf_s' : 서식 문자열 '%f'에 'double' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(268,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(268,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(267,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(267,7): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(280,29): warning C4477: 'swprintf_s' : 서식 문자열 '%f'에 'double' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
   Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Debug\Project_Iaido.exe

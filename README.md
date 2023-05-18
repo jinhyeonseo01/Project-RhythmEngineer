@@ -1,5 +1,5 @@
 # Project : Iaido
-University Win32 Project(2.1 Grade)
+2023 University(한국공학대학교) Win32 Project (2.1 Grade)
 2D Pipeline Process Develop Project
 
 * * *
@@ -16,7 +16,7 @@ Eigen 라이브러리 연결 (두 방법중 하나 선택)
 * * *
 # Develop Log
 ## Day 1(23.5.15) Log
-#### Logic Pipeline & Render Pipeline & Debug System Develop
+### Logic Pipeline & Render Pipeline & Debug System Develop
 
 ![Alt text](https://user-images.githubusercontent.com/45618159/238410773-956ea9fa-16f8-4216-9e79-1993f3dae090.png)
 
@@ -26,7 +26,7 @@ Eigen 라이브러리 연결 (두 방법중 하나 선택)
 >   벡터와 행렬의 연산을 도와줄 Eigen 라이브러리를 기용.
 * * *
 ## Day 2
-### Sprite Rednering pipeline 계산 절차 설계
+### Sprite Rendering pipeline 계산 절차 설계
 ![Alt text](https://user-images.githubusercontent.com/45618159/238851939-b670c12c-aa06-4527-8d6b-01236a237708.png)
 
 3단계 프로세스에 걸쳐서 Rendering 과정을 수립.
@@ -41,10 +41,12 @@ Eigen 라이브러리 연결 (두 방법중 하나 선택)
 > v3 : (0, stretchH)
 >> - R*V로 구해진 회전벡터에 |stretch| stretch의 대각 길이를 더해준다.
 >> - |stretch| stretch의 대각 길이 * 2의 BitMap을 준비하는 것으로 pivot 0~1사이에서 자유롭게 회전했을때 모두 비트맵에 담을 수 있도록 크기정해준다.
+PigBit 수행
 >>![Alt text](https://user-images.githubusercontent.com/45618159/238852550-706ff44a-358f-4929-a894-c2cd0935447a.gif)
 >>![Alt text](https://user-images.githubusercontent.com/45618159/238852335-7ec4da00-d8a4-4827-9925-fe5e1b888b34.gif)
 >3. 마지막으로 Alpha값이 적용될 수 있도록 Position - |stretch|위치에 렌더링한다.
->>![Alt text](https://user-images.githubusercontent.com/45618159/238857866-2cf6a137-52e5-4201-894c-751719640683.gif)
+> AlphaBlend 수행
+>![Alt text](https://user-images.githubusercontent.com/45618159/238857866-2cf6a137-52e5-4201-894c-751719640683.gif)
 <details>
 <summary>렌더링 소스코드 (접기/펼치기)</summary>
 

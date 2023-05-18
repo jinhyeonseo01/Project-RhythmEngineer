@@ -211,7 +211,7 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 			float imageScaley = 0.36;
 			BOOL bResult;
 
-			img2.Draw(hDC, 285, 285, 30, 30);
+			img.Draw(hDC, 000, 000, 400, 400);
 			//img2.m_r
 
 			HDC m_hDC = img.GetDC();
@@ -229,7 +229,6 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 				filterX + (flipx == 1 ? 0 : filterW - 1),
 				filterY + (flipy == 1 ? 0 : filterH - 1),
 				(flipx == 1 ? 1 : -1) * filterW, (flipy == 1 ? 1 : -1) * filterH, SRCCOPY);
-
 
 			float bmp3Size = sqrt(stretchW * stretchW + stretchH * stretchH);
 			HDC m_hDC3 = CreateCompatibleDC(m_hDC);
@@ -258,25 +257,24 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 				0, 0,
 				stretchW, stretchH,
 				NULL, NULL, NULL);
-
+			
 			BLENDFUNCTION bf;
 			bf.BlendOp = AC_SRC_OVER;
 			bf.BlendFlags = 0;
-			bf.SourceConstantAlpha = 0xff;
+			bf.SourceConstantAlpha = 255;
 			bf.AlphaFormat = AC_SRC_ALPHA;
 			bResult = ::AlphaBlend(hDC,
 				x - bmp3Size, y - bmp3Size,
 				bmp3Size * 2, bmp3Size * 2,
 				m_hDC3, 0, 0,
 				bmp3Size * 2, bmp3Size * 2, bf);
-
+				
+			img.ReleaseDC();
 			DeleteObject(m_hDC2);
 			DeleteObject(bmp);
 
 			DeleteObject(m_hDC3);
 			DeleteObject(bmp3);
-
-			img.ReleaseDC();
 			
 			TCHAR tempConsole[100];
 			_stprintf_s(tempConsole, L"%f", 1);
