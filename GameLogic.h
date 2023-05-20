@@ -59,6 +59,13 @@ public:
 	float rotationZ = 0;
 	Eigen::Matrix3d GetL2WMat();
 	Eigen::Matrix3d GetW2LMat();
+	Eigen::Matrix3d GetL2WMatScale();
+	Eigen::Matrix3d GetW2LMatScale();
+	Eigen::Matrix3d GetW2LMatRotate();
+	Eigen::Matrix3d GetL2WMatRotate();
+
+	Eigen::Matrix3d GetL2WMatPosition();
+	Eigen::Matrix3d GetW2LMatPosition();
 
 	virtual void Update() {};
 	virtual void LateUpdate() {};
@@ -74,9 +81,10 @@ class Camera : public Component
 public:
 	Eigen::Vector2d cameraScale = Eigen::Vector2d(1, 1);
 	std::vector<Renderer*> rendererList;
-
+	
+	Eigen::Matrix3d ScreenTranslateMatrix();
 	virtual void Render(HDC hdc);
-	template <typename T> void PushRenderer(T element);
+	template <typename T> void PushRenderer(T* element);
 };
 
 class Renderer : public Component
@@ -97,6 +105,8 @@ public:
 class SpriteRenderer : public Renderer
 {
 public:
+	CImage* sprite = NULL;
+	virtual void SetSprite(CImage* sprite);
 	virtual void Render(HDC hdc, Camera* camera);
 
 	virtual void Update() {};
@@ -106,6 +116,7 @@ public:
 	virtual void Enable() {};
 	virtual void Disable() {};
 	virtual void Destroy() {};
+	~SpriteRenderer();
 };
 
 class GameObject
@@ -159,4 +170,5 @@ public:
 	static RECT monitorSize;
 
 	static void Init();
+	static void GameDestroy();
 };
