@@ -26,7 +26,7 @@ std::shared_ptr<Camera> GameManager::mainCamera = NULL;
 std::shared_ptr<World> GameManager::mainWorld = NULL;
 
 
-bool GameManager::targetFrameLock = true;
+bool GameManager::targetFrameLock = false;
 float GameManager::targetFrame = 60;
 float GameManager::targetFrameBetween = ((float)1000) / GameManager::targetFrame;
 
@@ -34,6 +34,7 @@ float GameManager::deltaTime = 1 / GameManager::targetFrame;
 
 std::chrono::steady_clock::time_point GameManager::updatePrevClock;
 std::chrono::steady_clock::time_point GameManager::updateNowClock;
+std::chrono::steady_clock::time_point GameManager::GameStartClock;
 
 int GameManager::screenX = 2560;
 int GameManager::screenY = 1440;
