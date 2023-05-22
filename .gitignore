@@ -1,4 +1,5 @@
 # Prerequisites
+!lib/*
 *.d
 
 # Compiled Object files
