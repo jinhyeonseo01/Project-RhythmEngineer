@@ -1,4 +1,5 @@
 ﻿  GameLogic.cpp
+<<<<<<< Updated upstream
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
@@ -100,3 +101,21 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(494,80): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(494,65): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Debug\Project_Iaido.exe
+=======
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(136,2): warning C5053: C++17 및 이전 버전에서 'explicit(<expr>)'에 대한 지원은 공급업체 확장입니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(49,18): warning C4477: 'sprintf_s' : 서식 문자열 '%ld'에 'long' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(49,18): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(49,18): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(49,18): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(59,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(68,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(77,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(91,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(98,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(98,1): warning C4267: '초기화 중': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(103,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(112,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(127,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Project_Iaido.vcxproj -> C:\Custom File\VS File\Project_Iaido\x64\Debug\Project_Iaido.exe
+>>>>>>> Stashed changes
