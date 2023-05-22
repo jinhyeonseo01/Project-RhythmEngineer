@@ -44,9 +44,7 @@ public:
 	bool idFirst = true;
 	bool isDestroy = false;
 
-	//ID2D1Bitmap
-
-	std::shared_ptr<GameObject> gameObject = NULL;
+	std::weak_ptr<GameObject> gameObject;
 
 	virtual void Update(){};
 	virtual void LateUpdate() {};
@@ -136,7 +134,7 @@ public:
 	~SpriteRenderer();
 };
 
-class GameObject
+class GameObject : public std::enable_shared_from_this<GameObject>
 {
 public:
 	bool isActive = true;
@@ -144,7 +142,7 @@ public:
 	bool isDestroy = false;
 
 	std::vector<std::shared_ptr<Component>> componentList;
-	std::shared_ptr<Transform> transform = NULL;
+	std::shared_ptr<Transform> transform;
 	template <typename T> std::shared_ptr<T> AddComponent(std::shared_ptr<T> element);
 	template <typename T> std::shared_ptr<T> GetComponent();
 	template <typename T> std::vector<std::shared_ptr<T>> GetComponents();

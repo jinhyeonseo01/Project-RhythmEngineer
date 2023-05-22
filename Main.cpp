@@ -187,7 +187,7 @@ void GameUpdate(HWND wnd)
 	totalTime += deltatime;
 	GameManager::updatePrevClock = GameManager::updateNowClock;
 	(*ConsoleDebug::console).Clear();
-	if (totalTime > GameManager::targetFrameBetween || (!GameManager::targetFrameLock))
+	if (totalTime >= GameManager::targetFrameBetween || (!GameManager::targetFrameLock))
 	{
 		//(*ConsoleDebug::console) << totalTime << "\n";
 		GameManager::deltaTime = totalTime / 1000.0f;
@@ -195,7 +195,7 @@ void GameUpdate(HWND wnd)
 		GameRender();
 
 		if (GameManager::targetFrameLock)
-			while (totalTime > GameManager::targetFrameBetween)
+			while (totalTime >= GameManager::targetFrameBetween)
 				totalTime -= GameManager::targetFrameBetween;
 		else
 			totalTime = 0;
@@ -316,28 +316,28 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 				*/
 			if (w == VK_RIGHT)
 			{
-				GameManager::mainCamera->gameObject->transform->rotationZ += 0.1f;
+				GameManager::mainCamera->gameObject.lock()->transform->rotationZ += 0.1f;
 			}
 			if (w == VK_LEFT)
 			{
-				GameManager::mainCamera->gameObject->transform->rotationZ -= 0.1f;
+				GameManager::mainCamera->gameObject.lock()->transform->rotationZ -= 0.1f;
 			}
 			if (w == VK_UP)
 			{
-				GameManager::mainCamera->gameObject->transform->localScale += Eigen::Vector2d(0.1f, 0.1f);
+				GameManager::mainCamera->gameObject.lock()->transform->localScale += Eigen::Vector2d(0.1f, 0.1f);
 			}
 			if (w == VK_DOWN)
 			{
-				GameManager::mainCamera->gameObject->transform->localScale -= Eigen::Vector2d(0.1f, 0.1f);
+				GameManager::mainCamera->gameObject.lock()->transform->localScale -= Eigen::Vector2d(0.1f, 0.1f);
 			}
 			if (w == 'W')
-				GameManager::mainCamera->gameObject->transform->position += (GameManager::mainCamera->gameObject->transform->GetL2WMat() * Eigen::Vector3d(0, -10.0f, 0)).head<2>();
+				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(0, -10.0f, 0)).head<2>();
 			if (w == 'S')
-				GameManager::mainCamera->gameObject->transform->position += (GameManager::mainCamera->gameObject->transform->GetL2WMat() * Eigen::Vector3d(0, 10.0f, 0)).head<2>();
+				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(0, 10.0f, 0)).head<2>();
 			if (w == 'A')
-				GameManager::mainCamera->gameObject->transform->position += (GameManager::mainCamera->gameObject->transform->GetL2WMat() * Eigen::Vector3d(-10.0f, 0, 0)).head<2>();
+				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(-10.0f, 0, 0)).head<2>();
 			if (w == 'D')
-				GameManager::mainCamera->gameObject->transform->position += (GameManager::mainCamera->gameObject->transform->GetL2WMat() * Eigen::Vector3d(+10.0f, 0, 0)).head<2>();
+				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(+10.0f, 0, 0)).head<2>();
 			break;
 		}
 		case WM_LBUTTONDOWN:

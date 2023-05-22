@@ -129,8 +129,7 @@ void World::Update()
 
 GameObject::GameObject()
 { 
-	this->transform = std::make_shared<Transform>();
-	this->AddComponent(this->transform);
+	this->transform = this->AddComponent(std::make_shared<Transform>());
 }
 GameObject::~GameObject()
 {
@@ -156,13 +155,13 @@ template <typename T> std::shared_ptr<T> GameObject::AddComponent(std::shared_pt
 		if (this->componentList[i] == element)
 			return NULL;
 	}
-	auto component = std::dynamic_pointer_cast<Component>(element);
+	std::shared_ptr<Component> component = std::dynamic_pointer_cast<Component>(element);
 	if (component != NULL)
 		this->componentList.push_back(component);
 	else
 		return NULL;
 
-	component->gameObject = std::shared_ptr<GameObject>(this);
+	component->gameObject = weak_from_this();
 	return element;
 }
 
@@ -326,18 +325,18 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 	if (GameManager::RenderMode == 0)
 	{
 		CImage* img = this->sprite;
-		Eigen::Matrix3d m = this->gameObject->transform->GetL2WMat();
+		Eigen::Matrix3d m = this->gameObject.lock()->transform->GetL2WMat();
 		m = GameManager::mainCamera->ScreenTranslateMatrix()
-			* GameManager::mainCamera->gameObject->transform->GetW2LMat();
+			* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
 
-		float angle = this->gameObject->transform->rotationZ;
-		float x = this->gameObject->transform->position.x();
-		float y = this->gameObject->transform->position.y();
+		float angle = this->gameObject.lock()->transform->rotationZ;
+		float x = this->gameObject.lock()->transform->position.x();
+		float y = this->gameObject.lock()->transform->position.y();
 		float z = 1;
 
 		Eigen::Vector3d ScreenPos = Eigen::Vector3d(x, y, 1);
 		ScreenPos = (m * ScreenPos);
-		auto t = GameManager::mainCamera->gameObject->transform->GetW2LMatRotate()
+		auto t = GameManager::mainCamera->gameObject.lock()->transform->GetW2LMatRotate()
 			* Eigen::Vector3d(cos(angle), sin(angle), 0);
 		angle = atan2(t.y(), t.x()) * R2D;
 		//*ConsoleDebug::console << ScreenPos.x() << ", " << ScreenPos.y() << "\n";
@@ -346,8 +345,8 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 		float imageH = img->GetHeight();
 		int flipx = flip.x();
 		int flipy = flip.y();
-		float sizex = renderSize.x() * this->gameObject->transform->localScale.x();
-		float sizey = renderSize.y() * this->gameObject->transform->localScale.y();
+		float sizex = renderSize.x() * this->gameObject.lock()->transform->localScale.x();
+		float sizey = renderSize.y() * this->gameObject.lock()->transform->localScale.y();
 		float pivotx = pivot.x();
 		float pivoty = pivot.y();
 		float imageOffsetx = imageOffset.x();
@@ -356,7 +355,7 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 		float imageScaley = imageScale.y();
 
 		Eigen::Vector3d stretch = Eigen::Vector3d(sizex, sizey, 0);
-		stretch = GameManager::mainCamera->gameObject->transform->GetW2LMatScale() * stretch;
+		stretch = GameManager::mainCamera->gameObject.lock()->transform->GetW2LMatScale() * stretch;
 
 		float filterX = imageW * imageOffsetx;
 		float filterY = imageH * imageOffsety;
@@ -452,18 +451,18 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 	}
 	else
 	{
-		Eigen::Matrix3d m = this->gameObject->transform->GetL2WMat();
+		Eigen::Matrix3d m = this->gameObject.lock()->transform->GetL2WMat();
 		m = GameManager::mainCamera->ScreenTranslateMatrix()
-			* GameManager::mainCamera->gameObject->transform->GetW2LMat();
+			* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
 
-		float angle = this->gameObject->transform->rotationZ;
-		float x = this->gameObject->transform->position.x();
-		float y = this->gameObject->transform->position.y();
+		float angle = this->gameObject.lock()->transform->rotationZ;
+		float x = this->gameObject.lock()->transform->position.x();
+		float y = this->gameObject.lock()->transform->position.y();
 		float z = 1;
 
 		Eigen::Vector3d ScreenPos = Eigen::Vector3d(x, y, 1);
 		ScreenPos = (m * ScreenPos);
-		auto t = GameManager::mainCamera->gameObject->transform->GetW2LMatRotate()
+		auto t = GameManager::mainCamera->gameObject.lock()->transform->GetW2LMatRotate()
 			* Eigen::Vector3d(cos(angle), sin(angle), 0);
 		angle = atan2(t.y(), t.x()) * R2D;
 
@@ -474,11 +473,11 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 
 		float imageW = sprite2->GetSize().width;
 		float imageH = sprite2->GetSize().height;
-		float sizex = renderSize.x() * this->gameObject->transform->localScale.x();
-		float sizey = renderSize.y() * this->gameObject->transform->localScale.y();
+		float sizex = renderSize.x() * this->gameObject.lock()->transform->localScale.x();
+		float sizey = renderSize.y() * this->gameObject.lock()->transform->localScale.y();
 
 		Eigen::Vector3d stretch = Eigen::Vector3d(sizex, sizey, 0);
-		stretch = GameManager::mainCamera->gameObject->transform->GetW2LMatScale() * stretch;
+		stretch = GameManager::mainCamera->gameObject.lock()->transform->GetW2LMatScale() * stretch;
 
 		float filterX = imageW * imageOffsetx;
 		float filterY = imageH * imageOffsety;
