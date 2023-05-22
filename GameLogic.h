@@ -177,6 +177,7 @@ public:
 
 	static std::chrono::steady_clock::time_point updatePrevClock;
 	static std::chrono::steady_clock::time_point updateNowClock;
+	static std::chrono::steady_clock::time_point GameStartClock;
 
 	static int screenX;
 	static int screenY;

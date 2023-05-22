@@ -43,6 +43,9 @@ CImage img2;
 std::shared_ptr<SpriteRenderer> sr;
 std::shared_ptr<SpriteRenderer> sr2;
 
+void FrameInit(int count);
+void FrameUpdate();
+
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount)
 {
 	hInstMain = hInst;
@@ -98,6 +101,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 	sr2->pivot = Eigen::Vector2d(0, 0);
 	sr2->alpha = 0;
 	obj2->transform->position = Eigen::Vector2d(0, 0);
+
+	FrameInit(8);
 
 	ShowWindow(wnd, comCount);
 	UpdateWindow(wnd);
@@ -172,26 +177,61 @@ void GameInit()
 	GameManager::updateNowClock = std::chrono::steady_clock::now();
 	GameManager::updatePrevClock = GameManager::updateNowClock;
 
-
+	GameManager::GameStartClock = std::chrono::steady_clock::now();
 	//----World Load로 옮길것.
 }
 
 float deltatime = 0;
 float totalTime = 0;
 
+int frameCount = 0;
+float frameTotal = 0;
+int frame[100];
+std::chrono::steady_clock::time_point frameStartCheck;
+std::chrono::steady_clock::time_point frameCheck[100];
+void FrameInit(int count)
+{
+	frameCount = count;
+	for (int i = 0; i < frameCount; i++)
+	{
+		frame[i] = -1;
+		frameCheck[i] = std::chrono::steady_clock::now();
+	}
+	frameStartCheck = std::chrono::steady_clock::now();
+}
+void FrameUpdate()
+{
+	for (int i = 0; i < frameCount; i++)
+	{
+		if (frame[i] != -1 || (frame[i] == -1 && std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - frameStartCheck).count() >= ((1000000.0f / frameCount) * i)))
+		{
+			auto now = std::chrono::steady_clock::now();
+			if (frame[i] == -1)
+				frameCheck[i] = now;
+			if (std::chrono::duration_cast<std::chrono::microseconds>(now - frameCheck[i]).count() >= 1000000)
+			{
+				frameTotal = (frameTotal * (((float)frameCount - 1.0f) / frameCount) + frame[i] * (1.0f / frameCount));
+				frameCheck[i] = now;
+				frame[i] = 0;
+			}
+			frame[i]++;
+		}
+	}
+}
+
 void GameUpdate(HWND wnd)
 {
 	GameManager::updateNowClock = std::chrono::steady_clock::now();
 	auto betweenClock = std::chrono::duration_cast<std::chrono::microseconds>(GameManager::updateNowClock - GameManager::updatePrevClock);
+	GameManager::updatePrevClock = GameManager::updateNowClock;
 	deltatime = (((float)betweenClock.count()) / 1000);
 	totalTime += deltatime;
-	GameManager::updatePrevClock = GameManager::updateNowClock;
-	(*ConsoleDebug::console).Clear();
+	//(*ConsoleDebug::console).Clear();
 	if (totalTime >= GameManager::targetFrameBetween || (!GameManager::targetFrameLock))
 	{
 		//(*ConsoleDebug::console) << totalTime << "\n";
 		GameManager::deltaTime = totalTime / 1000.0f;
-		
+		FrameUpdate();
 		GameRender();
 
 		if (GameManager::targetFrameLock)
@@ -200,6 +240,8 @@ void GameUpdate(HWND wnd)
 		else
 			totalTime = 0;
 	}
+	else
+		std::this_thread::sleep_for(std::chrono::microseconds(50));
 }
 
 void GameRender()
@@ -246,7 +288,7 @@ void GameDebugRender(HDC hDC, ID2D1HwndRenderTarget* dPT)
 		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
 		_stprintf_s(tempConsole, L"TargetFrame:%.0f", GameManager::targetFrame);
 		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
-		_stprintf_s(tempConsole, L"Frame:%.2f", round(100 * (1 / GameManager::deltaTime)) / 100);
+		_stprintf_s(tempConsole, L"Frame:%d", (int)frameTotal);
 		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
 	}
 	else
@@ -261,7 +303,7 @@ void GameDebugRender(HDC hDC, ID2D1HwndRenderTarget* dPT)
 		dPT->DrawTextW(tempConsole, wcslen(tempConsole), GameManager::pWFormat, layoutRect, GameManager::pBrush);
 
 		layoutRect = D2D1::RectF(10, 10 + (20 * (indexY++)), 500, 10 + (20 * (indexY + 1)));
-		_stprintf_s(tempConsole, L"Frame:%.2f", round(100 * (1 / GameManager::deltaTime)) / 100);
+		_stprintf_s(tempConsole, L"Frame:%d", (int)frameTotal);
 		dPT->DrawTextW(tempConsole, wcslen(tempConsole), GameManager::pWFormat, layoutRect, GameManager::pBrush);
 	}
 }
