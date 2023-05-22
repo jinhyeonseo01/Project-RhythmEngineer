@@ -15,9 +15,7 @@
 
 #include <Eigen/Dense>
 
-
 #include "TotalLoader.h"
-
 
 
 HINSTANCE hInstMain;
@@ -29,9 +27,21 @@ LPCTSTR titleName = L"Iaido";
 
 LRESULT CALLBACK WinCallBack(HWND hWnd, UINT u, WPARAM w, LPARAM l);
 
+void GameDebugRender(HDC hDC, ID2D1HwndRenderTarget* dPT);
+
 void GameInit();
 void GameUpdate(HWND wnd);
 void GameRender();
+
+void CreateDirect(HWND hWnd);
+
+ProjectI projectI;
+
+CImage img;
+CImage img2;
+
+std::shared_ptr<SpriteRenderer> sr;
+std::shared_ptr<SpriteRenderer> sr2;
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount)
 {
@@ -66,7 +76,29 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 		GameManager::viewX, GameManager::viewY,
 		wnd, NULL,
 		hInst, 0);
-	
+
+	CreateDirect(wnd);
+
+	projectI.Init();
+
+	img.Load(L".\\Resources\\Image\\Back_2.png");
+	img2.Load(L".\\Resources\\Image\\Back4_2.png");
+	std::shared_ptr<GameObject> obj = GameManager::mainWorld->CreateGameObject();
+	sr = obj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	sr->SetSprite2(Resources::GetImage(0));
+	sr->SetSprite(&img);
+	sr->pivot = Eigen::Vector2d(0.5f, 0.5f);
+	obj->transform->position = Eigen::Vector2d(100, 100);
+
+	std::shared_ptr<GameObject> obj2 = GameManager::mainWorld->CreateGameObject();
+	sr2 = obj2->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	sr2->renderSize = Eigen::Vector2d(1920, 1080);
+	sr2->SetSprite(&img2);
+	sr2->SetSprite2(Resources::GetImage(1));
+	sr2->pivot = Eigen::Vector2d(0, 0);
+	sr2->alpha = 0;
+	obj2->transform->position = Eigen::Vector2d(0, 0);
+
 	ShowWindow(wnd, comCount);
 	UpdateWindow(wnd);
 
@@ -83,18 +115,50 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 				break;
 			}
 		}
-		
-		GameUpdate(wnd);
+		if(!GameManager::gameDestroy)
+			GameUpdate(wnd);
 	}
 	//delete ConsoleDebug::console;
 	//DestroyWindow(wnd);
 	//UnregisterClass(className, hInst);
 	//return message.wParam;
+	//m_pRenderTarget->Resize
 	return 0;
 }
 
-CImage img;
-CImage img2;
+
+
+void CreateDirect(HWND hWnd)
+{
+	D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &(GameManager::mainFactory));
+	
+	D2D1_SIZE_U size = D2D1::SizeU(GameManager::viewX, GameManager::viewY);
+	GameManager::mainFactory->CreateHwndRenderTarget(D2D1::RenderTargetProperties(), D2D1::HwndRenderTargetProperties(hWnd, size), &GameManager::mainRT);
+	
+	WICBitmapAlphaChannelOption opt = WICBitmapUseAlpha;
+	CoCreateInstance(CLSID_WICImagingFactory, NULL, CLSCTX_INPROC_SERVER,
+		IID_PPV_ARGS(&GameManager::wicFactory));
+
+	DWriteCreateFactory(
+		DWRITE_FACTORY_TYPE_SHARED,
+		__uuidof(IDWriteFactory),
+		reinterpret_cast<IUnknown**>(&GameManager::pWFactory));
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF::Black
+		), &GameManager::pBrush);
+	GameManager::pWFactory->CreateTextFormat(
+		L"¸¼Àº °íµñ",
+		nullptr,
+		DWRITE_FONT_WEIGHT_NORMAL,
+		DWRITE_FONT_STYLE_NORMAL,
+		DWRITE_FONT_STRETCH_NORMAL,
+		15.0f,
+		L"ko-kr",
+		&GameManager::pWFormat);
+	//pWFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+	//pWFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
+}
 
 void GameInit()
 {
@@ -103,18 +167,17 @@ void GameInit()
 
 	std::shared_ptr<GameObject> mainCameraObject = GameManager::mainWorld->CreateGameObject();
 	GameManager::mainCamera = mainCameraObject->AddComponent<Camera>(std::make_shared<Camera>());
-	mainCameraObject->transform->position = Eigen::Vector2d(0, 0);
+	mainCameraObject->transform->position = Eigen::Vector2d(960, 540);
 
 	GameManager::updateNowClock = std::chrono::steady_clock::now();
 	GameManager::updatePrevClock = GameManager::updateNowClock;
 
-	img.Load(L".\\Resources\\Image\\Back.png");
-	img2.Load(L".\\Resources\\Image\\Back3.png");
+
+	//----World Load·Î ¿Å±æ°Í.
 }
 
 float deltatime = 0;
 float totalTime = 0;
-float totalPerTime = 0;
 
 void GameUpdate(HWND wnd)
 {
@@ -123,48 +186,84 @@ void GameUpdate(HWND wnd)
 	deltatime = (((float)betweenClock.count()) / 1000);
 	totalTime += deltatime;
 	GameManager::updatePrevClock = GameManager::updateNowClock;
-	//(*ConsoleDebug::console).Clear();
-	while (totalTime > GameManager::targetFrameBetween)
+	(*ConsoleDebug::console).Clear();
+	if (totalTime > GameManager::targetFrameBetween || (!GameManager::targetFrameLock))
 	{
 		//(*ConsoleDebug::console) << totalTime << "\n";
-
-		//InvalidateRect(wnd, NULL, FALSE);
+		GameManager::deltaTime = totalTime / 1000.0f;
+		
 		GameRender();
-		totalPerTime = totalTime;
-		totalTime -= GameManager::targetFrameBetween;
+
+		if (GameManager::targetFrameLock)
+			while (totalTime > GameManager::targetFrameBetween)
+				totalTime -= GameManager::targetFrameBetween;
+		else
+			totalTime = 0;
 	}
 }
+
 void GameRender()
 {
 	GetClientRect(mainHWnd, &GameManager::viewSize);
-	HDC mainHDC = GetDC(mainHWnd);
-
-	std::shared_ptr<GameObject> obj = GameManager::mainWorld->CreateGameObject();
-	auto sr = obj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
-	sr->SetSprite(&img);
-	obj->transform->position = Eigen::Vector2d(300, 300);
+	HDC mainHDC = NULL;
+	HDC hDC = NULL;
+	HBITMAP hBitmapBuffer = NULL;
+	if (GameManager::RenderMode == 0)
+	{
+		mainHDC = GetDC(mainHWnd);
+		hDC = CreateCompatibleDC(mainHDC);
+		hBitmapBuffer = CreateCompatibleBitmap(mainHDC, GameManager::RenderSize.x(), GameManager::RenderSize.y());
+		SelectObject(hDC, hBitmapBuffer);
+	}
+	
+	//sr->gameObject->transform->rotationZ += 15.0f * GameManager::deltaTime;
+	GameManager::mainCamera->PushRenderer(sr2.get());
 	GameManager::mainCamera->PushRenderer(sr.get());
 
-	auto BitmapWidth = GameManager::viewSize.right;
-	auto BitmapHeight = GameManager::viewSize.bottom;
-	auto hDC = CreateCompatibleDC(mainHDC);
-	auto hBitmapBuffer = CreateCompatibleBitmap(mainHDC, BitmapWidth, BitmapHeight);
-	//hMemoryDC = CreateCompatibleDC(hDC2);
-
-	SelectObject(hDC, hBitmapBuffer);
-
-	img2.Draw(hDC, 0, 0, 400, 400);
+	GameManager::mainRT->BeginDraw();
+	GameManager::mainRT->SetTransform(D2D1::Matrix3x2F::Identity());
+	GameManager::mainRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 
 	GameManager::mainCamera->Render(hDC);
 
-	TCHAR tempConsole[100];
-	_stprintf_s(tempConsole, L"%f", 1);
-	TextOut(hDC, 700, 0, tempConsole, lstrlenW(tempConsole));
+	GameDebugRender(hDC, GameManager::mainRT);
+	if (GameManager::RenderMode == 0)
+	{
+		StretchBlt(mainHDC, 0, 0, GameManager::viewSize.right, GameManager::viewSize.bottom, hDC, 0, 0, GameManager::RenderSize.x(), GameManager::RenderSize.y(), SRCCOPY);
+		DeleteDC(hDC);
+		DeleteObject(hBitmapBuffer);
+		ReleaseDC(mainHWnd, mainHDC);
+	}
+	GameManager::mainRT->EndDraw();
+}
 
-	BitBlt(mainHDC, 0, 0, BitmapWidth, BitmapHeight, hDC, 0, 0, SRCCOPY);
-	DeleteDC(hDC);
-	DeleteObject(hBitmapBuffer);
-	ReleaseDC(mainHWnd, mainHDC);
+void GameDebugRender(HDC hDC, ID2D1HwndRenderTarget* dPT)
+{
+	TCHAR tempConsole[100]; int indexY = 0;
+	if (GameManager::RenderMode == 0)
+	{
+		_stprintf_s(tempConsole, L"TargetFrameLock:%s", GameManager::targetFrameLock ? L"True" : L"False");
+		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
+		_stprintf_s(tempConsole, L"TargetFrame:%.0f", GameManager::targetFrame);
+		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
+		_stprintf_s(tempConsole, L"Frame:%.2f", round(100 * (1 / GameManager::deltaTime)) / 100);
+		TextOut(hDC, 10, 10 + (20 * (indexY++)), tempConsole, lstrlenW(tempConsole));
+	}
+	else
+	{
+		dPT->SetTransform(D2D1::Matrix3x2F::Identity());
+		D2D1_RECT_F layoutRect = D2D1::RectF(10, 10 + (20 * (indexY++)), 500, 10 + (20 * (indexY+1)));
+		_stprintf_s(tempConsole, L"TargetFrameLock:%s", GameManager::targetFrameLock ? L"True" : L"False");
+		dPT->DrawTextW(tempConsole, wcslen(tempConsole), GameManager::pWFormat, layoutRect, GameManager::pBrush);
+
+		layoutRect = D2D1::RectF(10, 10 + (20 * (indexY++)), 500, 10 + (20 * (indexY + 1)));
+		_stprintf_s(tempConsole, L"TargetFrame:%.0f", GameManager::targetFrame);
+		dPT->DrawTextW(tempConsole, wcslen(tempConsole), GameManager::pWFormat, layoutRect, GameManager::pBrush);
+
+		layoutRect = D2D1::RectF(10, 10 + (20 * (indexY++)), 500, 10 + (20 * (indexY + 1)));
+		_stprintf_s(tempConsole, L"Frame:%.2f", round(100 * (1 / GameManager::deltaTime)) / 100);
+		dPT->DrawTextW(tempConsole, wcslen(tempConsole), GameManager::pWFormat, layoutRect, GameManager::pBrush);
+	}
 }
 
 LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
@@ -187,7 +286,12 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 		case WM_KEYDOWN:
 		{
 			if (w == 'Q')
+			{
+				//DestroyWindow(hWnd);
+				GameManager::gameDestroy = true;
 				DestroyWindow(hWnd);
+				DestroyWindow(GetConsoleWindow());
+			}
 			if (w == 'E')
 			{
 				ConsoleDebug::console->Close();
@@ -200,6 +304,16 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 				//SetWindowPos(hWnd, HWND_TOP, screenX / 2 - viewX / 2, screenY / 2 - viewY / 2,
 				//	viewX, viewY, SWP_FRAMECHANGED);
 			}
+			/*
+			if (w == 'R')
+				pivotX -= 0.1f;
+			if (w == 'T')
+				pivotX += 0.1f;
+			if (w == 'G')
+				flipX = flipX ? 0 : 1;
+			if (w == 'H')
+				flipY = flipY ? 0 : 1;
+				*/
 			if (w == VK_RIGHT)
 			{
 				GameManager::mainCamera->gameObject->transform->rotationZ += 0.1f;
@@ -235,9 +349,10 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 		}
 		case WM_PAINT:
 		{
-			hDC2 = BeginPaint(hWnd, &ps);
-			
-			EndPaint(hWnd, &ps);
+			HDC mainHDC = BeginPaint(mainHWnd, &ps);
+			//GameRender();
+
+			EndPaint(mainHWnd, &ps);
 			break;
 		}
 		case WM_DESTROY:
@@ -247,6 +362,7 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 
 			//UnregisterClass(className, hInstMain);
 			GameManager::GameDestroy();
+			GameManager::gameDestroy = true;
 			img.Destroy();
 			img2.Destroy();
 			PostQuitMessage(0);

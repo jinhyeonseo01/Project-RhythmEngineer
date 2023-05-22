@@ -128,3 +128,32 @@ img.ReleaseDC();
 </details>
 
 * * *
+
+
+
+* * *
+## Day 3~4
+### Camera 기반 렌더링 시스템 & Hierarchy 구조 도입 그리고 Direct2D
+<details>
+<summary>Camera 기반 렌더링 시스템 & Hierarchy 구조 도입</summary>
+
+#### Day 3
+TargetFrame System을 도입했음.
+Frame Lock을 걸면 해당 프레임 이상 솓구치지 않음.
+
+>![Alt text](https://user-images.githubusercontent.com/45618159/239778291-71a9fa16-1575-4566-bd63-359e744d762c.gif)
+카메라 렌더링 시스템을 개발했음.
+근데 PlgBit의 레스터라이즈 과정이 CPU에서 진행된다는 매우 치명적인 단점이 있음.
+그래서 angle이 0도일땐 괜찮지만... angle이 조금이라도 들어가면 매우매우 렉걸림.
+이 프레임 문제를 해결해야함.
+
+#### Day 4
+그래서 나는 Direct2D로 렌더링 시스템을 전면 교체하기로 했음.
+![Alt Text](https://user-images.githubusercontent.com/45618159/239778075-47bbb7d8-448a-4784-8eef-19411b505d5e.gif)
+프레임이 굉장히 잘나옴. 12시간을 갈아넢은 보람이 있음.
+
+![Alt Text](https://user-images.githubusercontent.com/45618159/239778700-2b4c82dc-c2da-46d5-9c46-e7ee62821a13.png)
+GDI라면 1~4프레임 나오겠지만, Direct2D에선 160~200프레임 이상 나옴.
+</details>
+
+* * *

@@ -133,10 +133,12 @@
     <ClCompile Include="ConsoleDebug.cpp" />
     <ClCompile Include="GameLogic.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleDebug.h" />
     <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="Project.h" />
     <ClInclude Include="TotalLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
