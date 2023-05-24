@@ -26,7 +26,7 @@ std::shared_ptr<Camera> GameManager::mainCamera = NULL;
 std::shared_ptr<World> GameManager::mainWorld = NULL;
 
 
-bool GameManager::targetFrameLock = false;
+bool GameManager::targetFrameLock = true;
 float GameManager::targetFrame = 60;
 float GameManager::targetFrameBetween = ((float)1000) / GameManager::targetFrame;
 
