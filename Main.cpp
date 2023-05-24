@@ -40,6 +40,8 @@ ProjectI projectI;
 CImage img;
 CImage img2;
 
+//Lixound
+
 std::shared_ptr<SpriteRenderer> sr;
 std::shared_ptr<SpriteRenderer> sr2;
 
@@ -178,6 +180,9 @@ void GameInit()
 	GameManager::updatePrevClock = GameManager::updateNowClock;
 
 	GameManager::GameStartClock = std::chrono::steady_clock::now();
+
+
+	//FMOD::System_Create()
 	//----World Load로 옮길것.
 }
 
@@ -210,7 +215,8 @@ void FrameUpdate()
 				frameCheck[i] = now;
 			if (std::chrono::duration_cast<std::chrono::microseconds>(now - frameCheck[i]).count() >= 1000000)
 			{
-				frameTotal = (frameTotal * (((float)frameCount - 1.0f) / frameCount) + frame[i] * (1.0f / frameCount));
+				//frameTotal = (frameTotal * (((float)frameCount - 1.0f) / frameCount) + frame[i] * (1.0f / frameCount));
+				frameTotal = (frameTotal + frame[i])/2.0f;
 				frameCheck[i] = now;
 				frame[i] = 0;
 			}
@@ -221,6 +227,8 @@ void FrameUpdate()
 
 void GameUpdate(HWND wnd)
 {
+	GameManager::targetFrameBetween = ((float)1000) / GameManager::targetFrame;
+
 	GameManager::updateNowClock = std::chrono::steady_clock::now();
 	auto betweenClock = std::chrono::duration_cast<std::chrono::microseconds>(GameManager::updateNowClock - GameManager::updatePrevClock);
 	GameManager::updatePrevClock = GameManager::updateNowClock;
@@ -258,7 +266,7 @@ void GameRender()
 		SelectObject(hDC, hBitmapBuffer);
 	}
 	
-	//sr->gameObject->transform->rotationZ += 15.0f * GameManager::deltaTime;
+	sr->gameObject.lock()->transform->rotationZ += 3.0f * GameManager::deltaTime;
 	GameManager::mainCamera->PushRenderer(sr2.get());
 	GameManager::mainCamera->PushRenderer(sr.get());
 
@@ -380,6 +388,17 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(-10.0f, 0, 0)).head<2>();
 			if (w == 'D')
 				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(+10.0f, 0, 0)).head<2>();
+			
+			break;
+		}
+		case WM_CHAR:
+		{
+			if (w == '1')
+				GameManager::targetFrame = 20;
+			if (w == '2')
+				GameManager::targetFrame = 60;
+			if (w == '3')
+				GameManager::targetFrame = 144;
 			break;
 		}
 		case WM_LBUTTONDOWN:
