@@ -44,6 +44,8 @@ Eigen::Vector2d GameManager::RenderSize = Eigen::Vector2d(1920, 1080);
 int GameManager::viewX = 1920;
 int GameManager::viewY = 1080;
 
+HWND GameManager::mainHWnd = NULL;
+
 RECT GameManager::viewSize;
 RECT GameManager::monitorSize;
 int GameManager::gameDestroy = false;
@@ -56,22 +58,71 @@ IDWriteFactory* GameManager::pWFactory = NULL;
 IDWriteTextFormat* GameManager::pWFormat = NULL;
 
 int GameManager::RenderMode = 1;
+FMOD::System* GameManager::soundSystem = nullptr;
 
 std::map<int, ID2D1Bitmap*> Resources::resourceMap = std::map<int, ID2D1Bitmap*>();
+std::map<int, FMOD::Sound*> Resources::soundMap = std::map<int, FMOD::Sound*>();
+std::map<int, std::shared_ptr<Sprite>> Resources::spriteMap = std::map<int, std::shared_ptr<Sprite>>();
 
-
+void* GameManager::extradriverdata = nullptr;
 void GameManager::Init()
 {
-	
+	FMOD::System_Create(&GameManager::soundSystem);
+	soundSystem->init(64, FMOD_INIT_NORMAL, extradriverdata);
+	//result = soundSystem->playSound(sound, 0, false, &channel);
+	//channel->setVolume(0.4f);
+}
+
+void GameManager::BeforeUpdate()
+{
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('Q'))
+	{
+		//DestroyWindow(hWnd);
+		GameManager::gameDestroy = true;
+		DestroyWindow(GameManager::mainHWnd);
+	}
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('D'))
+	{
+		if (ConsoleDebug::console->consoleActive)
+			ConsoleDebug::console->Close();
+		else
+			ConsoleDebug::console->Start();
+
+		ConsoleDebug::console->consoleActive = !ConsoleDebug::console->consoleActive;
+	}
+	if (InputManager::GetKeyDown('S'))
+	{
+		//viewX = monitorSize.right;
+		//viewY = monitorSize.bottom;
+		//SetWindowPos(hWnd, HWND_TOP, screenX / 2 - viewX / 2, screenY / 2 - viewY / 2,
+		//	viewX, viewY, SWP_FRAMECHANGED);
+	}
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('1'))
+		GameManager::targetFrame = 30;
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('2'))
+		GameManager::targetFrame = 60;
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('3'))
+		GameManager::targetFrame = 144;
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('4'))
+		GameManager::targetFrame = 244;
+	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('0'))
+		GameManager::targetFrameLock = !GameManager::targetFrameLock;
+	if (InputManager::GetKeyDown(MouseL))
+	{
+		if (InputManager::mousePos.x() > (GameManager::viewSize.right - 40) && InputManager::mousePos.y() < 40)
+			DestroyWindow(GameManager::mainHWnd);
+	}
 }
 
 void GameManager::GameDestroy()
 {
+	/*
 	for (int i = 0; i < mainWorld->objectList.size(); i++)
 		if (mainWorld->objectList[i] != NULL)
 			for (int j = 0; j < mainWorld->objectList[i]->componentList.size(); j++)
 				if (std::dynamic_pointer_cast<SpriteRenderer>(mainWorld->objectList[i]->componentList[j]) != NULL)
 					std::dynamic_pointer_cast<SpriteRenderer>(mainWorld->objectList[i]->componentList[j])->sprite = NULL;
+	*/
 	mainWorld->objectList.clear();
 	mainCamera = NULL;
 	mainWorld = NULL;
@@ -104,9 +155,35 @@ ID2D1Bitmap* Resources::ImageLoading(int id, LPCTSTR path)
 
 ID2D1Bitmap* Resources::GetImage(int id)
 {
-	if(resourceMap.find(id) != resourceMap.end())
-		return resourceMap[id];
-	return NULL;
+	if (resourceMap.find(id) == resourceMap.end())
+		return NULL;
+	return resourceMap[id];
+}
+
+FMOD::Sound* Resources::SoundLoading(int id, LPCSTR path)
+{
+	FMOD::Sound* result;
+	GameManager::soundSystem->createSound(path, FMOD_LOOP_OFF, 0, &result);
+	soundMap[id] = result;
+	return result;
+}
+
+FMOD::Sound* Resources::GetSound(int id)
+{
+	if (soundMap.find(id) == soundMap.end())
+		return NULL;
+	return soundMap[id];
+}
+
+std::weak_ptr<Sprite> Resources::PushSprite(int id, std::shared_ptr<Sprite> sprite)
+{
+	Resources::spriteMap[id] = sprite;
+	return sprite;
+}
+
+std::weak_ptr<Sprite> Resources::GetSprite(int id)
+{
+	return Resources::spriteMap[id];
 }
 
 //World Init
@@ -124,7 +201,102 @@ void World::Init()
 }
 void World::Update()
 {
-	//for()
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if ((nowGameObject->isActive != nowGameObject->isPrevActive) && nowGameObject->isActive)
+		{
+			nowGameObject->isPrevActive = nowGameObject->isActive;
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->Enable();
+			}
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isActive)
+		{
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				if (nowComponent->isFirst)
+				{
+					nowComponent->Start();
+					nowComponent->isFirst = false;
+				}
+			}
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isActive)
+		{
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->Update();
+			}
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isActive)
+		{
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->LateUpdate();
+			}
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isDestroy)
+			nowGameObject->isActive = false;
+		if ((nowGameObject->isActive != nowGameObject->isPrevActive) && (!nowGameObject->isActive))
+		{
+			nowGameObject->isPrevActive = nowGameObject->isActive;
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->Disable();
+			}
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isDestroy)
+		{
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->Destroy();
+			}
+			nowGameObject->Clear();
+			objectList.erase(objectList.begin() + i);
+			i--;
+		}
+	}
+	for (int i = 0; i < this->objectList.size(); i++)
+	{
+		auto nowGameObject = this->objectList[i];
+		if (nowGameObject->isActive)
+		{
+			for (int j = 0; j < nowGameObject->componentList.size(); j++)
+			{
+				auto nowComponent = nowGameObject->componentList[j];
+				nowComponent->BeforeRender();
+			}
+		}
+	}
+
 }
 
 
@@ -140,15 +312,18 @@ GameObject::~GameObject()
 void GameObject::Destroy()
 {
 	this->isDestroy = true;
-	for (int i = 0; i < this->componentList.size(); i++)
-	{
-		componentList[i]->isDestroy = true;
-	}
+}
+void GameObject::Clear()
+{
+	this->isDestroy = true;
+	componentList.clear();
+	transform = nullptr;
 }
 
 template std::shared_ptr<Transform> GameObject::AddComponent<Transform>(std::shared_ptr<Transform> element);
 template std::shared_ptr<Camera> GameObject::AddComponent<Camera>(std::shared_ptr<Camera> element);
 template std::shared_ptr<SpriteRenderer> GameObject::AddComponent<SpriteRenderer>(std::shared_ptr<SpriteRenderer> element);
+template std::shared_ptr<TestComponent> GameObject::AddComponent<TestComponent>(std::shared_ptr<TestComponent> element);
 template <typename T> std::shared_ptr<T> GameObject::AddComponent(std::shared_ptr<T> element)
 {
 	for (int i = 0; i < this->componentList.size(); i++)
@@ -268,6 +443,20 @@ Eigen::Matrix3d Camera::ScreenTranslateMatrix()
 }
 
 //Camera Init
+
+Eigen::Vector2d Camera::ScreenToWorld(Eigen::Vector2d pos)
+{
+	Eigen::Matrix3d m = GameManager::mainCamera->ScreenTranslateMatrix()
+		* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
+	return (m.inverse() * Eigen::Vector3d(pos.x(), pos.y(), 1)).head(2);
+}
+Eigen::Vector2d Camera::WorldToScreen(Eigen::Vector2d pos)
+{
+	Eigen::Matrix3d m = GameManager::mainCamera->ScreenTranslateMatrix()
+		* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
+	return (m * Eigen::Vector3d(pos.x(), pos.y(), 1)).head(2);
+}
+
 void Camera::Render(HDC hdc)
 {
 	sort(rendererList.begin(), rendererList.end(), [](auto a, auto b)
@@ -290,6 +479,65 @@ template <typename T> void Camera::PushRenderer(T* element)
 	}
 }
 
+void Camera::Update()
+{
+	Component::Update();
+	if (InputManager::GetKey(VK_LEFT))
+		GameManager::mainCamera->gameObject.lock()->transform->rotationZ -= 0.02f;
+	if (InputManager::GetKey(VK_RIGHT))
+		GameManager::mainCamera->gameObject.lock()->transform->rotationZ += 0.02f;
+	if (InputManager::GetKey('D'))
+		GameManager::mainCamera->gameObject.lock()->transform->position.x() += 3.0f;
+	if (InputManager::GetKey('A'))
+		GameManager::mainCamera->gameObject.lock()->transform->position.x() -= 3.0f;
+	if (InputManager::GetKey('S'))
+		GameManager::mainCamera->gameObject.lock()->transform->position.y() += 3.0f;
+	if (InputManager::GetKey('W'))
+		GameManager::mainCamera->gameObject.lock()->transform->position.y() -= 3.0f;
+}
+
+
+
+void SpriteRenderer::Enable()
+{
+	Component::Enable();
+}
+
+void SpriteRenderer::Disable()
+{
+	Component::Disable();
+}
+
+void SpriteRenderer::Update()
+{
+	Component::Update();
+	if (IsPlay())
+	{
+		animationTime += GameManager::deltaTime * animationSpeedScale;
+		auto sprite = this->sprite.lock();
+		if (animationTime > sprite->time)
+		{
+			if (animationLoop)
+				animationTime -= sprite->time;
+			else
+				Stop();
+		}
+	}
+}
+void SpriteRenderer::LateUpdate()
+{
+	Component::LateUpdate();
+	auto sprite = this->sprite.lock();
+	animationIndex = animationTime / (sprite->time / sprite->imageList.size());
+}
+void SpriteRenderer::Start()
+{
+	Component::Start();
+}
+void SpriteRenderer::Destroy()
+{
+	Component::Destroy();
+}
 
 void Renderer::BeforeRender()
 {
@@ -309,23 +557,49 @@ void Renderer::Render(HDC hdc, Camera* camera)
 
 SpriteRenderer::~SpriteRenderer()
 {
-	this->sprite = NULL;
+	
 }
 
-void SpriteRenderer::SetSprite(CImage* sprite)
+bool SpriteRenderer::IsPlay()
+{
+	return isAnimation == true;
+}
+
+void SpriteRenderer::Play()
+{
+	isAnimation = true;
+}
+void SpriteRenderer::Stop()
+{
+	isAnimation = false;
+	Reset();
+}
+
+void SpriteRenderer::Pause()
+{
+	isAnimation = false;
+}
+
+void SpriteRenderer::Reset()
+{
+	animationIndex = 0;
+	animationTime = 0;
+}
+
+void SpriteRenderer::SetSprite(std::weak_ptr<Sprite> sprite)
 {
 	this->sprite = sprite;
-}
-void SpriteRenderer::SetSprite2(ID2D1Bitmap* sprite2)
-{
-	this->sprite2 = sprite2;
 }
 
 void SpriteRenderer::Render(HDC hDC, Camera* camera)
 {
 	if (GameManager::RenderMode == 0)
 	{
-		CImage* img = this->sprite;
+		CImage* img = this->sprite2;
+		Eigen::Vector2d pivot = Eigen::Vector2d(0, 0);
+		Eigen::Vector2d imageOffset = Eigen::Vector2d(0, 0);
+		Eigen::Vector2d imageScale = Eigen::Vector2d(1, 1);
+
 		Eigen::Matrix3d m = this->gameObject.lock()->transform->GetL2WMat();
 		m = GameManager::mainCamera->ScreenTranslateMatrix()
 			* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
@@ -452,6 +726,7 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 	}
 	else
 	{
+		std::shared_ptr<Sprite> sprite = this->sprite.lock();
 		Eigen::Matrix3d m = this->gameObject.lock()->transform->GetL2WMat();
 		m = GameManager::mainCamera->ScreenTranslateMatrix()
 			* GameManager::mainCamera->gameObject.lock()->transform->GetW2LMat();
@@ -467,13 +742,13 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 			* Eigen::Vector3d(cos(angle), sin(angle), 0);
 		angle = atan2(t.y(), t.x()) * R2D;
 
-		float imageOffsetx = imageOffset.x();
-		float imageOffsety = imageOffset.y();
-		float imageScalex = imageScale.x();
-		float imageScaley = imageScale.y();
+		float imageOffsetx = sprite->spriteOffset.x();
+		float imageOffsety = sprite->spriteOffset.y();
+		float imageScalex = sprite->spriteTiled.x();
+		float imageScaley = sprite->spriteTiled.y();
 
-		float imageW = sprite2->GetSize().width;
-		float imageH = sprite2->GetSize().height;
+		float imageW = sprite->spriteSize.x();
+		float imageH = sprite->spriteSize.y();
 		float sizex = renderSize.x() * this->gameObject.lock()->transform->localScale.x();
 		float sizey = renderSize.y() * this->gameObject.lock()->transform->localScale.y();
 
@@ -485,15 +760,68 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 		float filterW = imageW * imageScalex;
 		float filterH = imageH * imageScaley;
 
-		D2D1_RECT_F RectF = D2D1::RectF(ScreenPos.x() - stretch.x() * pivot.x(), ScreenPos.y() - stretch.y() * pivot.y(), ScreenPos.x() + stretch.x() * (1 - pivot.x()), ScreenPos.y() + stretch.y() * (1 - pivot.y()));
+		D2D1_RECT_F RectF = D2D1::RectF(ScreenPos.x() - stretch.x() * sprite->pivot.x(), ScreenPos.y() - stretch.y() * sprite->pivot.y(), ScreenPos.x() + stretch.x() * (1 - sprite->pivot.x()), ScreenPos.y() + stretch.y() * (1 - sprite->pivot.y()));
 		D2D1_RECT_F RectF2 = D2D1::RectF(filterX, filterY, filterX + filterW, filterY + filterH);
 
 		GameManager::mainRT->SetTransform(
 			D2D1::Matrix3x2F(flip.x() == 0 ? 1 : -1, 0, 0, flip.y() == 0 ? 1 : -1, 0, 0)
 			* D2D1::Matrix3x2F::Translation((flip.x() == 0 ? 0 : 1) * (ScreenPos.x() * 2), (flip.y() == 0 ? 0 : 1) * (ScreenPos.y() * 2))
 			* D2D1::Matrix3x2F::Rotation(angle, D2D1::Point2F(ScreenPos.x(), ScreenPos.y())));
-		ID2D1Bitmap* bitmap = this->sprite2;
+		ID2D1Bitmap* bitmap = sprite->imageList[animationIndex];
 		GameManager::mainRT->DrawBitmap(bitmap, RectF, 1, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, // 이 값이 보간 모드
 			RectF2);
+	}
+}
+
+unsigned int InputManager::KeyMaskData[KeyDataSize];
+
+Eigen::Vector2d InputManager::mousePos = Eigen::Vector2d(0, 0);
+Eigen::Vector2d InputManager::mousePrevPos = Eigen::Vector2d(0, 0);
+
+void InputManager::SetKeyState(int keyID, unsigned int bitMask)
+{
+	KeyMaskData[keyID] = bitMask;
+}
+unsigned int InputManager::GetKeyState(int keyID)
+{
+	return KeyMaskData[keyID];
+}
+
+bool InputManager::GetKeyDown(int keyID)
+{
+	return (KeyMaskData[keyID] & KeyDownBit) != 0;
+}
+bool InputManager::GetKey(int keyID)
+{
+	return (KeyMaskData[keyID] & KeyStayBit) != 0;
+}
+bool InputManager::GetKeyUp(int keyID)
+{
+	return (KeyMaskData[keyID] & KeyUpBit) != 0;
+}
+
+void InputManager::BeforeUpdate()
+{
+	for (int keyIndex = 0; keyIndex < KeyDataSize; keyIndex++)
+	{
+		if (InputManager::GetKeyUp(keyIndex))
+			InputManager::SetKeyState(keyIndex, InputManager::GetKeyState(keyIndex) & (~KeyStayBit));
+		if (InputManager::GetKeyDown(keyIndex))
+			InputManager::SetKeyState(keyIndex, InputManager::GetKeyState(keyIndex) | KeyStayBit);
+	}
+}
+
+void InputManager::AfterUpdate()
+{
+	InputManager::mousePrevPos = InputManager::mousePos;
+	for (int keyIndex = 0; keyIndex < KeyDataSize; keyIndex++)
+	{
+		if (InputManager::GetKeyDown(keyIndex))
+			InputManager::SetKeyState(keyIndex, InputManager::GetKeyState(keyIndex) & (~KeyDownBit));
+		if (InputManager::GetKeyUp(keyIndex))
+		{
+			InputManager::SetKeyState(keyIndex, InputManager::GetKeyState(keyIndex) & (~KeyStayBit));
+			InputManager::SetKeyState(keyIndex, InputManager::GetKeyState(keyIndex) & (~KeyUpBit));
+		}
 	}
 }

@@ -19,7 +19,6 @@
 
 
 HINSTANCE hInstMain;
-HWND mainHWnd;
 WNDCLASSEX wndClass;
 
 LPCTSTR className = L"Iaido";
@@ -36,14 +35,7 @@ void GameRender();
 void CreateDirect(HWND hWnd);
 
 ProjectI projectI;
-
-CImage img;
-CImage img2;
-
 //Lixound
-
-std::shared_ptr<SpriteRenderer> sr;
-std::shared_ptr<SpriteRenderer> sr2;
 
 void FrameInit(int count);
 void FrameUpdate();
@@ -75,7 +67,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 	wndClass.style = CS_HREDRAW | CS_VREDRAW;
 	RegisterClassEx(&wndClass);
 
-	mainHWnd = wnd = CreateWindow(className, titleName,
+	GameManager::mainHWnd = wnd = CreateWindow(className, titleName,
 		WS_POPUP | WS_VISIBLE,
 		GameManager::screenX / 2 - GameManager::viewX / 2, GameManager::screenY / 2 - GameManager::viewY / 2,
 		GameManager::viewX, GameManager::viewY,
@@ -86,25 +78,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 
 	projectI.Init();
 
-	img.Load(L".\\Resources\\Image\\Back_2.png");
-	img2.Load(L".\\Resources\\Image\\Back4_2.png");
-	std::shared_ptr<GameObject> obj = GameManager::mainWorld->CreateGameObject();
-	sr = obj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
-	sr->SetSprite2(Resources::GetImage(0));
-	sr->SetSprite(&img);
-	sr->pivot = Eigen::Vector2d(0.5f, 0.5f);
-	obj->transform->position = Eigen::Vector2d(100, 100);
-
-	std::shared_ptr<GameObject> obj2 = GameManager::mainWorld->CreateGameObject();
-	sr2 = obj2->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
-	sr2->renderSize = Eigen::Vector2d(1920, 1080);
-	sr2->SetSprite(&img2);
-	sr2->SetSprite2(Resources::GetImage(1));
-	sr2->pivot = Eigen::Vector2d(0, 0);
-	sr2->alpha = 0;
-	obj2->transform->position = Eigen::Vector2d(0, 0);
-
 	FrameInit(8);
+
+	GameManager::mainWorld->Init();
 
 	ShowWindow(wnd, comCount);
 	UpdateWindow(wnd);
@@ -125,11 +101,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR cmd, int comCount
 		if(!GameManager::gameDestroy)
 			GameUpdate(wnd);
 	}
-	//delete ConsoleDebug::console;
-	//DestroyWindow(wnd);
-	//UnregisterClass(className, hInst);
-	//return message.wParam;
-	//m_pRenderTarget->Resize
 	return 0;
 }
 
@@ -170,20 +141,16 @@ void CreateDirect(HWND hWnd)
 void GameInit()
 {
 	debug(L"- Console Test Start -\n");
-	GameManager::mainWorld = std::make_shared<World>();
-
-	std::shared_ptr<GameObject> mainCameraObject = GameManager::mainWorld->CreateGameObject();
-	GameManager::mainCamera = mainCameraObject->AddComponent<Camera>(std::make_shared<Camera>());
-	mainCameraObject->transform->position = Eigen::Vector2d(960, 540);
+	timeBeginPeriod(1);
+	SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS);
+	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_HIGHEST);
 
 	GameManager::updateNowClock = std::chrono::steady_clock::now();
 	GameManager::updatePrevClock = GameManager::updateNowClock;
-
 	GameManager::GameStartClock = std::chrono::steady_clock::now();
 
-
-	//FMOD::System_Create()
-	//----World Load로 옮길것.
+	for (int KeyIndex = 0; KeyIndex < KeyDataSize; KeyIndex++)
+		InputManager::KeyMaskData[KeyIndex] = 0;
 }
 
 float deltatime = 0;
@@ -193,7 +160,7 @@ int frameCount = 0;
 float frameTotal = 0;
 int frame[100];
 std::chrono::steady_clock::time_point frameStartCheck;
-std::chrono::steady_clock::time_point frameCheck[100];
+std::chrono::steady_clock::time_point frameCheck[100]; 
 void FrameInit(int count)
 {
 	frameCount = count;
@@ -215,7 +182,6 @@ void FrameUpdate()
 				frameCheck[i] = now;
 			if (std::chrono::duration_cast<std::chrono::microseconds>(now - frameCheck[i]).count() >= 1000000)
 			{
-				//frameTotal = (frameTotal * (((float)frameCount - 1.0f) / frameCount) + frame[i] * (1.0f / frameCount));
 				frameTotal = (frameTotal + frame[i])/2.0f;
 				frameCheck[i] = now;
 				frame[i] = 0;
@@ -239,7 +205,13 @@ void GameUpdate(HWND wnd)
 	{
 		//(*ConsoleDebug::console) << totalTime << "\n";
 		GameManager::deltaTime = totalTime / 1000.0f;
+
 		FrameUpdate();
+		InputManager::BeforeUpdate();
+		GameManager::BeforeUpdate();
+		GameManager::mainWorld->Update();
+		InputManager::AfterUpdate();
+
 		GameRender();
 
 		if (GameManager::targetFrameLock)
@@ -254,21 +226,17 @@ void GameUpdate(HWND wnd)
 
 void GameRender()
 {
-	GetClientRect(mainHWnd, &GameManager::viewSize);
+	GetClientRect(GameManager::mainHWnd, &GameManager::viewSize);
 	HDC mainHDC = NULL;
 	HDC hDC = NULL;
 	HBITMAP hBitmapBuffer = NULL;
 	if (GameManager::RenderMode == 0)
 	{
-		mainHDC = GetDC(mainHWnd);
+		mainHDC = GetDC(GameManager::mainHWnd);
 		hDC = CreateCompatibleDC(mainHDC);
 		hBitmapBuffer = CreateCompatibleBitmap(mainHDC, GameManager::RenderSize.x(), GameManager::RenderSize.y());
 		SelectObject(hDC, hBitmapBuffer);
 	}
-	
-	sr->gameObject.lock()->transform->rotationZ += 3.0f * GameManager::deltaTime;
-	GameManager::mainCamera->PushRenderer(sr2.get());
-	GameManager::mainCamera->PushRenderer(sr.get());
 
 	GameManager::mainRT->BeginDraw();
 	GameManager::mainRT->SetTransform(D2D1::Matrix3x2F::Identity());
@@ -282,7 +250,7 @@ void GameRender()
 		StretchBlt(mainHDC, 0, 0, GameManager::viewSize.right, GameManager::viewSize.bottom, hDC, 0, 0, GameManager::RenderSize.x(), GameManager::RenderSize.y(), SRCCOPY);
 		DeleteDC(hDC);
 		DeleteObject(hBitmapBuffer);
-		ReleaseDC(mainHWnd, mainHDC);
+		ReleaseDC(GameManager::mainHWnd, mainHDC);
 	}
 	GameManager::mainRT->EndDraw();
 }
@@ -335,85 +303,51 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 		}
 		case WM_KEYDOWN:
 		{
-			if (w == 'Q')
-			{
-				//DestroyWindow(hWnd);
-				GameManager::gameDestroy = true;
-				DestroyWindow(hWnd);
-				DestroyWindow(GetConsoleWindow());
-			}
-			if (w == 'E')
-			{
-				ConsoleDebug::console->Close();
-				ConsoleDebug::console->consoleActive = false;
-			}
-			if (w == 'S')
-			{
-				//viewX = monitorSize.right;
-				//viewY = monitorSize.bottom;
-				//SetWindowPos(hWnd, HWND_TOP, screenX / 2 - viewX / 2, screenY / 2 - viewY / 2,
-				//	viewX, viewY, SWP_FRAMECHANGED);
-			}
-			/*
-			if (w == 'R')
-				pivotX -= 0.1f;
-			if (w == 'T')
-				pivotX += 0.1f;
-			if (w == 'G')
-				flipX = flipX ? 0 : 1;
-			if (w == 'H')
-				flipY = flipY ? 0 : 1;
-				*/
-			if (w == VK_RIGHT)
-			{
-				GameManager::mainCamera->gameObject.lock()->transform->rotationZ += 0.1f;
-			}
-			if (w == VK_LEFT)
-			{
-				GameManager::mainCamera->gameObject.lock()->transform->rotationZ -= 0.1f;
-			}
-			if (w == VK_UP)
-			{
-				GameManager::mainCamera->gameObject.lock()->transform->localScale += Eigen::Vector2d(0.1f, 0.1f);
-			}
-			if (w == VK_DOWN)
-			{
-				GameManager::mainCamera->gameObject.lock()->transform->localScale -= Eigen::Vector2d(0.1f, 0.1f);
-			}
-			if (w == 'W')
-				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(0, -10.0f, 0)).head<2>();
-			if (w == 'S')
-				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(0, 10.0f, 0)).head<2>();
-			if (w == 'A')
-				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(-10.0f, 0, 0)).head<2>();
-			if (w == 'D')
-				GameManager::mainCamera->gameObject.lock()->transform->position += (GameManager::mainCamera->gameObject.lock()->transform->GetL2WMat() * Eigen::Vector3d(+10.0f, 0, 0)).head<2>();
-			
+			if(!InputManager::GetKey(w))
+				InputManager::SetKeyState(w, InputManager::GetKeyState(w) | KeyDownBit);
 			break;
 		}
-		case WM_CHAR:
+		case WM_KEYUP:
 		{
-			if (w == '1')
-				GameManager::targetFrame = 20;
-			if (w == '2')
-				GameManager::targetFrame = 60;
-			if (w == '3')
-				GameManager::targetFrame = 144;
+			if (InputManager::GetKeyDown(w) || InputManager::GetKey(w))
+				InputManager::SetKeyState(w, InputManager::GetKeyState(w) | KeyUpBit);
+			break;
+		}
+		case WM_MOUSEMOVE:
+		{
+			InputManager::mousePos = Eigen::Vector2d(LOWORD(l), HIWORD(l));
 			break;
 		}
 		case WM_LBUTTONDOWN:
 		{
-			//if (LOWORD(l) > (GameManager::viewSize.right - 40) && HIWORD(l) < 40) // 게임종료
-			//	DestroyWindow(hWnd);
-			
+			if (!InputManager::GetKey(MouseL))
+				InputManager::SetKeyState(MouseL, InputManager::GetKeyState(MouseL) | KeyDownBit);
+			break;
+		}
+		case WM_LBUTTONUP:
+		{
+			if (InputManager::GetKeyDown(MouseL) || InputManager::GetKey(MouseL))
+				InputManager::SetKeyState(MouseL, InputManager::GetKeyState(MouseL) | KeyUpBit);
+			break;
+		}
+		case WM_RBUTTONDOWN:
+		{
+			if (!InputManager::GetKey(MouseR))
+				InputManager::SetKeyState(MouseR, InputManager::GetKeyState(MouseR) | KeyDownBit);
+			break;
+		}
+		case WM_RBUTTONUP:
+		{
+			if (InputManager::GetKeyDown(MouseR) || InputManager::GetKey(MouseR))
+				InputManager::SetKeyState(MouseR, InputManager::GetKeyState(MouseR) | KeyUpBit);
 			break;
 		}
 		case WM_PAINT:
 		{
-			HDC mainHDC = BeginPaint(mainHWnd, &ps);
+			HDC mainHDC = BeginPaint(GameManager::mainHWnd, &ps);
 			//GameRender();
 
-			EndPaint(mainHWnd, &ps);
+			EndPaint(GameManager::mainHWnd, &ps);
 			break;
 		}
 		case WM_DESTROY:
@@ -424,8 +358,6 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 			//UnregisterClass(className, hInstMain);
 			GameManager::GameDestroy();
 			GameManager::gameDestroy = true;
-			img.Destroy();
-			img2.Destroy();
 			PostQuitMessage(0);
 			break;
 		}
