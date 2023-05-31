@@ -27,7 +27,7 @@ public:
 			Clear();
 			Allocation = true;
 			AllocConsole();
-			SetWindowPos(GetConsoleWindow(), 0, 0, 0, 400, 900, SWP_NOZORDER);
+			SetWindowPos(GetConsoleWindow(), HWND_BOTTOM, 0, 0, 400, 900, SWP_SHOWWINDOW);
 		}
 		else throw e;
 	}

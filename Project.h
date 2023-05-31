@@ -23,34 +23,47 @@
 
 #include "GameLogic.h"
 
+class OutGame;
+class InGame;
+class World;
+
+class ProjectI
+{
+public:
+	std::shared_ptr<OutGame> outGame = nullptr;
+	std::shared_ptr<InGame> inGame = nullptr;
+
+	void Init();
+};
+
 class GlobalData
 {
 public:
+	
 };
 
 class OutGame : public World
 {
 public:
-	virtual void Init()
-	{
-		World::Init();
-
-	}
+	virtual void Init();
+	virtual void Update();
 };
 class InGame : public World
 {
 public:
-	virtual void Init()
-	{
-		World::Init();
-
-	}
+	virtual void Init();
+	virtual void Update();
 };
 
-class ProjectI
+
+class TestComponent : public Component
 {
 public:
-	OutGame outGame;
-	InGame inGame;
-	void Init();
+	virtual void Update();
+	virtual void LateUpdate();
+	virtual void BeforeRender();
+	virtual void Start();
+	virtual void Enable();
+	virtual void Disable();
+	virtual void Destroy();
 };

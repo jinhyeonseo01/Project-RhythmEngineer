@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ﻿  GameLogic.cpp
 =======
@@ -174,6 +175,9 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(290,6
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(319,18): error C2601: 'WinCallBack': 지역 함수 정의가 잘못되었습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Main.cpp(438,1): fatal  error C1004: 예기치 않은 파일의 끝이 나타났습니다.
   Project.cpp
+=======
+﻿  Project.cpp
+>>>>>>> master
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
@@ -194,6 +198,14 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(113,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> master
 =======
+>>>>>>> master
+=======
+  코드를 생성하고 있습니다.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 2142 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Release\Project_Iaido.exe
 >>>>>>> master
