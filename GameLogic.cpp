@@ -528,7 +528,11 @@ void SpriteRenderer::LateUpdate()
 {
 	Component::LateUpdate();
 	auto sprite = this->sprite.lock();
-	animationIndex = animationTime / (sprite->time / sprite->imageList.size());
+	if (IsPlay())
+	{
+		animationIndex = animationTime / (sprite->time / sprite->imageList.size());
+		animationIndex = min(animationIndex, sprite->imageList.size() - 1);
+	}
 }
 void SpriteRenderer::Start()
 {
@@ -572,7 +576,7 @@ void SpriteRenderer::Play()
 void SpriteRenderer::Stop()
 {
 	isAnimation = false;
-	Reset();
+	animationTime = 0;
 }
 
 void SpriteRenderer::Pause()

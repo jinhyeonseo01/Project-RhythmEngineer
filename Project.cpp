@@ -26,14 +26,16 @@
 #define music_Abiogenesis 0002
 
 #define image_player_idle 100
-#define image_player_idle2 400
+#define image_player_idle2 1000
 #define image_player_Attack1 200
 #define image_player_Attack2 300
+#define image_player_Attack3 400
 
 #define sprite_player_idle 10
 #define sprite_player_idle2 11
 #define sprite_player_Attack1 15
 #define sprite_player_Attack2 16
+#define sprite_player_Attack3 17
 
 FMOD::Channel* channel;
 
@@ -81,11 +83,20 @@ void ProjectI::Init()
 	sprite->time = 0.25f;
 
 	//-----------------------------------------------------------
-	
+
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack2\\", L"", 80, L".png",
 		11, image_player_Attack2, sprite_player_Attack2);
 	sprite = spriteWeak.lock();
 	sprite->pivot = Eigen::Vector2d(0.5, 0.73333333);
+	sprite->time = 0.25f;
+	//-----------------------------------------------------------
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack3\\", L"", 100, L".png",
+		21, image_player_Attack3, sprite_player_Attack3);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.73333333);
+	sprite->time = 0.5f;
+
 	
 	Resources::SoundLoading(music_Urgency, ".\\Resources\\Sound\\Urgency.mp3");
 	Resources::SoundLoading(music_Abiogenesis, ".\\Resources\\Sound\\Abiogenesis.mp3");
@@ -122,6 +133,7 @@ void OutGame::Init()
 
 	GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
 }
+int TestAttackStack = 0;
 void OutGame::Update()
 {
 	//sr->gameObject.lock()->transform->rotationZ += 3.0f * GameManager::deltaTime;
@@ -134,8 +146,22 @@ void OutGame::Update()
 	}
 	if (InputManager::GetKeyDown('E'))
 	{
-		sr->SetSprite(Resources::GetSprite(sprite_player_Attack1));
+		if (TestAttackStack == 0)
+		{
+			sr->SetSprite(Resources::GetSprite(sprite_player_Attack1));
+		}
+		if (TestAttackStack == 1)
+		{
+			sr->SetSprite(Resources::GetSprite(sprite_player_Attack2));
+		}
+		if (TestAttackStack == 2)
+		{
+			sr->SetSprite(Resources::GetSprite(sprite_player_Attack3));
+		}
+		TestAttackStack++;
+		TestAttackStack = TestAttackStack % 3;
 		sr->animationLoop = false;
+		sr->Reset();
 		sr->Play();
 	}
 
