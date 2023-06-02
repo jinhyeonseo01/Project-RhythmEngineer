@@ -1,26 +1,26 @@
 ﻿  Project.cpp
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(666,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\products\GeneralBlockPanelKernel.h(2004,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(137,2): warning C5053: C++17 및 이전 버전에서 'explicit(<expr>)'에 대한 지원은 공급업체 확장입니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): warning C4477: 'sprintf_s' : 서식 문자열 '%ld'에 'long' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(51,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(60,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(69,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(78,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(92,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(104,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(113,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\products\GeneralBlockPanelKernel.h(2063,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(137,2): warning C5053: C++17 및 이전 버전에서 'explicit(<expr>)'에 대한 지원은 공급업체 확장입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): warning C4477: 'sprintf_s' : 서식 문자열 '%ld'에 'long' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(51,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(60,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(69,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(78,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(92,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(104,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(113,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  1 of 2142 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    73 functions had inline decision re-evaluated but remain unchanged
+  15 of 2991 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    92 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
-  Project_Iaido.vcxproj -> C:\Custom File\VS File\Project_Iaido\x64\Release\Project_Iaido.exe
+  Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Release\Project_Iaido.exe

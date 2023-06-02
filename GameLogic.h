@@ -15,11 +15,15 @@
 #include <map>
 #include <chrono>
 #include <algorithm>
+#include <iostream>
+#include <fstream>
 
 #include <Eigen/Dense>
 #include "ConsoleDebug.h"
 #include "fmod.hpp"
 #include "fmod_errors.h"
+
+#include "lib/nlohmann/json.hpp"
 
 #include <d2d1.h>
 #include <d2d1helper.h>
@@ -41,6 +45,7 @@ class GameManager;
 class Sprite;
 class InputManager;
 class GameManager;
+class NodeSystem;
 
 class Component
 {
@@ -290,3 +295,29 @@ public:
 };
 
 std::weak_ptr<Sprite> SpriteGroupLoad(const TCHAR* mainPath, const TCHAR* SubPath, const TCHAR* FName, int startIndex, const TCHAR* LName, int count, int resourceIndex, int spriteIndex);
+
+
+class NodeSystem
+{
+public:
+	FMOD::Channel* musicChannel;
+	std::chrono::steady_clock::time_point startClock;
+	std::chrono::steady_clock::time_point pauseClock;
+	double delayTotalTime = 0;
+	bool isPause = false;
+	bool isStart = false;
+	void Start(FMOD::Sound* sound);
+	void Pause();
+	void DisPause();
+	void Stop();
+	double GetMusicTime();
+	//double 
+};
+
+
+class JsonReader
+{
+public:
+	nlohmann::json Read(std::string s);
+	void Write(std::string s, nlohmann::json json);
+};

@@ -829,3 +829,90 @@ void InputManager::AfterUpdate()
 		}
 	}
 }
+
+
+void NodeSystem::Start(FMOD::Sound* sound)
+{
+	if (!isStart)
+	{
+		isStart = true;
+		isPause = false;
+		delayTotalTime = 0;
+		GameManager::soundSystem->playSound(sound, 0, false, &this->musicChannel);
+		this->startClock = std::chrono::steady_clock::now();
+	}
+	//auto betweenClock = std::chrono::duration_cast<std::chrono::microseconds>();
+	//sound.play
+}
+void NodeSystem::Pause()
+{
+	if (!isPause && isStart)
+	{
+		isPause = true;
+
+		bool playing = false;
+		this->musicChannel->isPlaying(&playing);
+		if (playing)
+			this->musicChannel->setPaused(true);
+		this->pauseClock = std::chrono::steady_clock::now();
+	}
+}
+void NodeSystem::DisPause()
+{
+	if (isPause && isStart)
+	{
+		isPause = false;
+
+		bool channelPause = false;
+		this->musicChannel->getPaused(&channelPause);
+		if (channelPause)
+			this->musicChannel->setPaused(false);
+		delayTotalTime += std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - this->pauseClock).count() / 1000000.0;
+	}
+}
+
+double NodeSystem::GetMusicTime()
+{
+	if (isStart)
+	{
+		double startToNowTime = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - this->startClock).count() / 1000000.0;
+		if (isPause)
+			startToNowTime = std::chrono::duration_cast<std::chrono::microseconds>(this->pauseClock - this->startClock).count() / 1000000.0;
+		double musicTime = startToNowTime - delayTotalTime;
+		return musicTime;
+	}
+	return 0.0;
+}
+
+void NodeSystem::Stop()
+{
+	if (isStart)
+	{
+		isStart = false;
+		isPause = false;
+		delayTotalTime = 0;
+		this->musicChannel->stop();
+		this->musicChannel = nullptr;
+	}
+}
+
+
+void JsonReader::Write(std::string path, nlohmann::json json)
+{
+	std::ofstream json_file;
+	json_file.open(path);
+	json_file << json;
+	json_file.close();
+}
+
+
+nlohmann::json JsonReader::Read(std::string path)
+{
+	nlohmann::json json;
+	std::string s;
+	std::ifstream json_file;
+	json_file.open(path);
+	json_file >> s;
+	json_file.close();
+	return json.parse(s);
+}

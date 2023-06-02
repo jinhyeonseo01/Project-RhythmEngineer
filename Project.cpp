@@ -84,15 +84,15 @@ void ProjectI::Init()
 
 	//-----------------------------------------------------------
 
-	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack2\\", L"", 80, L".png",
-		11, image_player_Attack2, sprite_player_Attack2);
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack2\\", L"", 81, L".png",
+		10, image_player_Attack2, sprite_player_Attack2);
 	sprite = spriteWeak.lock();
 	sprite->pivot = Eigen::Vector2d(0.5, 0.73333333);
 	sprite->time = 0.25f;
 	//-----------------------------------------------------------
 
-	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack3\\", L"", 100, L".png",
-		21, image_player_Attack3, sprite_player_Attack3);
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Attack3\\", L"", 101, L".png",
+		20, image_player_Attack3, sprite_player_Attack3);
 	sprite = spriteWeak.lock();
 	sprite->pivot = Eigen::Vector2d(0.5, 0.73333333);
 	sprite->time = 0.5f;
@@ -106,11 +106,24 @@ void ProjectI::Init()
 
 	GameManager::mainWorld = this->outGame;
 }
+
 std::shared_ptr<SpriteRenderer> sr;
+std::shared_ptr<NodeSystem> nodeSystem;
+
+JsonReader jr;
+class Data
+{
+public:
+	int a = 10;
+	float b = 10;
+	std::string s = "Hello";
+};
 void OutGame::Init()
 {
 	World::Init();
 	
+	nodeSystem = std::make_shared<NodeSystem>();
+
 	std::shared_ptr<GameObject> mainCameraObject = GameManager::mainWorld->CreateGameObject();
 	GameManager::mainCamera = mainCameraObject->AddComponent<Camera>(std::make_shared<Camera>());
 	mainCameraObject->transform->position = Eigen::Vector2d(960, 540);
@@ -130,10 +143,24 @@ void OutGame::Init()
 	sr2->alpha = 0;
 	obj2->transform->position = Eigen::Vector2d(0, 0);
 	*/
-
-	GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
+	nlohmann::json data;
+	nlohmann::json data2;
+	data2["A"] = 10;
+	data2["B"] = 123.456;
+	data2["C"] = "Hello";
+	data2["D"] = false;
+	data["Node"]["Song_A"]["Datas"].push_back(data2);
+	data["Node"]["Song_A"]["Datas"].push_back(data2);
+	data["Node"]["Song_A"]["Datas"].push_back(data2);
+	data["Node"]["Song_A"]["Datas"].push_back(data2);
+	jr.Write(".\\Resources\\GameData\\Test.json", data);
+	//GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
 }
+
 int TestAttackStack = 0;
+bool TestAttackAnim = false;
+std::chrono::steady_clock::time_point playerAnimTime;
+
 void OutGame::Update()
 {
 	//sr->gameObject.lock()->transform->rotationZ += 3.0f * GameManager::deltaTime;
@@ -142,6 +169,7 @@ void OutGame::Update()
 	{
 		sr->SetSprite(Resources::GetSprite(sprite_player_idle2));
 		sr->animationLoop = true;
+		sr->Reset();
 		sr->Play();
 	}
 	if (InputManager::GetKeyDown('E'))
@@ -149,14 +177,20 @@ void OutGame::Update()
 		if (TestAttackStack == 0)
 		{
 			sr->SetSprite(Resources::GetSprite(sprite_player_Attack1));
+			playerAnimTime = std::chrono::steady_clock::now();
+			TestAttackAnim = true;
 		}
 		if (TestAttackStack == 1)
 		{
 			sr->SetSprite(Resources::GetSprite(sprite_player_Attack2));
+			playerAnimTime = std::chrono::steady_clock::now();
+			TestAttackAnim = true;
 		}
 		if (TestAttackStack == 2)
 		{
 			sr->SetSprite(Resources::GetSprite(sprite_player_Attack3));
+			playerAnimTime = std::chrono::steady_clock::now();
+			TestAttackAnim = true;
 		}
 		TestAttackStack++;
 		TestAttackStack = TestAttackStack % 3;
@@ -164,9 +198,41 @@ void OutGame::Update()
 		sr->Reset();
 		sr->Play();
 	}
+	if (InputManager::GetKeyDown('T'))
+	{
+		nodeSystem->Start(Resources::GetSound(music_Urgency));
+	}
+	if (InputManager::GetKeyDown('Y'))
+	{
+		nodeSystem->Pause();
+	}
+	if (InputManager::GetKeyDown('U'))
+	{
+		nodeSystem->DisPause();
+	}
+	if (InputManager::GetKeyDown('I'))
+	{
+		nodeSystem->Stop();
+	}
+	if (TestAttackAnim)
+	{
+		if (std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - playerAnimTime).count() / 1000000.0 >= 0.51)
+		{
+			TestAttackAnim = false;
+			TestAttackStack = 0;
+			sr->SetSprite(Resources::GetSprite(sprite_player_idle));
+			sr->animationLoop = true;
+			sr->Reset();
+			sr->Play();
+		}
+	}
 
+	*ConsoleDebug::console << nodeSystem->GetMusicTime() << "\n" << "\n";
 	World::Update();
 }
+
+
+
 
 void InGame::Init()
 {
