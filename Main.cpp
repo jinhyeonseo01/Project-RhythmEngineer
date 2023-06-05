@@ -138,20 +138,7 @@ void CreateDirect(HWND hWnd)
 	//pWFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
 }
 
-void GameInit()
-{
-	debug(L"- Console Test Start -\n");
-	timeBeginPeriod(1);
-	SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS);
-	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_HIGHEST);
-
-	GameManager::updateNowClock = std::chrono::steady_clock::now();
-	GameManager::updatePrevClock = GameManager::updateNowClock;
-	GameManager::GameStartClock = std::chrono::steady_clock::now();
-
-	for (int KeyIndex = 0; KeyIndex < KeyDataSize; KeyIndex++)
-		InputManager::KeyMaskData[KeyIndex] = 0;
-}
+//--------Frame--------
 
 float deltatime = 0;
 float totalTime = 0;
@@ -160,7 +147,7 @@ int frameCount = 0;
 float frameTotal = 0;
 int frame[100];
 std::chrono::steady_clock::time_point frameStartCheck;
-std::chrono::steady_clock::time_point frameCheck[100]; 
+std::chrono::steady_clock::time_point frameCheck[100];
 void FrameInit(int count)
 {
 	frameCount = count;
@@ -182,13 +169,30 @@ void FrameUpdate()
 				frameCheck[i] = now;
 			if (std::chrono::duration_cast<std::chrono::microseconds>(now - frameCheck[i]).count() >= 1000000)
 			{
-				frameTotal = (frameTotal + frame[i])/2.0f;
+				frameTotal = (frameTotal + frame[i]) / 2.0f;
 				frameCheck[i] = now;
 				frame[i] = 0;
 			}
 			frame[i]++;
 		}
 	}
+}
+
+//--------Game--------
+
+void GameInit()
+{
+	debug(L"- Console Test Start -\n");
+	timeBeginPeriod(1);
+	SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS);
+	SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_HIGHEST);
+
+	GameManager::updateNowClock = std::chrono::steady_clock::now();
+	GameManager::updatePrevClock = GameManager::updateNowClock;
+	GameManager::GameStartClock = std::chrono::steady_clock::now();
+
+	for (int KeyIndex = 0; KeyIndex < KeyDataSize; KeyIndex++)
+		InputManager::KeyMaskData[KeyIndex] = 0;
 }
 
 void GameUpdate(HWND wnd)
@@ -303,14 +307,20 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 		}
 		case WM_KEYDOWN:
 		{
-			if(!InputManager::GetKey(w))
+			if (!InputManager::GetKey(w))
+			{
 				InputManager::SetKeyState(w, InputManager::GetKeyState(w) | KeyDownBit);
+				InputManager::SetKeyDownTime(w, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_KEYUP:
 		{
 			if (InputManager::GetKeyDown(w) || InputManager::GetKey(w))
+			{
 				InputManager::SetKeyState(w, InputManager::GetKeyState(w) | KeyUpBit);
+				InputManager::SetKeyUpTime(w, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_MOUSEMOVE:
@@ -321,25 +331,37 @@ LRESULT CALLBACK WinCallBack(HWND hWnd, UINT msgUD, WPARAM w, LPARAM l)
 		case WM_LBUTTONDOWN:
 		{
 			if (!InputManager::GetKey(MouseL))
+			{
 				InputManager::SetKeyState(MouseL, InputManager::GetKeyState(MouseL) | KeyDownBit);
+				InputManager::SetKeyDownTime(MouseL, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_LBUTTONUP:
 		{
 			if (InputManager::GetKeyDown(MouseL) || InputManager::GetKey(MouseL))
+			{
 				InputManager::SetKeyState(MouseL, InputManager::GetKeyState(MouseL) | KeyUpBit);
+				InputManager::SetKeyUpTime(MouseL, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_RBUTTONDOWN:
 		{
 			if (!InputManager::GetKey(MouseR))
+			{
 				InputManager::SetKeyState(MouseR, InputManager::GetKeyState(MouseR) | KeyDownBit);
+				InputManager::SetKeyDownTime(MouseR, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_RBUTTONUP:
 		{
 			if (InputManager::GetKeyDown(MouseR) || InputManager::GetKey(MouseR))
+			{
 				InputManager::SetKeyState(MouseR, InputManager::GetKeyState(MouseR) | KeyUpBit);
+				InputManager::SetKeyUpTime(MouseR, std::chrono::steady_clock::now());
+			}
 			break;
 		}
 		case WM_PAINT:

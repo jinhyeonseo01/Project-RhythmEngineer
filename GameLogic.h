@@ -174,6 +174,47 @@ public:
 };
 
 
+template <typename T> std::shared_ptr<T> GameObject::AddComponent(std::shared_ptr<T> element)
+{
+	for (int i = 0; i < this->componentList.size(); i++)
+	{
+		if (this->componentList[i] == element)
+			return NULL;
+	}
+	std::shared_ptr<Component> component = std::dynamic_pointer_cast<Component>(element);
+	if (component != NULL)
+		this->componentList.push_back(component);
+	else
+		return NULL;
+
+	component->gameObject = weak_from_this();
+	return element;
+}
+
+template <typename T> std::shared_ptr<T> GameObject::GetComponent()
+{
+	std::shared_ptr<T> component = NULL;
+	for (int i = 0; i < this->componentList.size(); i++)
+	{
+		if ((component = std::dynamic_pointer_cast<T>(this->componentList[i])) != NULL)
+			return component;
+	}
+	return NULL;
+}
+
+
+template <typename T> std::vector<std::shared_ptr<T>> GameObject::GetComponents()
+{
+	std::vector<std::shared_ptr<T>> components;
+	std::shared_ptr<T> component = NULL;
+	for (int i = 0; i < this->componentList.size(); i++)
+	{
+		if ((component = std::dynamic_pointer_cast<T>(this->componentList[i])) != NULL)
+			components.push_back(component);
+	}
+	return components;
+}
+
 
 class World
 {
@@ -242,14 +283,25 @@ public:
 #define KeyStayBit 0x02
 #define KeyUpBit 0x04
 
+class KeyData
+{
+public:
+	std::chrono::steady_clock::time_point KeyUp;
+	std::chrono::steady_clock::time_point KeyDown;
+};
 
 class InputManager
 {
 public:
 	static unsigned int KeyMaskData[KeyDataSize];
+	static KeyData KeyData[KeyDataSize];
 	static Eigen::Vector2d mousePos;
 	static Eigen::Vector2d mousePrevPos;
 	static void SetKeyState(int keyID, unsigned int bitMask);
+	static void SetKeyUpTime(int keyID, std::chrono::steady_clock::time_point time);
+	static void SetKeyDownTime(int keyID, std::chrono::steady_clock::time_point time);
+	static std::chrono::steady_clock::time_point GetKeyUpTime(int keyID);
+	static std::chrono::steady_clock::time_point GetKeyDownTime(int keyID);
 	static unsigned int GetKeyState(int keyID);
 	static bool GetKeyDown(int keyID);
 	static bool GetKey(int keyID);
@@ -311,6 +363,7 @@ public:
 	void DisPause();
 	void Stop();
 	double GetMusicTime();
+	double GetDeltaTime(std::chrono::steady_clock::time_point time);
 	//double 
 };
 

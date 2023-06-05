@@ -319,50 +319,13 @@ void GameObject::Clear()
 	componentList.clear();
 	transform = nullptr;
 }
-
+/*
+template std::shared_ptr<EnemyEntityComponent> GameObject::AddComponent<EnemyEntityComponent>(std::shared_ptr<EnemyEntityComponent> element);
 template std::shared_ptr<Transform> GameObject::AddComponent<Transform>(std::shared_ptr<Transform> element);
 template std::shared_ptr<Camera> GameObject::AddComponent<Camera>(std::shared_ptr<Camera> element);
 template std::shared_ptr<SpriteRenderer> GameObject::AddComponent<SpriteRenderer>(std::shared_ptr<SpriteRenderer> element);
 template std::shared_ptr<TestComponent> GameObject::AddComponent<TestComponent>(std::shared_ptr<TestComponent> element);
-template <typename T> std::shared_ptr<T> GameObject::AddComponent(std::shared_ptr<T> element)
-{
-	for (int i = 0; i < this->componentList.size(); i++)
-	{
-		if (this->componentList[i] == element)
-			return NULL;
-	}
-	std::shared_ptr<Component> component = std::dynamic_pointer_cast<Component>(element);
-	if (component != NULL)
-		this->componentList.push_back(component);
-	else
-		return NULL;
-
-	component->gameObject = weak_from_this();
-	return element;
-}
-
-template <typename T> std::shared_ptr<T> GameObject::GetComponent()
-{
-	std::shared_ptr<T> component = NULL;
-	for (int i = 0; i < this->componentList.size(); i++)
-	{
-		if ((component = std::dynamic_pointer_cast<std::shared_ptr<T>>(this->componentList[i])) != NULL)
-			return component;
-	}
-	return NULL;
-}
-
-template <typename T> std::vector<std::shared_ptr<T>> GameObject::GetComponents()
-{
-	std::vector<std::shared_ptr<T>> components;
-	std::shared_ptr<T> component = NULL;
-	for (int i = 0; i < this->componentList.size(); i++)
-	{
-		if ((component = std::dynamic_pointer_cast<std::shared_ptr<T>>(this->componentList[i])) != NULL)
-			components.push_back(component);
-	}
-	return components;
-}
+*/
 
 //Trnasform Init
 Eigen::Matrix3d Transform::GetL2WMat()
@@ -482,18 +445,7 @@ template <typename T> void Camera::PushRenderer(T* element)
 void Camera::Update()
 {
 	Component::Update();
-	if (InputManager::GetKey(VK_LEFT))
-		GameManager::mainCamera->gameObject.lock()->transform->rotationZ -= 0.02f;
-	if (InputManager::GetKey(VK_RIGHT))
-		GameManager::mainCamera->gameObject.lock()->transform->rotationZ += 0.02f;
-	if (InputManager::GetKey('D'))
-		GameManager::mainCamera->gameObject.lock()->transform->position.x() += 3.0f;
-	if (InputManager::GetKey('A'))
-		GameManager::mainCamera->gameObject.lock()->transform->position.x() -= 3.0f;
-	if (InputManager::GetKey('S'))
-		GameManager::mainCamera->gameObject.lock()->transform->position.y() += 3.0f;
-	if (InputManager::GetKey('W'))
-		GameManager::mainCamera->gameObject.lock()->transform->position.y() -= 3.0f;
+
 }
 
 
@@ -778,6 +730,7 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 }
 
 unsigned int InputManager::KeyMaskData[KeyDataSize];
+KeyData InputManager::KeyData[KeyDataSize];
 
 Eigen::Vector2d InputManager::mousePos = Eigen::Vector2d(0, 0);
 Eigen::Vector2d InputManager::mousePrevPos = Eigen::Vector2d(0, 0);
@@ -786,6 +739,24 @@ void InputManager::SetKeyState(int keyID, unsigned int bitMask)
 {
 	KeyMaskData[keyID] = bitMask;
 }
+void InputManager::SetKeyDownTime(int keyID, std::chrono::steady_clock::time_point time)
+{
+	KeyData[keyID].KeyDown = time;
+}
+void InputManager::SetKeyUpTime(int keyID, std::chrono::steady_clock::time_point time)
+{
+	KeyData[keyID].KeyUp = time;
+}
+
+std::chrono::steady_clock::time_point InputManager::GetKeyDownTime(int keyID)
+{
+	return KeyData[keyID].KeyDown;
+}
+std::chrono::steady_clock::time_point InputManager::GetKeyUpTime(int keyID)
+{
+	return KeyData[keyID].KeyUp;
+}
+
 unsigned int InputManager::GetKeyState(int keyID)
 {
 	return KeyMaskData[keyID];
@@ -883,6 +854,19 @@ double NodeSystem::GetMusicTime()
 	}
 	return 0.0;
 }
+double NodeSystem::GetDeltaTime(std::chrono::steady_clock::time_point time)
+{
+	if (isStart)
+	{
+		double startToNowTime = std::chrono::duration_cast<std::chrono::microseconds>(time - this->startClock).count() / 1000000.0;
+		if (isPause)
+			startToNowTime = std::chrono::duration_cast<std::chrono::microseconds>(this->pauseClock - this->startClock).count() / 1000000.0;
+		double musicTime = startToNowTime - delayTotalTime;
+		return musicTime;
+	}
+	return -1.0;
+}
+
 
 void NodeSystem::Stop()
 {
@@ -909,10 +893,15 @@ void JsonReader::Write(std::string path, nlohmann::json json)
 nlohmann::json JsonReader::Read(std::string path)
 {
 	nlohmann::json json;
-	std::string s;
+	std::string s, total;
 	std::ifstream json_file;
 	json_file.open(path);
-	json_file >> s;
+	while (!json_file.eof())
+	{
+		json_file >> s;
+		total += s;
+	}
 	json_file.close();
-	return json.parse(s);
+	*ConsoleDebug::console << total << "\n";
+	return json.parse(total);
 }
