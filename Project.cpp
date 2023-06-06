@@ -39,12 +39,15 @@
 
 #define image_enemy_1_move 2000
 #define image_enemy_1_move_hit 2100
+#define image_enemy_1_part 2150
 
 #define image_enemy_2_move 3000
 #define image_enemy_2_move_hit 3100
+#define image_enemy_2_part 3150
 
 #define image_enemy_3_move 4000
 #define image_enemy_3_move_hit 4100
+#define image_enemy_3_part 4150
 
 #define image_DeadLine_1 10000
 #define image_ProgressBar_1 10010
@@ -58,12 +61,15 @@
 
 #define sprite_enemy_1_move 30
 #define sprite_enemy_1_move_hit 35
+#define sprite_enemy_1_Part 37
 
 #define sprite_enemy_2_move 40
 #define sprite_enemy_2_move_hit 45
+#define sprite_enemy_2_Part 47
 
 #define sprite_enemy_3_move 50
 #define sprite_enemy_3_move_hit 55
+#define sprite_enemy_3_Part 57
 
 #define sprite_DeadLine_1 100
 #define sprite_ProgressBar_1 105
@@ -152,6 +158,26 @@ void ProjectI::Init()
 	sprite = spriteWeak.lock();
 	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
 	sprite->time = 0.35f;
+
+	//-----------------------------------------------------------
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Enemy1\\Part\\", L"Part", 1, L".png",
+		21, image_enemy_1_part, sprite_enemy_1_Part);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1000.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Enemy2\\Part\\", L"Part", 1, L".png",
+		16, image_enemy_2_part, sprite_enemy_2_Part);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1000.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Enemy3\\Part\\", L"Part", 1, L".png",
+		26, image_enemy_3_part, sprite_enemy_3_Part);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1000.0f;
 
 	//-----------------------------------------------------------
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"DeadLine", 0, L".png",
@@ -332,7 +358,15 @@ void InGame::Init()
 	
 	
 	project->songJsonData = jr.Read(".\\Resources\\GameData\\Test.json");
-	nlohmann::json jsonData = project->songJsonData["Node"]["Song_A"]["Datas"];
+	//GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
+}
+
+
+void InGame::StartNode(int musicCode, nlohmann::json jsonData)
+{
+	nodeSystem->Start(Resources::GetSound(musicCode));
+	nodeDataList.clear();
+
 	for (int i = 0; i < jsonData.size(); i++)
 	{
 		if (!jsonData.at(i)["Type"].is_null())
@@ -341,7 +375,7 @@ void InGame::Init()
 
 			int type = jsonData.at(i)["Type"].get<int>();
 			int id = jsonData.at(i)["ID"].get<int>();
-			double time = jsonData.at(i)["Time"].is_null()?-1.0:jsonData.at(i)["Time"].get<double>();
+			double time = jsonData.at(i)["Time"].is_null() ? -1.0 : jsonData.at(i)["Time"].get<double>();
 			double speed = jsonData.at(i)["Speed"].is_null() ? 3 : jsonData.at(i)["Speed"].get<double>();
 			std::string direction = jsonData.at(i)["Direction"].is_null() ? "L" : jsonData.at(i)["Direction"].get<std::string>();
 			double reTime = jsonData.at(i)["ReTime"].is_null() ? 3.0 : jsonData.at(i)["ReTime"].get<double>();
@@ -358,8 +392,18 @@ void InGame::Init()
 			nodeDataList.push_back(data);
 		}
 	}
-	//GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
+	for (int i = 0; i < EECList.size(); i++)
+		EECList[i].lock()->gameObject.lock()->isDestroy = true;
+	EECList.clear();
+	int count = 0;
+	for (int i = 0; i < nodeDataList.size(); i++)
+		count += EnemyEntityComponent::TypeToHP(nodeDataList[i].type);
+	scoreHitAdd = (100000.0 / count);
+	scoreComboAdd = 0;
+	score = 0;
+	combo = 0;
 }
+
 int attackDir = 0;
 void InGame::Update()
 {
@@ -395,6 +439,7 @@ void InGame::Update()
 		project->autoAttack = !project->autoAttack;
 	}
 
+	
 
 	//GameManager::mainCamera->gameObject.lock()->
 	//	GetComponent<CameraControl>()->targetPosition += Eigen::Vector2d(10, 10);
@@ -560,19 +605,19 @@ void InGame::Update()
 					double dTime = (keyDeltaTime - (EECList[i].lock()->nodeData.time + ProjectI::hardLatency));
 					if (EECList[i].lock()->nodeData.direction == -attackDir || attackDir == 2)
 					{
-						if (!leftHit)
-							leftHit = EECList[i].lock()->nodeData.direction >= 0 ? true : false;
-						else if(EECList[i].lock()->nodeData.direction >= 0 ? true : false)
+						if (leftHit && EECList[i].lock()->nodeData.direction >= 0 ? true : false)
 							continue;
-						if (!rightHit)
-							rightHit = EECList[i].lock()->nodeData.direction < 0 ? true : false;
-						else if(EECList[i].lock()->nodeData.direction < 0 ? true : false)
+						if (rightHit && EECList[i].lock()->nodeData.direction < 0 ? true : false)
 							continue;
-
 						if (EECList[i].lock()->hp > 0)
 						{
 							if (abs(dTime) <= hitTimeRange)
 							{
+								if (!leftHit)
+									leftHit = EECList[i].lock()->nodeData.direction >= 0 ? true : false;
+								if (!rightHit)
+									rightHit = EECList[i].lock()->nodeData.direction < 0 ? true : false;
+
 								*ConsoleDebug::console << (int)EECList.size() << "\n";
 								EECList[i].lock()->Hit(0);
 
@@ -581,6 +626,7 @@ void InGame::Update()
 								channel->setVolume(GameManager::masterSound* GameManager::SFXSound * 0.75f);
 								combo++;
 								comboObj.lock()->GetComponent<EffectComponent>()->Execute(0);
+								score += scoreHitAdd;
 
 								if(attackDir == 2 && leftHit && rightHit)
 									break;
@@ -589,6 +635,11 @@ void InGame::Update()
 							}
 							else if (abs(dTime) <= hitBadTimeRange)
 							{
+								if (!leftHit)
+									leftHit = EECList[i].lock()->nodeData.direction >= 0 ? true : false;
+								if (!rightHit)
+									rightHit = EECList[i].lock()->nodeData.direction < 0 ? true : false;
+
 								EECList[i].lock()->Hit(0);
 								combo = 0;
 							}
@@ -606,10 +657,13 @@ void InGame::Update()
 					i--;
 				}
 			}
+
+			if (attackDir == 2 && (!leftHit || !rightHit))
+				combo = 0;
 		}
 	}
 
-	_stprintf_s(tempText, L"%03d,%03d", score);
+	_stprintf_s(tempText, L"%03d,%03d", (int)((int)round(score)/1000), (int)round(score)%1000);
 	scoreText.lock()->SetText(tempText);
 
 	if (combo != 0)
@@ -644,7 +698,7 @@ void InGame::Update()
 	}
 	if (InputManager::GetKeyDown('T'))
 	{
-		nodeSystem->Start(Resources::GetSound(music_Urgency));
+		StartNode(music_Urgency, project->songJsonData["Node"]["Song_A"]["Datas"]);
 	}
 	if (InputManager::GetKeyDown('Y'))
 	{
@@ -780,13 +834,17 @@ void EnemyEntityComponent::Setting(NodeData data, Eigen::Vector2d targetPosition
 	this->nodeData = data;
 	this->offset = offset;
 	this->targetPosition = targetPosition;
-	
-	if (this->nodeData.type == 0)
-		this->hp = 1;
-	if (this->nodeData.type == 1)
-		this->hp = 2;
-	if (this->nodeData.type == 2)
-		this->hp = 2;
+	this->hp = TypeToHP(this->nodeData.type);
+}
+
+int EnemyEntityComponent::TypeToHP(int type)
+{
+	if (type == 0)
+		return 1;
+	if (type == 1)
+		return 2;
+	if (type == 2)
+		return 2;
 }
 
 void EnemyEntityComponent::Hit(int hitPer)
@@ -807,8 +865,67 @@ void EnemyEntityComponent::Hit(int hitPer)
 	else
 	{
 		this->gameObject.lock()->isDestroy = true;
+
+		int partCount = 10;
+		if (this->nodeData.type == 0)
+			partCount = 10;
+		if (this->nodeData.type == 1)
+			partCount = 18;
+		if (this->nodeData.type == 2)
+			partCount = 26;
+		for (int i = 0; i < partCount; i++)
+		{
+			auto obj = GameManager::mainWorld->CreateGameObject();
+			auto sr = obj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+			if (this->nodeData.type == 0)
+				sr->SetSprite(Resources::GetSprite(sprite_enemy_1_Part));
+			if (this->nodeData.type == 1)
+				sr->SetSprite(Resources::GetSprite(sprite_enemy_2_Part));
+			if (this->nodeData.type == 2)
+				sr->SetSprite(Resources::GetSprite(sprite_enemy_3_Part));
+			sr->zIndex = -2;
+			sr->flip.x() = 0;
+			sr->animationTime = sr->sprite.lock()->time * ((rand()%999)/1000.0);
+			sr->renderSize = Eigen::Vector2d(sr->sprite.lock()->spriteSize.x() * 3.0f, sr->sprite.lock()->spriteSize.y() * 3.0f);
+			sr->Play();
+			auto effectScript = obj->AddComponent<EffectComponent>(std::make_shared<EffectComponent>());
+			effectScript->Execute(10);
+			effectScript->SetDirection(-this->nodeData.direction);
+			obj->transform->position = this->gameObject.lock()->transform->position;
+		}
 	}
 }
+
+void EffectComponent::Update()
+{
+	auto trans = this->gameObject.lock()->transform;
+	if (this->type == 0)
+	{
+		auto currentPos = trans->position + ((targetPosition - trans->position) / 5.0f) * (GameManager::deltaTime * 60);
+		trans->position = currentPos + shockPower;
+
+		if (shockPower.norm() <= 1)
+			shockPower = Eigen::Vector2d(0, 0);
+		shockPower = shockPower + ((Eigen::Vector2d(0, 0) - shockPower) / 1.35f) * (GameManager::deltaTime * 60);
+	}
+	if (this->type == 10)
+	{
+		trans->position += shockPower * (GameManager::deltaTime * 60);
+		trans->rotationZ += ((shockPower.x() * 5.0f * (GameManager::deltaTime * 60)) * D2R);
+		shockPower.x() = (abs(shockPower.x()) + ((0 - abs(shockPower.x())) / 28.0) * (GameManager::deltaTime * 60)) * this->dir;
+		shockPower.y() += 0.981 * (GameManager::deltaTime * 60);
+		if (trans->position.y() >= project->inGame->playerPosition.y())
+		{
+			trans->position.y() = project->inGame->playerPosition.y();
+			shockPower.y() = abs(shockPower.y());
+		}
+		if (std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count() / 1000000.0 >= limitTime)
+		{
+			this->gameObject.lock()->isDestroy = true;
+		}
+	}
+}
+
 /*
 void Component::Enable()
 {

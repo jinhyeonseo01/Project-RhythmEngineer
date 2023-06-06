@@ -78,6 +78,8 @@ public:
 	virtual void Init();
 	virtual void Update();
 
+	void StartNode(int musicCode, nlohmann::json jsonData);
+
 	std::shared_ptr<SpriteRenderer> deadLine_L_SR;
 	std::shared_ptr<SpriteRenderer> deadLine_R_SR;
 
@@ -100,7 +102,9 @@ public:
 	float globalSpeed = 200;
 	float HitDistance = 175;
 	int combo = 0;
-	int score = 0;
+	float score = 0;
+	float scoreHitAdd = 0;
+	float scoreComboAdd = 0;
 };
 
 
@@ -127,6 +131,7 @@ public:
 
 	NodeData nodeData;
 
+	static int TypeToHP(int type);
 	void Setting(NodeData data, Eigen::Vector2d targetPosition, Eigen::Vector2d offset);
 	void Hit(int hitPre);
 	virtual void Update();
@@ -143,33 +148,40 @@ class EffectComponent : public Component
 public:
 	Eigen::Vector2d targetPosition;
 	Eigen::Vector2d shockPower;
+	std::chrono::steady_clock::time_point startTime;
+	int type = 0;
+	int dir = 0;
+	float limitTime = 2;
 	void Execute(int type)
 	{
-		switch(type)
+		this->type = type;
+		switch(this->type)
 		{
 		case 0:
 		{
 			shockPower = Eigen::Vector2d(0, 50);
 			break;
 		}
+		case 10:
+		{
+			shockPower = Eigen::Vector2d(5 + (rand() % 200)/10.0f, -10 + (-(rand() % 120)/10.0));
+			limitTime = 1.5 + (rand() % 15) / 10.0f;
+		}
 		}
 	}
-	virtual void Update()
+	void SetDirection(int dir)
 	{
-		auto trans = this->gameObject.lock()->transform;
-
-		auto currentPos = trans->position + ((targetPosition - trans->position) / 5.0f) * (GameManager::deltaTime * 60);
-		trans->position = currentPos + shockPower;
-
-		if (shockPower.norm() <= 1)
-			shockPower = Eigen::Vector2d(0, 0);
-		shockPower = shockPower + ((Eigen::Vector2d(0, 0) - shockPower) / 1.35f) * (GameManager::deltaTime * 60);
+		this->dir = dir;
 	}
+	virtual void Update();
 	virtual void LateUpdate() {}
 	virtual void BeforeRender() {}
 	virtual void Start()
 	{
 		targetPosition = gameObject.lock()->transform->position;
+		if (this->type == 10)
+			targetPosition += Eigen::Vector2d(-20 + (rand() % 40), -20 + (rand() % 40));
+		startTime = std::chrono::steady_clock::now();
 	}
 	virtual void Enable() {}
 	virtual void Disable() {}

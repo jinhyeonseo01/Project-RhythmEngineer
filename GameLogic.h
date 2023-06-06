@@ -412,6 +412,8 @@ class NodeSystem
 {
 public:
 	FMOD::Channel* musicChannel;
+
+
 	std::chrono::steady_clock::time_point startClock;
 	std::chrono::steady_clock::time_point pauseClock;
 	double delayTotalTime = 0;
