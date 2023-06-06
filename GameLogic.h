@@ -98,7 +98,16 @@ public:
 	Eigen::Matrix3d ScreenTranslateMatrix();
 	Eigen::Vector2d ScreenToWorld(Eigen::Vector2d pos);
 	Eigen::Vector2d WorldToScreen(Eigen::Vector2d pos);
-	template <typename T> void PushRenderer(T* element);
+
+	template <typename T> void PushRenderer(T* element)
+	{
+		Renderer* renderer = dynamic_cast<Renderer*>(element);
+		if (renderer != NULL)
+		{
+			rendererList.push_back(renderer);
+		}
+	}
+
 	virtual void Render(HDC hdc);
 	virtual void Update();
 };
@@ -152,6 +161,52 @@ public:
 	virtual void Disable();
 	virtual void Destroy();
 	~SpriteRenderer();
+};
+
+#define MAX_TEXT_SIZE 1000
+class TextComponent : public Renderer
+{
+public:
+	IDWriteTextFormat* font;
+	TCHAR text[MAX_TEXT_SIZE];
+
+	DWRITE_TEXT_ALIGNMENT sortOrder;
+
+	virtual void Start()
+	{
+		
+	}
+
+	virtual void Update()
+	{
+
+	}
+	void SetFont(IDWriteTextFormat* font, DWRITE_TEXT_ALIGNMENT order)
+	{
+		this->font = font;
+		this->sortOrder = order;
+	}
+	void SetText(LPCTSTR str)
+	{
+		wcscpy_s(text, MAX_TEXT_SIZE, str);
+	}
+	void SetText(TCHAR* str)
+	{
+		wcscpy_s(text, MAX_TEXT_SIZE, str);
+	}
+
+	virtual void Render(HDC hdc, Camera* camera);
+
+	virtual void LateUpdate() {}
+	virtual void BeforeRender()
+	{
+		Renderer::BeforeRender();
+		font->SetTextAlignment(this->sortOrder);
+	}
+	virtual void Enable() {}
+	virtual void Disable() {}
+	virtual void Destroy() {}
+
 };
 
 class GameObject : public std::enable_shared_from_this<GameObject>
@@ -268,6 +323,10 @@ public:
 
 	static int gameDestroy;
 
+	static float masterSound;
+	static float BGMSound;
+	static float SFXSound;
+
 	static void Init();
 	static void BeforeUpdate();
 	static void GameDestroy();
@@ -356,6 +415,7 @@ public:
 	std::chrono::steady_clock::time_point startClock;
 	std::chrono::steady_clock::time_point pauseClock;
 	double delayTotalTime = 0;
+	double musicTotalSecond = 100000;
 	bool isPause = false;
 	bool isStart = false;
 	void Start(FMOD::Sound* sound);
@@ -363,6 +423,7 @@ public:
 	void DisPause();
 	void Stop();
 	double GetMusicTime();
+	double GetMusicTotalTime();
 	double GetDeltaTime(std::chrono::steady_clock::time_point time);
 	//double 
 };

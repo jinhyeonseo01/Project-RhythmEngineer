@@ -123,10 +123,10 @@ void CreateDirect(HWND hWnd)
 		reinterpret_cast<IUnknown**>(&GameManager::pWFactory));
 	GameManager::mainRT->CreateSolidColorBrush(
 		D2D1::ColorF(
-			D2D1::ColorF::Black
+			D2D1::ColorF::White
 		), &GameManager::pBrush);
 	GameManager::pWFactory->CreateTextFormat(
-		L"¸¼Àº °íµñ",
+		L"PF½ºÅ¸´õ½ºÆ®S Bold",
 		nullptr,
 		DWRITE_FONT_WEIGHT_NORMAL,
 		DWRITE_FONT_STYLE_NORMAL,

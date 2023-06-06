@@ -32,6 +32,15 @@ class ProjectI;
 class GlobalData;
 class NodeData;
 
+class GlobalData
+{
+public:
+	IDWriteTextFormat* scoreFont;
+	IDWriteTextFormat* comboFont;
+	IDWriteTextFormat* soundFont;
+};
+
+
 class ProjectI
 {
 public:
@@ -39,13 +48,10 @@ public:
 	std::shared_ptr<InGame> inGame = nullptr;
 	nlohmann::json songJsonData;
 	static float hardLatency;
+	bool autoAttack = false;
 	void Init();
-};
 
-class GlobalData
-{
-public:
-	
+	GlobalData globalData;
 };
 
 class NodeData
@@ -79,9 +85,22 @@ public:
 	std::vector<std::weak_ptr<EnemyEntityComponent>> EECList;
 	std::shared_ptr<NodeSystem> nodeSystem;
 
+	std::weak_ptr<GameObject> comboObj;
+	std::weak_ptr<GameObject> scoreObj;
+	std::weak_ptr<GameObject> songObj;
+
+	std::weak_ptr<TextComponent> comboText;
+	std::weak_ptr<TextComponent> scoreText;
+	std::weak_ptr<TextComponent> songText;
+
+	std::weak_ptr<SpriteRenderer> progressGaugeSR;
+	std::weak_ptr<SpriteRenderer> progressBarSR;
+
 	Eigen::Vector2d playerPosition = Eigen::Vector2d(0,100);
 	float globalSpeed = 200;
 	float HitDistance = 175;
+	int combo = 0;
+	int score = 0;
 };
 
 
@@ -109,7 +128,7 @@ public:
 	NodeData nodeData;
 
 	void Setting(NodeData data, Eigen::Vector2d targetPosition, Eigen::Vector2d offset);
-	void Hit();
+	void Hit(int hitPre);
 	virtual void Update();
 	virtual void LateUpdate();
 	virtual void BeforeRender();
@@ -117,4 +136,110 @@ public:
 	virtual void Enable();
 	virtual void Disable();
 	virtual void Destroy();
+};
+
+class EffectComponent : public Component
+{
+public:
+	Eigen::Vector2d targetPosition;
+	Eigen::Vector2d shockPower;
+	void Execute(int type)
+	{
+		switch(type)
+		{
+		case 0:
+		{
+			shockPower = Eigen::Vector2d(0, 50);
+			break;
+		}
+		}
+	}
+	virtual void Update()
+	{
+		auto trans = this->gameObject.lock()->transform;
+
+		auto currentPos = trans->position + ((targetPosition - trans->position) / 5.0f) * (GameManager::deltaTime * 60);
+		trans->position = currentPos + shockPower;
+
+		if (shockPower.norm() <= 1)
+			shockPower = Eigen::Vector2d(0, 0);
+		shockPower = shockPower + ((Eigen::Vector2d(0, 0) - shockPower) / 1.35f) * (GameManager::deltaTime * 60);
+	}
+	virtual void LateUpdate() {}
+	virtual void BeforeRender() {}
+	virtual void Start()
+	{
+		targetPosition = gameObject.lock()->transform->position;
+	}
+	virtual void Enable() {}
+	virtual void Disable() {}
+	virtual void Destroy() {}
+};
+
+class CameraControl : public Component
+{
+public:
+	Eigen::Vector2d targetPosition;
+	Eigen::Vector2d shockPower;
+	std::weak_ptr<Camera> camera;
+	int shockType = 0;
+	int shockDir = 0;
+	bool shockSwing = true;
+	bool shockDirSwing = false;
+
+	virtual void Start()
+	{
+		camera = this->gameObject.lock()->GetComponent<Camera>();
+	}
+
+	virtual void Update()
+	{
+		if (!camera.expired())
+		{
+			std::shared_ptr<Camera> camera = this->camera.lock();
+			auto trans = this->gameObject.lock()->transform;
+			
+			auto currentPos = trans->position + ((targetPosition - trans->position) / 5.0f) * (GameManager::deltaTime * 60);
+			if (shockPower.norm() <= 1)
+				shockPower = Eigen::Vector2d(0, 0);
+			shockPower = shockPower + ((Eigen::Vector2d(0,0) - shockPower) / 2.5f) * (GameManager::deltaTime * 60);
+			trans->position = currentPos + shockPower;
+			trans->rotationZ = -shockDir * (shockPower.norm()/4.0f*D2R);
+			if (shockSwing)
+			{
+				shockPower.x() = -shockPower.x();
+				shockPower.y() = -shockPower.y();
+			}
+			if (shockDirSwing)
+				shockDir = -shockDir;
+		}
+	}
+	void Shock(int type, int shockDir, Eigen::Vector2d shockPower)
+	{
+		this->shockType = type;
+		this->shockPower = shockPower;
+		this->shockDir = shockDir;
+		switch (type)
+		{
+		case 0:
+		case 1:
+			shockDirSwing = false;
+			shockSwing = true;
+			break;
+		case 2:
+			shockDirSwing = true;
+			shockSwing = true;
+			break;
+		default:
+			shockDirSwing = false;
+			shockSwing = true;
+			break;
+		}
+	}
+
+	virtual void LateUpdate() {}
+	virtual void BeforeRender() {}
+	virtual void Enable() {}
+	virtual void Disable() {}
+	virtual void Destroy() {}
 };

@@ -25,6 +25,12 @@
 #define music_Urgency 0001
 #define music_Abiogenesis 0002
 
+#define Sound_Attack_1 0100
+#define Sound_Attack_2 0101
+#define Sound_Attack_3 0102
+
+#define Sound_Hit_1 0110
+
 #define image_player_idle 100
 #define image_player_idle2 1000
 #define image_player_Attack1 200
@@ -41,6 +47,8 @@
 #define image_enemy_3_move_hit 4100
 
 #define image_DeadLine_1 10000
+#define image_ProgressBar_1 10010
+#define image_ProgressGauge_1 10020
 
 #define sprite_player_idle 10
 #define sprite_player_idle2 11
@@ -58,6 +66,8 @@
 #define sprite_enemy_3_move_hit 55
 
 #define sprite_DeadLine_1 100
+#define sprite_ProgressBar_1 105
+#define sprite_ProgressGauge_1 110
 
 float ProjectI::hardLatency = 0.01f;
 
@@ -69,6 +79,7 @@ std::weak_ptr<Sprite> spriteWeak;
 ID2D1Bitmap* image;
 
 ProjectI* project;
+TCHAR tempText[MAX_TEXT_SIZE];
 
 std::weak_ptr<Sprite> SpriteGroupLoad(const TCHAR* mainPath, const TCHAR* SubPath, const TCHAR* FName, int startIndex, const TCHAR* LName, int count, int resourceIndex, int spriteIndex)
 {
@@ -149,9 +160,60 @@ void ProjectI::Init()
 	sprite->pivot = Eigen::Vector2d(0.5, 0);
 	sprite->time = 1.0f;
 
-	
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"ProgressBar", 0, L".png",
+		1, image_ProgressBar_1, sprite_ProgressBar_1);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"ProgressGauge", 0, L".png",
+		1, image_ProgressGauge_1, sprite_ProgressGauge_1);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0, 0.5);
+	sprite->time = 1.0f;
+
 	Resources::SoundLoading(music_Urgency, ".\\Resources\\Sound\\Urgency.mp3");
 	Resources::SoundLoading(music_Abiogenesis, ".\\Resources\\Sound\\Abiogenesis.mp3");
+	Resources::SoundLoading(Sound_Attack_1, ".\\Resources\\Sound\\Attack\\Attack1.mp3");
+	Resources::SoundLoading(Sound_Attack_2, ".\\Resources\\Sound\\Attack\\Attack2.mp3");
+	Resources::SoundLoading(Sound_Attack_3, ".\\Resources\\Sound\\Attack\\Attack3.mp3");
+	Resources::SoundLoading(Sound_Hit_1, ".\\Resources\\Sound\\Hit\\Hit1.ogg");
+
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF::White
+		), &GameManager::pBrush);
+	
+	GameManager::pWFactory->CreateTextFormat(
+		L"PF스타더스트S",
+		nullptr,
+		DWRITE_FONT_WEIGHT_BOLD,
+		DWRITE_FONT_STYLE_NORMAL,
+		DWRITE_FONT_STRETCH_NORMAL,
+		108.0f,
+		L"ko-kr",
+		&project->globalData.comboFont);
+	
+	GameManager::pWFactory->CreateTextFormat(
+		L"PF스타더스트S",
+		nullptr,
+		DWRITE_FONT_WEIGHT_BOLD,
+		DWRITE_FONT_STYLE_NORMAL,
+		DWRITE_FONT_STRETCH_NORMAL,
+		72.0f,
+		L"ko-kr",
+		&project->globalData.scoreFont);
+	GameManager::pWFactory->CreateTextFormat(
+		L"PF스타더스트S",
+		nullptr,
+		DWRITE_FONT_WEIGHT_NORMAL,
+		DWRITE_FONT_STYLE_NORMAL,
+		DWRITE_FONT_STRETCH_NORMAL,
+		34.0f,
+		L"ko-kr",
+		&project->globalData.soundFont);
+
+
 
 	this->inGame = std::make_shared<InGame>();
 	this->outGame = std::make_shared<OutGame>();
@@ -194,6 +256,8 @@ void InGame::Init()
 
 	std::shared_ptr<GameObject> mainCameraObject = GameManager::mainWorld->CreateGameObject();
 	GameManager::mainCamera = mainCameraObject->AddComponent<Camera>(std::make_shared<Camera>());
+	auto CC = mainCameraObject->AddComponent<CameraControl>(std::make_shared<CameraControl>());
+	CC->targetPosition = Eigen::Vector2d(0, 0);
 	mainCameraObject->transform->position = Eigen::Vector2d(0, 0);
 
 	auto obj = GameManager::mainWorld->CreateGameObject();
@@ -202,6 +266,7 @@ void InGame::Init()
 	sr->zIndex = 1;
 	sr->renderSize = Eigen::Vector2d(sr->sprite.lock()->spriteSize.x() * 3.0f, sr->sprite.lock()->spriteSize.y() * 3.0f);
 	obj->transform->position = playerPosition;
+
 	/*
 	std::shared_ptr<GameObject> obj2 = GameManager::mainWorld->CreateGameObject();
 	auto sr2 = obj2->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
@@ -212,6 +277,26 @@ void InGame::Init()
 	obj2->transform->position = Eigen::Vector2d(0, 0);
 	*/
 
+	songObj = GameManager::mainWorld->CreateGameObject();
+	songText = songObj.lock()->AddComponent<TextComponent>(std::make_shared<TextComponent>());
+	songObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y()+300);
+	songText.lock()->SetFont(project->globalData.soundFont, DWRITE_TEXT_ALIGNMENT_CENTER);
+	songText.lock()->SetText(L"Cytus2 : Urgency-SIHanatsuka");
+	songText.lock()->zIndex = -5;
+
+	comboObj = GameManager::mainWorld->CreateGameObject();
+	comboText = comboObj.lock()->AddComponent<TextComponent>(std::make_shared<TextComponent>());
+	comboObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y() + -250);
+	comboText.lock()->SetFont(project->globalData.comboFont, DWRITE_TEXT_ALIGNMENT_CENTER);
+	comboText.lock()->zIndex = -5;
+	comboObj.lock()->AddComponent<EffectComponent>(std::make_shared<EffectComponent>());
+
+	scoreObj = GameManager::mainWorld->CreateGameObject();
+	scoreText = scoreObj.lock()->AddComponent<TextComponent>(std::make_shared<TextComponent>());
+	scoreObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y() + 120);
+	scoreText.lock()->SetFont(project->globalData.scoreFont, DWRITE_TEXT_ALIGNMENT_CENTER);
+	scoreText.lock()->SetText(L"100,000");
+	scoreText.lock()->zIndex = -5;
 	//--------DeadLine--------
 
 	auto deadLineObj = GameManager::mainWorld->CreateGameObject();
@@ -230,6 +315,21 @@ void InGame::Init()
 	deadLine_R_SR->renderSize = Eigen::Vector2d(deadLine_R_SR->sprite.lock()->spriteSize.x() * 3, deadLine_R_SR->sprite.lock()->spriteSize.y() * 3);
 	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x() + HitDistance, playerPosition.y());
 
+	auto progressBarObj = GameManager::mainWorld->CreateGameObject();
+	progressBarSR = progressBarObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	progressBarSR.lock()->SetSprite(Resources::GetSprite(sprite_ProgressBar_1));
+	progressBarSR.lock()->zIndex = 10;
+	progressBarSR.lock()->renderSize = Eigen::Vector2d(progressBarSR.lock()->sprite.lock()->spriteSize.x() * 3, progressBarSR.lock()->sprite.lock()->spriteSize.y() * 3);
+	progressBarObj->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y()+200);
+
+	auto progressGaugeObj = GameManager::mainWorld->CreateGameObject();
+	progressGaugeSR = progressGaugeObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	progressGaugeSR.lock()->SetSprite(Resources::GetSprite(sprite_ProgressGauge_1));
+	progressGaugeSR.lock()->zIndex = 10;
+	progressGaugeSR.lock()->renderSize = Eigen::Vector2d(progressGaugeSR.lock()->sprite.lock()->spriteSize.x() * 3, progressGaugeSR.lock()->sprite.lock()->spriteSize.y() * 3);
+	progressGaugeObj->transform->position = Eigen::Vector2d(progressBarObj->transform->position.x() - (progressBarSR.lock()->renderSize.x() - 12.0) / 2, playerPosition.y() + 200);
+
+	
 	
 	project->songJsonData = jr.Read(".\\Resources\\GameData\\Test.json");
 	nlohmann::json jsonData = project->songJsonData["Node"]["Song_A"]["Datas"];
@@ -264,7 +364,7 @@ int attackDir = 0;
 void InGame::Update()
 {
 	World::Update();
-
+	
 	for (int i = 0; i < nodeDataList.size(); i++)
 	{
 		if (!nodeDataList[i].isCreateed)
@@ -287,46 +387,30 @@ void InGame::Update()
 			}
 		}
 	}
+	progressGaugeSR.lock()->renderSize = Eigen::Vector2d((progressBarSR.lock()->renderSize.x() - (4.0 * 3)) * min((nodeSystem->GetMusicTime() / nodeSystem->GetMusicTotalTime()), 1.0), progressGaugeSR.lock()->renderSize.y());
 
 	//sr->gameObject.lock()->transform->position += (GameManager::mainCamera->ScreenToWorld(InputManager::mousePos) - sr->gameObject.lock()->transform->position) / (5.0f / (GameManager::deltaTime * 60));
-	if (InputManager::GetKeyDown('R'))
+	if (InputManager::GetKeyDown('L'))
 	{
-		sr->SetSprite(Resources::GetSprite(sprite_player_idle2));
-		sr->animationLoop = true;
-		sr->Reset();
-		sr->Play();
+		project->autoAttack = !project->autoAttack;
 	}
 
+
+	//GameManager::mainCamera->gameObject.lock()->
+	//	GetComponent<CameraControl>()->targetPosition += Eigen::Vector2d(10, 10);
+
+	//*ConsoleDebug::console << (GameManager::mainCamera->gameObject.lock()->
+	//	GetComponent<CameraControl>()->targetPosition.x()) << "\n";
 	attackDir = 0;
-	if (InputManager::GetKeyDown(VK_RIGHT) || InputManager::GetKeyDown(VK_LEFT))
+	if (InputManager::GetKeyDown(VK_RIGHT) || InputManager::GetKeyDown(VK_LEFT) || InputManager::GetKeyDown(VK_DOWN) || project->autoAttack)
 	{
 		//*ConsoleDebug::console << (nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_LEFT)) - (enemyScript->targetTime + ProjectI::hardLatency)) << "\n";
-		if (TestAttackStack == 0)
-		{
-			sr->SetSprite(Resources::GetSprite(sprite_player_Attack1));
-			playerAnimTime = std::chrono::steady_clock::now();
-			TestAttackAnim = true;
-		}
-		if (TestAttackStack == 1)
-		{
-			sr->SetSprite(Resources::GetSprite(sprite_player_Attack2));
-			playerAnimTime = std::chrono::steady_clock::now();
-			TestAttackAnim = true;
-		}
-		if (TestAttackStack == 2)
-		{
-			sr->SetSprite(Resources::GetSprite(sprite_player_Attack3));
-			playerAnimTime = std::chrono::steady_clock::now();
-			TestAttackAnim = true;
-		}
-		sr->flip.x() = InputManager::GetKeyDown(VK_RIGHT) ? 0 : 1;
-		TestAttackStack++;
-		TestAttackStack = TestAttackStack % 3;
-		sr->animationLoop = false;
-		sr->Reset();
-		sr->Play();
-
 		double keyDeltaTime = 0;
+		
+		float power = 22;
+		float hitTimeRange = 0.16f;
+		float hitBadTimeRange = 0.28f;
+
 		if (InputManager::GetKey(VK_RIGHT))
 		{
 			attackDir = 1;
@@ -337,29 +421,176 @@ void InGame::Update()
 			attackDir = -1;
 			keyDeltaTime = nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_LEFT));
 		}
-		if (attackDir != 0)
+		else if (InputManager::GetKey(VK_DOWN))
 		{
+			attackDir = 2;
+			keyDeltaTime = nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_DOWN));
+		}
+
+		if (project->autoAttack) // autoAttack
+		{
+			float autoHitPer = 0.035;
+			attackDir = 0;
+			keyDeltaTime = nodeSystem->GetDeltaTime(std::chrono::steady_clock::now());
+
+			double minLeftTime = 1000000.0;
+			double minRightTime = 1000000.0;
+
+			for (int i = 0; i < EECList.size(); i++)
+			{
+				if (!EECList[i].expired())
+				{
+					double dTime = (keyDeltaTime - EECList[i].lock()->nodeData.time);
+					if (EECList[i].lock()->nodeData.direction == 1)
+					{
+						if (minLeftTime > abs(dTime))
+							minLeftTime = abs(dTime);
+					}
+					else
+					{
+						if (minRightTime > abs(dTime))
+							minRightTime = abs(dTime);
+					}
+				}
+			}
+			if (minLeftTime == 1000000.0 && minRightTime == 1000000.0)
+			{
+				attackDir = 0;
+			}
+			else if (minLeftTime != 1000000.0 && minRightTime != 1000000.0)
+			{
+				if (minLeftTime <= autoHitPer && minRightTime <= autoHitPer && abs(minLeftTime - minRightTime) <= 0.035)
+					attackDir = 2;
+				else if (minLeftTime < minRightTime)
+				{
+					if (minLeftTime <= autoHitPer)
+						attackDir = -1;
+				}
+				else
+				{
+					if (minRightTime <= autoHitPer)
+						attackDir = 1;
+				}
+			}
+			else if (minLeftTime != 1000000.0)
+			{
+				if(minLeftTime <= autoHitPer)
+					attackDir = -1;
+			}
+			else if (minRightTime != 1000000.0)
+			{
+				if (minRightTime <= autoHitPer)
+					attackDir = 1;
+			}
+		}
+
+		//--------Player Animation--------
+		if (attackDir == -1 || attackDir == 1)
+		{
+			if (TestAttackStack == 0)
+			{
+				sr->SetSprite(Resources::GetSprite(sprite_player_Attack1));
+				playerAnimTime = std::chrono::steady_clock::now();
+				TestAttackAnim = true;
+
+				GameManager::mainCamera->gameObject.lock()->
+					GetComponent<CameraControl>()->Shock(0, 0, -Eigen::Vector2d(power * attackDir, -power));
+				FMOD::Channel* channel;
+				GameManager::soundSystem->playSound(Resources::GetSound(Sound_Attack_1), 0, false, &channel);
+				channel->setVolume(GameManager::masterSound * GameManager::SFXSound * 0.40f);
+				channel->setPitch(0.75f);
+			}
+			if (TestAttackStack == 1)
+			{
+				sr->SetSprite(Resources::GetSprite(sprite_player_Attack2));
+				playerAnimTime = std::chrono::steady_clock::now();
+				TestAttackAnim = true;
+				GameManager::mainCamera->gameObject.lock()->
+					GetComponent<CameraControl>()->Shock(0, 0, -Eigen::Vector2d(power * 1.5 * attackDir, power / 0.8f));
+				FMOD::Channel* channel;
+				GameManager::soundSystem->playSound(Resources::GetSound(Sound_Attack_2), 0, false, &channel);
+				channel->setVolume(GameManager::masterSound * GameManager::SFXSound * 0.6f);
+				channel->setPitch(0.75f);
+			}
+			if (TestAttackStack == 2)
+			{
+				sr->SetSprite(Resources::GetSprite(sprite_player_Attack3));
+				playerAnimTime = std::chrono::steady_clock::now();
+				TestAttackAnim = true;
+				GameManager::mainCamera->gameObject.lock()->
+					GetComponent<CameraControl>()->Shock(0, attackDir, Eigen::Vector2d(0, -power * 2));
+				FMOD::Channel* channel;
+				GameManager::soundSystem->playSound(Resources::GetSound(Sound_Attack_3), 0, false, &channel);
+				channel->setVolume(GameManager::masterSound * GameManager::SFXSound * 0.6f);
+				channel->setPitch(0.75f);
+			}
+			TestAttackStack++;
+			TestAttackStack = TestAttackStack % 3;
+			sr->animationLoop = false;
+			sr->flip.x() = (attackDir == 1) ? 0 : 1;
+			sr->Reset();
+			sr->Play();
+		}
+		else if (attackDir == 2)
+		{
+			TestAttackStack = 0;
+
+			sr->SetSprite(Resources::GetSprite(sprite_player_idle2));
+			playerAnimTime = std::chrono::steady_clock::now();
+			TestAttackAnim = true;
+			GameManager::mainCamera->gameObject.lock()->
+				GetComponent<CameraControl>()->Shock(2, attackDir, Eigen::Vector2d(0, -power * 2));
+			FMOD::Channel* channel;
+			GameManager::soundSystem->playSound(Resources::GetSound(Sound_Attack_3), 0, false, &channel);
+			channel->setVolume(GameManager::masterSound* GameManager::SFXSound * 0.6f);
+			channel->setPitch(0.75f);
+			sr->Reset();
+			sr->Play();
+		}
+
+		//--------Hit Check--------
+		if (attackDir == -1 || attackDir == 1 || attackDir == 2)
+		{
+			bool leftHit = false;
+			bool rightHit = false;
 			for (int i = 0; i < EECList.size(); i++)
 			{
 				if (!EECList[i].expired())
 				{
 					double dTime = (keyDeltaTime - (EECList[i].lock()->nodeData.time + ProjectI::hardLatency));
-					if (EECList[i].lock()->nodeData.direction == -attackDir)
+					if (EECList[i].lock()->nodeData.direction == -attackDir || attackDir == 2)
 					{
+						if (!leftHit)
+							leftHit = EECList[i].lock()->nodeData.direction >= 0 ? true : false;
+						else if(EECList[i].lock()->nodeData.direction >= 0 ? true : false)
+							continue;
+						if (!rightHit)
+							rightHit = EECList[i].lock()->nodeData.direction < 0 ? true : false;
+						else if(EECList[i].lock()->nodeData.direction < 0 ? true : false)
+							continue;
+
 						if (EECList[i].lock()->hp > 0)
 						{
-							if (abs(dTime) <= 0.15)
+							if (abs(dTime) <= hitTimeRange)
 							{
 								*ConsoleDebug::console << (int)EECList.size() << "\n";
-								EECList[i].lock()->Hit();
-								break;
+								EECList[i].lock()->Hit(0);
+
+								FMOD::Channel* channel;
+								GameManager::soundSystem->playSound(Resources::GetSound(Sound_Hit_1), 0, false, &channel);
+								channel->setVolume(GameManager::masterSound* GameManager::SFXSound * 0.75f);
+								combo++;
+								comboObj.lock()->GetComponent<EffectComponent>()->Execute(0);
+
+								if(attackDir == 2 && leftHit && rightHit)
+									break;
+								if (attackDir == -1 || attackDir == 1)
+									break;
 							}
-							else if (abs(dTime) <= 0.25)
+							else if (abs(dTime) <= hitBadTimeRange)
 							{
-								EECList[i].lock()->hp = 0;
-								EECList[i].lock()->gameObject.lock()->isDestroy = true;
-								EECList.erase(EECList.begin() + i);
-								i--;
+								EECList[i].lock()->Hit(0);
+								combo = 0;
 							}
 						}
 						else
@@ -378,6 +609,19 @@ void InGame::Update()
 		}
 	}
 
+	_stprintf_s(tempText, L"%03d,%03d", score);
+	scoreText.lock()->SetText(tempText);
+
+	if (combo != 0)
+	{
+		_stprintf_s(tempText, L"%d", combo);
+		comboText.lock()->SetText(tempText);
+	}
+	else
+	{
+		comboText.lock()->SetText(L"");
+	}
+
 	for (int i = 0; i < EECList.size(); i++)
 	{
 		if (!EECList[i].expired())
@@ -389,6 +633,7 @@ void InGame::Update()
 				//EECList[i].lock()->Hit();
 				//EECList.erase(EECList.begin() + i);
 				//i--;
+
 			}
 		}
 		else
@@ -544,7 +789,7 @@ void EnemyEntityComponent::Setting(NodeData data, Eigen::Vector2d targetPosition
 		this->hp = 2;
 }
 
-void EnemyEntityComponent::Hit()
+void EnemyEntityComponent::Hit(int hitPer)
 {
 	(this->hp)--;
 	if (this->hp > 0)
