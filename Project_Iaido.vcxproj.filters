@@ -41,11 +41,5 @@
     <ClInclude Include="Project.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="lib\nlohmann\json.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\nlohmann\json_fwd.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
