@@ -722,7 +722,7 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 			* D2D1::Matrix3x2F::Translation((flip.x() == 0 ? 0 : 1) * (ScreenPos.x() * 2), (flip.y() == 0 ? 0 : 1) * (ScreenPos.y() * 2))
 			* D2D1::Matrix3x2F::Rotation(angle, D2D1::Point2F(ScreenPos.x(), ScreenPos.y())));
 		ID2D1Bitmap* bitmap = sprite->imageList[animationIndex];
-		GameManager::mainRT->DrawBitmap(bitmap, RectF, 1, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, // 이 값이 보간 모드
+		GameManager::mainRT->DrawBitmap(bitmap, RectF, alphaValue, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, // 이 값이 보간 모드
 			RectF2);
 	}
 }
@@ -760,7 +760,7 @@ void TextComponent::Render(HDC hdc, Camera* camera)
 	//TCHAR tempConsole[100]; int indexY = 0;
 	//_stprintf_s(tempConsole, L"Cytus2 : Urgency-SIHanatsuka");
 	//GameManager::mainRT->DrawTextW(tempConsole, wcslen(tempConsole), font, RectF, GameManager::pBrush);
-	GameManager::mainRT->DrawTextW(text, wcslen(text), font, RectF, GameManager::pBrush);
+	GameManager::mainRT->DrawTextW(text, wcslen(text), font, RectF, brush);
 
 }
 

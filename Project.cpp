@@ -52,6 +52,8 @@
 #define image_DeadLine_1 10000
 #define image_ProgressBar_1 10010
 #define image_ProgressGauge_1 10020
+#define image_ViewEffect_White 11020
+#define image_ViewEffect_Red 11030
 
 #define sprite_player_idle 10
 #define sprite_player_idle2 11
@@ -74,6 +76,8 @@
 #define sprite_DeadLine_1 100
 #define sprite_ProgressBar_1 105
 #define sprite_ProgressGauge_1 110
+#define sprite_ViewEffect_White 200
+#define sprite_ViewEffect_Red 201
 
 float ProjectI::hardLatency = 0.01f;
 
@@ -198,6 +202,18 @@ void ProjectI::Init()
 	sprite->pivot = Eigen::Vector2d(0, 0.5);
 	sprite->time = 1.0f;
 
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"ViewEffect_White", 0, L".png",
+		1, image_ViewEffect_White, sprite_ViewEffect_White);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"ViewEffect_Red", 0, L".png",
+		1, image_ViewEffect_Red, sprite_ViewEffect_Red);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1.0f;
+
 	Resources::SoundLoading(music_Urgency, ".\\Resources\\Sound\\Urgency.mp3");
 	Resources::SoundLoading(music_Abiogenesis, ".\\Resources\\Sound\\Abiogenesis.mp3");
 	Resources::SoundLoading(Sound_Attack_1, ".\\Resources\\Sound\\Attack\\Attack1.mp3");
@@ -207,9 +223,29 @@ void ProjectI::Init()
 
 	GameManager::mainRT->CreateSolidColorBrush(
 		D2D1::ColorF(
-			D2D1::ColorF::White
-		), &GameManager::pBrush);
+			D2D1::ColorF(246 / 255.0, 241 / 255.0, 134.0 / 255.0, 1.0)
+		), &(project->globalData.perfectBrush));
 	
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF(100 / 255.0, 155 / 255.0, 255.0 / 255.0, 1.0)
+		), &(project->globalData.goodBrush));
+
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF(188 / 255.0, 183 / 255.0, 190.0 / 255.0, 1.0)
+		), &(project->globalData.normalBrush));
+
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF(220 / 255.0, 58 / 255.0, 73.0 / 255.0, 1.0)
+		), &(project->globalData.badBrush));
+
+	GameManager::mainRT->CreateSolidColorBrush(
+		D2D1::ColorF(
+			D2D1::ColorF::White
+		), &(project->globalData.whiteBrush));
+
 	GameManager::pWFactory->CreateTextFormat(
 		L"PF스타더스트S",
 		nullptr,
@@ -238,7 +274,6 @@ void ProjectI::Init()
 		34.0f,
 		L"ko-kr",
 		&project->globalData.soundFont);
-
 
 
 	this->inGame = std::make_shared<InGame>();
@@ -308,20 +343,23 @@ void InGame::Init()
 	songObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y()+300);
 	songText.lock()->SetFont(project->globalData.soundFont, DWRITE_TEXT_ALIGNMENT_CENTER);
 	songText.lock()->SetText(L"Cytus2 : Urgency-SIHanatsuka");
+	songText.lock()->SetBrush(project->globalData.whiteBrush);
 	songText.lock()->zIndex = -5;
 
 	comboObj = GameManager::mainWorld->CreateGameObject();
 	comboText = comboObj.lock()->AddComponent<TextComponent>(std::make_shared<TextComponent>());
 	comboObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y() + -250);
 	comboText.lock()->SetFont(project->globalData.comboFont, DWRITE_TEXT_ALIGNMENT_CENTER);
+	comboText.lock()->SetBrush(project->globalData.perfectBrush);
 	comboText.lock()->zIndex = -5;
 	comboObj.lock()->AddComponent<EffectComponent>(std::make_shared<EffectComponent>());
 
 	scoreObj = GameManager::mainWorld->CreateGameObject();
 	scoreText = scoreObj.lock()->AddComponent<TextComponent>(std::make_shared<TextComponent>());
-	scoreObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y() + 120);
+	scoreObj.lock()->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y() + 130);
 	scoreText.lock()->SetFont(project->globalData.scoreFont, DWRITE_TEXT_ALIGNMENT_CENTER);
-	scoreText.lock()->SetText(L"100,000");
+	scoreText.lock()->SetText(L"000,000");
+	scoreText.lock()->SetBrush(project->globalData.whiteBrush);
 	scoreText.lock()->zIndex = -5;
 	//--------DeadLine--------
 
@@ -618,15 +656,26 @@ void InGame::Update()
 								if (!rightHit)
 									rightHit = EECList[i].lock()->nodeData.direction < 0 ? true : false;
 
+								if (abs(dTime) < hitTimeRange / 3)
+									hitPerfact = 0;
+								else if (abs(dTime) < hitTimeRange * (2.0/3))
+									hitPerfact = 1;
+								else
+									hitPerfact = 2;
+
 								*ConsoleDebug::console << (int)EECList.size() << "\n";
-								EECList[i].lock()->Hit(0);
+								EECList[i].lock()->Hit(hitPerfact);
 
 								FMOD::Channel* channel;
 								GameManager::soundSystem->playSound(Resources::GetSound(Sound_Hit_1), 0, false, &channel);
 								channel->setVolume(GameManager::masterSound* GameManager::SFXSound * 0.75f);
 								combo++;
 								comboObj.lock()->GetComponent<EffectComponent>()->Execute(0);
+								GameManager::mainCamera->gameObject.lock()->
+									GetComponent<CameraControl>()->HolyEffect(20.0, 0.1f, 0);
 								score += scoreHitAdd;
+
+								
 
 								if(attackDir == 2 && leftHit && rightHit)
 									break;
@@ -642,6 +691,8 @@ void InGame::Update()
 
 								EECList[i].lock()->Hit(0);
 								combo = 0;
+								GameManager::mainCamera->gameObject.lock()->
+									GetComponent<CameraControl>()->HolyEffect(12.0, 0.15f, 1);
 							}
 						}
 						else
@@ -668,6 +719,12 @@ void InGame::Update()
 
 	if (combo != 0)
 	{
+		if (hitPerfact == 0)
+			comboText.lock()->SetBrush(project->globalData.perfectBrush);
+		if (hitPerfact == 1)
+			comboText.lock()->SetBrush(project->globalData.goodBrush);
+		if (hitPerfact == 2)
+			comboText.lock()->SetBrush(project->globalData.normalBrush);
 		_stprintf_s(tempText, L"%d", combo);
 		comboText.lock()->SetText(tempText);
 	}
@@ -809,6 +866,8 @@ void EnemyEntityComponent::Update()
 	if ((targetPosition.x() - gameObject.lock()->transform->position.x()) * this->nodeData.direction < 0)
 	{
 		this->gameObject.lock()->isDestroy = true;
+		GameManager::mainCamera->gameObject.lock()->
+			GetComponent<CameraControl>()->HolyEffect(12.0, 0.15f, 1);
 	}
 }
 
@@ -924,6 +983,42 @@ void EffectComponent::Update()
 			this->gameObject.lock()->isDestroy = true;
 		}
 	}
+	if (this->type == 15)
+	{
+		if (!effectSR.expired())
+		{
+			auto sr = effectSR.lock();
+
+			effectSR.lock()->alphaValue = effectSR.lock()->alphaValue + ((0 - effectSR.lock()->alphaValue) / limitTime) * (GameManager::deltaTime * 60);
+		}
+	}
+}
+
+void CameraControl::Start()
+{
+	camera = this->gameObject.lock()->GetComponent<Camera>();
+	holyEffectObj = GameManager::mainWorld->CreateGameObject();
+	holyEffectSR = holyEffectObj.lock()->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	auto effectScript = holyEffectObj.lock()->AddComponent<EffectComponent>(std::make_shared<EffectComponent>());
+
+	holyEffectSR.lock()->SetSprite(Resources::GetSprite(sprite_ViewEffect_White));
+	holyEffectSR.lock()->zIndex = 100;
+	holyEffectSR.lock()->flip.x() = 0;
+	holyEffectSR.lock()->renderSize = Eigen::Vector2d(GameManager::RenderSize.x() * 1.25f, GameManager::RenderSize.y() * 1.25f);
+	holyEffectSR.lock()->alphaValue = 0.0;
+}
+
+void CameraControl::HolyEffect(float speed, float alpha, int type)
+{
+	auto effectScript = holyEffectObj.lock()->GetComponent<EffectComponent>();
+	if (type == 0)
+		holyEffectSR.lock()->SetSprite(Resources::GetSprite(sprite_ViewEffect_White));
+	if (type == 1)
+		holyEffectSR.lock()->SetSprite(Resources::GetSprite(sprite_ViewEffect_Red));
+	effectScript->Execute(15);
+	effectScript->limitTime = speed;
+	effectScript->effectSR = holyEffectSR;
+	effectScript->effectSR.lock()->alphaValue = alpha;
 }
 
 /*

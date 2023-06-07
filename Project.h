@@ -38,6 +38,13 @@ public:
 	IDWriteTextFormat* scoreFont;
 	IDWriteTextFormat* comboFont;
 	IDWriteTextFormat* soundFont;
+
+	ID2D1SolidColorBrush* perfectBrush;
+	ID2D1SolidColorBrush* goodBrush;
+	ID2D1SolidColorBrush* normalBrush;
+	ID2D1SolidColorBrush* badBrush;
+
+	ID2D1SolidColorBrush* whiteBrush;
 };
 
 
@@ -105,6 +112,7 @@ public:
 	float score = 0;
 	float scoreHitAdd = 0;
 	float scoreComboAdd = 0;
+	int hitPerfact = 0;
 };
 
 
@@ -152,6 +160,8 @@ public:
 	int type = 0;
 	int dir = 0;
 	float limitTime = 2;
+
+	std::weak_ptr<SpriteRenderer> effectSR;
 	void Execute(int type)
 	{
 		this->type = type;
@@ -166,6 +176,12 @@ public:
 		{
 			shockPower = Eigen::Vector2d(5 + (rand() % 200)/10.0f, -10 + (-(rand() % 120)/10.0));
 			limitTime = 1.5 + (rand() % 15) / 10.0f;
+			break;
+		}
+		case 15:
+		{
+		
+			break;
 		}
 		}
 	}
@@ -199,10 +215,10 @@ public:
 	bool shockSwing = true;
 	bool shockDirSwing = false;
 
-	virtual void Start()
-	{
-		camera = this->gameObject.lock()->GetComponent<Camera>();
-	}
+	std::weak_ptr<GameObject> holyEffectObj;
+	std::weak_ptr<SpriteRenderer> holyEffectSR;
+
+	virtual void Start();
 
 	virtual void Update()
 	{
@@ -248,6 +264,8 @@ public:
 			break;
 		}
 	}
+
+	void HolyEffect(float speed, float alpha, int type);
 
 	virtual void LateUpdate() {}
 	virtual void BeforeRender() {}

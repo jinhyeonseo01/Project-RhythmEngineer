@@ -142,6 +142,7 @@ public:
 	float animationSpeedScale = 1.0f;
 
 	bool alpha = true;
+	float alphaValue = 1.0;
 
 	virtual void SetSprite(std::weak_ptr<Sprite> sprite);
 
@@ -168,6 +169,7 @@ class TextComponent : public Renderer
 {
 public:
 	IDWriteTextFormat* font;
+	ID2D1SolidColorBrush* brush;
 	TCHAR text[MAX_TEXT_SIZE];
 
 	DWRITE_TEXT_ALIGNMENT sortOrder;
@@ -193,6 +195,10 @@ public:
 	void SetText(TCHAR* str)
 	{
 		wcscpy_s(text, MAX_TEXT_SIZE, str);
+	}
+	void SetBrush(ID2D1SolidColorBrush* brush)
+	{
+		this->brush = brush;
 	}
 
 	virtual void Render(HDC hdc, Camera* camera);
