@@ -341,7 +341,7 @@ FMOD_RESULT F_API FMOD_Channel_SetLoopCount             (FMOD_CHANNEL *channel, 
 FMOD_RESULT F_API FMOD_Channel_GetLoopCount             (FMOD_CHANNEL *channel, int *loopcount);
 FMOD_RESULT F_API FMOD_Channel_SetLoopPoints            (FMOD_CHANNEL *channel, unsigned int loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int loopend, FMOD_TIMEUNIT loopendtype);
 FMOD_RESULT F_API FMOD_Channel_GetLoopPoints            (FMOD_CHANNEL *channel, unsigned int *loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int *loopend, FMOD_TIMEUNIT loopendtype);
-
+FMOD_RESULT F_API FMOD_Channel_GetSpectrum              (FMOD_CHANNEL *channel, float* spectrumarray, int numvalues, int channeloffset, FMOD_DSP_FFT_WINDOW windowtype);
 /*
      Information only functions.
 */

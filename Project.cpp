@@ -24,6 +24,7 @@
 
 #define music_Urgency 0001
 #define music_Abiogenesis 0002
+#define music_Gloxinia_by_Ruxxi 0003
 
 #define Sound_Attack_1 0100
 #define Sound_Attack_2 0101
@@ -50,10 +51,20 @@
 #define image_enemy_3_part 4150
 
 #define image_DeadLine_1 10000
+#define image_DeadLine_2 10002
+#define image_DeadLine_3 10003
+#define image_DeadLine_4 10004
+
 #define image_ProgressBar_1 10010
 #define image_ProgressGauge_1 10020
 #define image_ViewEffect_White 11020
 #define image_ViewEffect_Red 11030
+
+#define image_Background_1 20010
+#define image_Background_2 20020
+#define image_Vignette_1 20100
+
+#define image_FFT_1 30000
 
 #define sprite_player_idle 10
 #define sprite_player_idle2 11
@@ -74,10 +85,18 @@
 #define sprite_enemy_3_Part 57
 
 #define sprite_DeadLine_1 100
+#define sprite_DeadLine_2 102
+#define sprite_DeadLine_3 103
+#define sprite_DeadLine_4 104
 #define sprite_ProgressBar_1 105
 #define sprite_ProgressGauge_1 110
 #define sprite_ViewEffect_White 200
 #define sprite_ViewEffect_Red 201
+
+#define sprite_FFT_1 1001
+
+#define sprite_Background_1 501
+#define sprite_Background_2 502
 
 float ProjectI::hardLatency = 0.01f;
 
@@ -107,9 +126,6 @@ std::weak_ptr<Sprite> SpriteGroupLoad(const TCHAR* mainPath, const TCHAR* SubPat
 void ProjectI::Init()
 {
 	project = this;
-
-	Resources::ImageLoading(0, L".\\Resources\\Image\\Back.png");
-	Resources::ImageLoading(1, L".\\Resources\\Image\\Back4.png");
 	
 	//-----------------------------------------------------------
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Player\\Idle\\", L"", 31, L".png",
@@ -190,6 +206,36 @@ void ProjectI::Init()
 	sprite->pivot = Eigen::Vector2d(0.5, 0);
 	sprite->time = 1.0f;
 
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"DeadLine", 2, L".png",
+		1, image_DeadLine_2, sprite_DeadLine_2);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 1);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"DeadLine", 3, L".png",
+		1, image_DeadLine_3, sprite_DeadLine_3);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 1);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"DeadLine", 4, L".png",
+		1, image_DeadLine_4, sprite_DeadLine_4);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 1);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"Background_Floor_", 1, L".png",
+		1, image_Background_1, sprite_Background_1);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"Background_", 1, L".png",
+		1, image_Background_2, sprite_Background_2);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1.0f;
+
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"ProgressBar", 0, L".png",
 		1, image_ProgressBar_1, sprite_ProgressBar_1);
 	sprite = spriteWeak.lock();
@@ -214,8 +260,22 @@ void ProjectI::Init()
 	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
 	sprite->time = 1.0f;
 
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"Vignette_", 0, L".png",
+		1, image_Vignette_1, sprite_Vignette_1);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0.5, 0.5);
+	sprite->time = 1.0f;
+
+	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"FFT_Effect_", 1, L".png",
+		1, image_FFT_1, sprite_FFT_1);
+	sprite = spriteWeak.lock();
+	sprite->pivot = Eigen::Vector2d(0, 0);
+	sprite->time = 1.0f;
+
 	Resources::SoundLoading(music_Urgency, ".\\Resources\\Sound\\Urgency.mp3");
 	Resources::SoundLoading(music_Abiogenesis, ".\\Resources\\Sound\\Abiogenesis.mp3");
+	Resources::SoundLoading(music_Gloxinia_by_Ruxxi, ".\\Resources\\Sound\\Gloxinia by Ruxxi.mp3");
+
 	Resources::SoundLoading(Sound_Attack_1, ".\\Resources\\Sound\\Attack\\Attack1.mp3");
 	Resources::SoundLoading(Sound_Attack_2, ".\\Resources\\Sound\\Attack\\Attack2.mp3");
 	Resources::SoundLoading(Sound_Attack_3, ".\\Resources\\Sound\\Attack\\Attack3.mp3");
@@ -298,6 +358,7 @@ void OutGame::Init()
 	World::Init();
 }
 
+int WindowSize = 256;
 int TestAttackStack = 0;
 bool TestAttackAnim = false;
 std::chrono::steady_clock::time_point playerAnimTime;
@@ -379,6 +440,46 @@ void InGame::Init()
 	deadLine_R_SR->renderSize = Eigen::Vector2d(deadLine_R_SR->sprite.lock()->spriteSize.x() * 3, deadLine_R_SR->sprite.lock()->spriteSize.y() * 3);
 	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x() + HitDistance, playerPosition.y());
 
+	
+	deadLineObj = GameManager::mainWorld->CreateGameObject();
+	deadLine_L_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	deadLine_L_SR->SetSprite(Resources::GetSprite(sprite_DeadLine_4));
+	deadLine_L_SR->zIndex = -10;
+	deadLine_L_SR->flip.x() = 1;
+	deadLine_L_SR->renderSize = Eigen::Vector2d(deadLine_L_SR->sprite.lock()->spriteSize.x() * 3, deadLine_L_SR->sprite.lock()->spriteSize.y() * 3);
+	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x() - HitDistance, playerPosition.y());
+
+	deadLineObj = GameManager::mainWorld->CreateGameObject();
+	deadLine_R_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	deadLine_R_SR->SetSprite(Resources::GetSprite(sprite_DeadLine_4));
+	deadLine_R_SR->zIndex = -10;
+	deadLine_R_SR->flip.x() = 1;
+	deadLine_R_SR->renderSize = Eigen::Vector2d(deadLine_R_SR->sprite.lock()->spriteSize.x() * 3, deadLine_R_SR->sprite.lock()->spriteSize.y() * 3);
+	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x() + HitDistance, playerPosition.y());
+	
+	deadLineObj = GameManager::mainWorld->CreateGameObject();
+	deadLine_R_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	deadLine_R_SR->SetSprite(Resources::GetSprite(sprite_Background_1));
+	deadLine_R_SR->zIndex = -99;
+	deadLine_R_SR->flip.x() = 1;
+	deadLine_R_SR->renderSize = Eigen::Vector2d(deadLine_R_SR->sprite.lock()->spriteSize.x() * 3, deadLine_R_SR->sprite.lock()->spriteSize.y() * 3);
+	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y());
+
+	deadLineObj = GameManager::mainWorld->CreateGameObject();
+	deadLine_R_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+	deadLine_R_SR->SetSprite(Resources::GetSprite(sprite_Background_2));
+	deadLine_R_SR->zIndex = -100;
+	deadLine_R_SR->flip.x() = 1;
+	deadLine_R_SR->renderSize = Eigen::Vector2d(deadLine_R_SR->sprite.lock()->spriteSize.x()*3, deadLine_R_SR->sprite.lock()->spriteSize.y() * 3);
+	deadLineObj->transform->position = Eigen::Vector2d(playerPosition.x(), playerPosition.y());
+
+	deadLineObj = GameManager::mainWorld->CreateGameObject();
+	auto PP_OR = deadLineObj->AddComponent<OverlayRenderer>(std::make_shared<OverlayRenderer>());
+	PP_OR->SetSprite(Resources::GetSprite(sprite_Vignette_1));
+	PP_OR->zIndex = 80;
+	PP_OR->alphaValue = 0.87f;
+	deadLineObj->transform->position = Eigen::Vector2d(0, 0);
+
 	auto progressBarObj = GameManager::mainWorld->CreateGameObject();
 	progressBarSR = progressBarObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
 	progressBarSR.lock()->SetSprite(Resources::GetSprite(sprite_ProgressBar_1));
@@ -393,17 +494,51 @@ void InGame::Init()
 	progressGaugeSR.lock()->renderSize = Eigen::Vector2d(progressGaugeSR.lock()->sprite.lock()->spriteSize.x() * 3, progressGaugeSR.lock()->sprite.lock()->spriteSize.y() * 3);
 	progressGaugeObj->transform->position = Eigen::Vector2d(progressBarObj->transform->position.x() - (progressBarSR.lock()->renderSize.x() - 12.0) / 2, playerPosition.y() + 200);
 
-	
-	
+	for (int i = 0; i < WindowSize; i++)
+	{
+		deadLineObj = GameManager::mainWorld->CreateGameObject();
+		deadLine_R_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
+		deadLine_R_SR->SetSprite(Resources::GetSprite(sprite_FFT_1));
+		deadLine_R_SR->zIndex = -50;
+		deadLine_R_SR->renderSize = Eigen::Vector2d(GameManager::viewSize.right/((float)WindowSize) + 1, 0);
+		FFTList.push_back(deadLine_R_SR);
+		deadLineObj->transform->position = Eigen::Vector2d(((playerPosition.x() - GameManager::viewSize.right / 2.0)) + (i * (GameManager::viewSize.right / (float)WindowSize)), playerPosition.y() + 3);
+		//deadLineObj->transform->position = Eigen::Vector2d(0, 0);
+	}
+
 	project->songJsonData = jr.Read(".\\Resources\\GameData\\Test.json");
 	//GameManager::soundSystem->playSound(Resources::GetSound(music_Urgency), 0, false, &channel);
 }
 
 
-void InGame::StartNode(int musicCode, nlohmann::json jsonData)
+FMOD::DSP* dsp;
+FMOD_DSP_PARAMETER_FFT* data = NULL;
+void InGame::StartNode(int musicCode, std::string name, nlohmann::json jsonData)
 {
+	float ChanPitch;
+	
+	FMOD::ChannelGroup* master;
+	GameManager::soundSystem->getMasterChannelGroup(&master);
+	GameManager::channelGroup = master;
+	GameManager::soundSystem->createDSPByType(FMOD_DSP_TYPE_FFT, &dsp);
+	//result = channel->addDSP(FMOD_DSP_PARAMETER_DATA_TYPE_FFT, dsp);
+	master->addDSP(0, dsp);
+	dsp->setParameterInt(FMOD_DSP_FFT_WINDOWTYPE, FMOD_DSP_FFT_WINDOW_HANNING);
+	dsp->setParameterInt(FMOD_DSP_FFT_WINDOWSIZE, WindowSize);
+	dsp->setBypass(false);
+	dsp->setActive(true);
+
 	nodeSystem->Start(Resources::GetSound(musicCode));
 	nodeDataList.clear();
+
+	//result = LowlevelSystem->createDSPByType(FMOD_DSP_TYPE_FFT, &fftDSP);
+	//result = channelGroup->addDSP(0 /* = DSP 체인의 헤드. */, fftDSP);
+	
+	//void* data;
+	//unsigned int length;
+	//result = fft->getParameterData(FMOD_DSP_FFT_SPECTRUMDATA, &data, &length, 0, 0);
+
+	songText.lock()->SetText(std::wstring(name.begin(), name.end()).c_str());
 
 	for (int i = 0; i < jsonData.size(); i++)
 	{
@@ -440,6 +575,8 @@ void InGame::StartNode(int musicCode, nlohmann::json jsonData)
 	scoreComboAdd = 0;
 	score = 0;
 	combo = 0;
+	maxComboLevel = -1;
+	hitPerfact = 0;
 }
 
 int attackDir = 0;
@@ -476,8 +613,60 @@ void InGame::Update()
 	{
 		project->autoAttack = !project->autoAttack;
 	}
-
 	
+	dsp->getParameterData(FMOD_DSP_FFT_SPECTRUMDATA, (void**)(&data), 0, 0, 0);
+
+	if (data != nullptr)
+	{
+		//*ConsoleDebug::console << data->spectrum[0][10] << "\n";
+		//*ConsoleDebug::console << data->length << "\n";
+		for (int i = 0; i < data->numchannels; i++)
+		{
+			float prevH = 0;
+			for (int i = 0; i < FFTList.size()/2; i++)
+			{
+				float h, nextH = 0;
+				if (i < FFTList.size() - 1)
+					nextH = data->spectrum[0][i+1];
+				h = data->spectrum[0][i];
+				h = sqrt(sqrt(h)) * 400;
+				float h2 = (abs(h - prevH) * 0.5 + abs(h - nextH) * 0.5);
+
+				float prevX = FFTList[i].lock()->renderSize.x();
+				float prevY = FFTList[i].lock()->renderSize.y();
+				FFTList[i].lock()->renderSize = Eigen::Vector2d(prevX,
+					prevY + (h2 - prevY) / 5.0);
+				prevH = h;
+			}
+
+			prevH = 0;
+			for (int i = 0; i < FFTList.size()/2; i++)
+			{
+				float h, nextH = 0;
+				if (i < FFTList.size() - 1)
+					nextH = data->spectrum[0][i + 1];
+				h = data->spectrum[0][i];
+				h = sqrt(sqrt(h)) * 400;
+				float h2 = (abs(h - prevH) * 0.5 + abs(h - nextH) * 0.5);
+
+				float prevX = FFTList[WindowSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.x();
+				float prevY = FFTList[WindowSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.y();
+				FFTList[WindowSize/2 + (FFTList.size()/2 - 1 - i)].lock()->renderSize = Eigen::Vector2d(prevX,
+					prevY + (h2 - prevY) / 5.0);
+				prevH = h;
+			}
+		}
+		//*ConsoleDebug::console << data->numchannels << "\n";
+	}
+	
+	if(data == nullptr || !nodeSystem->isStart)
+	{
+		for (int i = 0; i < FFTList.size(); i++)
+		{
+			float prevX = FFTList[i].lock()->renderSize.x();
+			FFTList[i].lock()->renderSize = Eigen::Vector2d(prevX, 0);
+		}
+	}
 
 	//GameManager::mainCamera->gameObject.lock()->
 	//	GetComponent<CameraControl>()->targetPosition += Eigen::Vector2d(10, 10);
@@ -630,12 +819,13 @@ void InGame::Update()
 			sr->Reset();
 			sr->Play();
 		}
-
+		
 		//--------Hit Check--------
 		if (attackDir == -1 || attackDir == 1 || attackDir == 2)
 		{
 			bool leftHit = false;
 			bool rightHit = false;
+			*ConsoleDebug::console << nodeSystem->GetMusicTime() << "\n";
 			for (int i = 0; i < EECList.size(); i++)
 			{
 				if (!EECList[i].expired())
@@ -663,7 +853,6 @@ void InGame::Update()
 								else
 									hitPerfact = 2;
 
-								*ConsoleDebug::console << (int)EECList.size() << "\n";
 								EECList[i].lock()->Hit(hitPerfact);
 
 								FMOD::Channel* channel;
@@ -672,10 +861,10 @@ void InGame::Update()
 								combo++;
 								comboObj.lock()->GetComponent<EffectComponent>()->Execute(0);
 								GameManager::mainCamera->gameObject.lock()->
-									GetComponent<CameraControl>()->HolyEffect(20.0, 0.1f, 0);
-								score += scoreHitAdd;
+									GetComponent<CameraControl>()->HolyEffect(14.0, 0.10f, 0);
+								score += scoreHitAdd * (0.5 + 0.5 * ((2.0 - hitPerfact) / 2.0f));
 
-								
+								//*ConsoleDebug::console << hitPerfact << "\n";
 
 								if(attackDir == 2 && leftHit && rightHit)
 									break;
@@ -710,12 +899,13 @@ void InGame::Update()
 			}
 
 			if (attackDir == 2 && (!leftHit || !rightHit))
+			{
 				combo = 0;
+				GameManager::mainCamera->gameObject.lock()->
+					GetComponent<CameraControl>()->HolyEffect(12.0, 0.15f, 1);
+			}
 		}
 	}
-
-	_stprintf_s(tempText, L"%03d,%03d", (int)((int)round(score)/1000), (int)round(score)%1000);
-	scoreText.lock()->SetText(tempText);
 
 	if (combo != 0)
 	{
@@ -725,6 +915,7 @@ void InGame::Update()
 			comboText.lock()->SetBrush(project->globalData.goodBrush);
 		if (hitPerfact == 2)
 			comboText.lock()->SetBrush(project->globalData.normalBrush);
+
 		_stprintf_s(tempText, L"%d", combo);
 		comboText.lock()->SetText(tempText);
 	}
@@ -732,6 +923,20 @@ void InGame::Update()
 	{
 		comboText.lock()->SetText(L"");
 	}
+
+
+	if (maxComboLevel < hitPerfact)
+	{
+		maxComboLevel = hitPerfact;
+		if (maxComboLevel == 0)
+			scoreText.lock()->SetBrush(project->globalData.perfectBrush);
+		if (maxComboLevel == 1)
+			scoreText.lock()->SetBrush(project->globalData.goodBrush);
+		if (maxComboLevel == 2)
+			scoreText.lock()->SetBrush(project->globalData.whiteBrush);
+	}
+	_stprintf_s(tempText, L"%03d,%03d", (int)((int)round(score) / 1000), (int)round(score) % 1000);
+	scoreText.lock()->SetText(tempText);
 
 	for (int i = 0; i < EECList.size(); i++)
 	{
@@ -755,11 +960,16 @@ void InGame::Update()
 	}
 	if (InputManager::GetKeyDown('T'))
 	{
-		StartNode(music_Urgency, project->songJsonData["Node"]["Song_A"]["Datas"]);
+		StartNode(music_Urgency, project->songJsonData["Node"]["Song_A"]["Name"].get<std::string>(), project->songJsonData["Node"]["Song_A"]["Datas"]);
+	}
+	if (InputManager::GetKeyDown('G'))
+	{
+		StartNode(music_Gloxinia_by_Ruxxi, project->songJsonData["Node"]["Song_B"]["Name"].get<std::string>(), project->songJsonData["Node"]["Song_B"]["Datas"]);
 	}
 	if (InputManager::GetKeyDown('Y'))
 	{
 		nodeSystem->Pause();
+		*ConsoleDebug::console << project->inGame->nodeSystem->GetMusicTime() << "\n";
 	}
 	if (InputManager::GetKeyDown('U'))
 	{
@@ -866,6 +1076,7 @@ void EnemyEntityComponent::Update()
 	if ((targetPosition.x() - gameObject.lock()->transform->position.x()) * this->nodeData.direction < 0)
 	{
 		this->gameObject.lock()->isDestroy = true;
+		project->inGame->combo = 0;
 		GameManager::mainCamera->gameObject.lock()->
 			GetComponent<CameraControl>()->HolyEffect(12.0, 0.15f, 1);
 	}
@@ -970,13 +1181,13 @@ void EffectComponent::Update()
 	if (this->type == 10)
 	{
 		trans->position += shockPower * (GameManager::deltaTime * 60);
-		trans->rotationZ += ((shockPower.x() * 5.0f * (GameManager::deltaTime * 60)) * D2R);
+		trans->rotationZ += ((shockPower.x() * 3.14f * (GameManager::deltaTime * 60)) * D2R);
 		shockPower.x() = (abs(shockPower.x()) + ((0 - abs(shockPower.x())) / 28.0) * (GameManager::deltaTime * 60)) * this->dir;
 		shockPower.y() += 0.981 * (GameManager::deltaTime * 60);
 		if (trans->position.y() >= project->inGame->playerPosition.y())
 		{
 			trans->position.y() = project->inGame->playerPosition.y();
-			shockPower.y() = abs(shockPower.y());
+			shockPower.y() = -abs(shockPower.y()/3.5f);
 		}
 		if (std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - startTime).count() / 1000000.0 >= limitTime)
 		{
@@ -989,6 +1200,8 @@ void EffectComponent::Update()
 		{
 			auto sr = effectSR.lock();
 
+			if (effectSR.lock()->alphaValue <= 0.005)
+				effectSR.lock()->alphaValue = 0;
 			effectSR.lock()->alphaValue = effectSR.lock()->alphaValue + ((0 - effectSR.lock()->alphaValue) / limitTime) * (GameManager::deltaTime * 60);
 		}
 	}

@@ -85,7 +85,7 @@ public:
 	virtual void Init();
 	virtual void Update();
 
-	void StartNode(int musicCode, nlohmann::json jsonData);
+	void StartNode(int musicCode, std::string name, nlohmann::json jsonData);
 
 	std::shared_ptr<SpriteRenderer> deadLine_L_SR;
 	std::shared_ptr<SpriteRenderer> deadLine_R_SR;
@@ -105,6 +105,8 @@ public:
 	std::weak_ptr<SpriteRenderer> progressGaugeSR;
 	std::weak_ptr<SpriteRenderer> progressBarSR;
 
+	std::vector<std::weak_ptr<SpriteRenderer>> FFTList;
+
 	Eigen::Vector2d playerPosition = Eigen::Vector2d(0,100);
 	float globalSpeed = 200;
 	float HitDistance = 175;
@@ -113,6 +115,7 @@ public:
 	float scoreHitAdd = 0;
 	float scoreComboAdd = 0;
 	int hitPerfact = 0;
+	int maxComboLevel = -1;
 };
 
 
@@ -169,7 +172,7 @@ public:
 		{
 		case 0:
 		{
-			shockPower = Eigen::Vector2d(0, 50);
+			shockPower = Eigen::Vector2d(0, 35);
 			break;
 		}
 		case 10:

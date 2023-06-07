@@ -89,6 +89,8 @@ public:
 	virtual void Destroy() {};
 };
 
+#define sprite_Vignette_1 510
+
 class Camera : public Component
 {
 public:
@@ -215,6 +217,67 @@ public:
 
 };
 
+class OverlayRenderer : public Renderer
+{
+public:
+	std::weak_ptr<Sprite> sprite;
+
+	int animationIndex = 0;
+	bool animationLoop = true;
+	bool isAnimation = true;
+	float animationTime = 0;
+	float animationSpeedScale = 1.0f;
+
+	bool alpha = true;
+	float alphaValue = 1.0;
+
+	virtual void SetSprite(std::weak_ptr<Sprite> sprite)
+	{
+		this->sprite = sprite;
+	}
+
+	void Play() {
+		isAnimation = true;
+	}
+	void Stop() {
+		isAnimation = false;
+		animationTime = 0;
+	}
+	void Pause() {
+		isAnimation = false;
+	}
+	void Reset() {
+		animationIndex = 0;
+		animationTime = 0;
+	}
+	bool IsPlay() {
+		return isAnimation == true;
+	}
+
+	virtual void Render(HDC hdc, Camera* camera);
+
+	virtual void Update() {
+		Component::Update();
+	}
+	virtual void LateUpdate();
+	virtual void BeforeRender()
+	{
+		Renderer::BeforeRender();
+	}
+	virtual void Start() {
+		Component::Start();
+	}
+	virtual void Enable() {
+		Component::Enable();
+	}
+	virtual void Disable() {
+		Component::Disable();
+	}
+	virtual void Destroy() {
+		Component::Destroy();
+	}
+};
+
 class GameObject : public std::enable_shared_from_this<GameObject>
 {
 public:
@@ -332,6 +395,8 @@ public:
 	static float masterSound;
 	static float BGMSound;
 	static float SFXSound;
+
+	static FMOD::ChannelGroup* channelGroup;
 
 	static void Init();
 	static void BeforeUpdate();

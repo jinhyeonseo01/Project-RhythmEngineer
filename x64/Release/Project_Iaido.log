@@ -1,38 +1,47 @@
 ﻿  Project.cpp
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(666,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\lib\eigen\Eigen\src\Core\products\GeneralBlockPanelKernel.h(2004,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(137,2): warning C5053: C++17 및 이전 버전에서 'explicit(<expr>)'에 대한 지원은 공급업체 확장입니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): warning C4477: 'sprintf_s' : 서식 문자열 '%ld'에 'long' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(51,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(60,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(69,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(78,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(92,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(104,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(113,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.h(178,20): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.h(235,33): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(226,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(231,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(236,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(241,59): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(439,26): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(515,28): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(861,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(862,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(947,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(973,80): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\products\GeneralBlockPanelKernel.h(2063,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(137,2): warning C5053: C++17 및 이전 버전에서 'explicit(<expr>)'에 대한 지원은 공급업체 확장입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): warning C4477: 'sprintf_s' : 서식 문자열 '%ld'에 'long' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 '__int64'입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%lld'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%Id'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(50,18): message : 서식 문자열에서 '%I64d'을(를) 사용하는 것이 좋습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(51,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(60,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(69,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(78,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(92,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(99,1): warning C4267: '초기화 중': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(104,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(113,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.h(181,20): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.h(238,33): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(286,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(291,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(296,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(301,59): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(574,26): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(518,8): warning C4101: 'ChanPitch' :참조되지 않은 지역 변수입니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(633,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(635,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(636,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(650,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(652,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(653,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(666,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(704,28): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(865,30): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1071,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1072,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1158,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1184,81): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-C:\Custom File\VS File\Project_Iaido\Project.cpp(907): warning C4715: 'EnemyEntityComponent::TypeToHP': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  All 3907 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 4043 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    54 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
-  Project_Iaido.vcxproj -> C:\Custom File\VS File\Project_Iaido\x64\Release\Project_Iaido.exe
+  Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Release\Project_Iaido.exe

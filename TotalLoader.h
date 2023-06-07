@@ -10,6 +10,7 @@
 #include <fstream>
 
 #include "fmod.hpp"
+#include "fmod_studio.hpp"
 #include "fmod_errors.h"
 
 #include "lib/nlohmann/json.hpp"
@@ -18,3 +19,4 @@
 #pragma comment(lib, "dwrite")
 #pragma comment(lib, "d2d1.lib")
 #pragma comment(lib, "winmm.lib")
+

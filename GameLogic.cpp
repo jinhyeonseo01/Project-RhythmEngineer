@@ -68,6 +68,8 @@ std::map<int, ID2D1Bitmap*> Resources::resourceMap = std::map<int, ID2D1Bitmap*>
 std::map<int, FMOD::Sound*> Resources::soundMap = std::map<int, FMOD::Sound*>();
 std::map<int, std::shared_ptr<Sprite>> Resources::spriteMap = std::map<int, std::shared_ptr<Sprite>>();
 
+FMOD::ChannelGroup* GameManager::channelGroup = nullptr;
+
 void* GameManager::extradriverdata = nullptr;
 void GameManager::Init()
 {
@@ -501,7 +503,8 @@ void Renderer::BeforeRender()
 
 void SpriteRenderer::BeforeRender()
 {
-	Renderer::BeforeRender();
+	if (alphaValue != 0)
+		Renderer::BeforeRender();
 
 }
 void Renderer::Render(HDC hdc, Camera* camera)
@@ -727,6 +730,26 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 	}
 }
 
+void OverlayRenderer::Render(HDC hdc, Camera* camera)
+{
+	auto spriteVigntte = this->sprite.lock()->imageList[animationIndex];
+	D2D1_RECT_F RectF = D2D1::RectF(0, 0, GameManager::viewSize.right, GameManager::viewSize.bottom);
+	D2D1_RECT_F RectF2 = D2D1::RectF(0, 0, spriteVigntte->GetSize().width, spriteVigntte->GetSize().height);
+
+	GameManager::mainRT->SetTransform(D2D1::Matrix3x2F(1, 0, 0, 1, 0, 0));
+	GameManager::mainRT->DrawBitmap(spriteVigntte, RectF, this->alphaValue, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, RectF2);
+}
+
+void OverlayRenderer::LateUpdate()
+{
+	Component::LateUpdate();
+	auto sprite = this->sprite.lock();
+	if (IsPlay())
+	{
+		animationIndex = animationTime / (sprite->time / sprite->imageList.size());
+		animationIndex = min(animationIndex, sprite->imageList.size() - 1);
+	}
+}
 
 void TextComponent::Render(HDC hdc, Camera* camera)
 {
@@ -847,7 +870,7 @@ void NodeSystem::Start(FMOD::Sound* sound)
 		unsigned int tempMosicMS;
 		sound->getLength(&tempMosicMS, FMOD_TIMEUNIT_MS);
 		musicTotalSecond = tempMosicMS / 1000.0;
-		GameManager::soundSystem->playSound(sound, 0, false, &this->musicChannel);
+		GameManager::soundSystem->playSound(sound, GameManager::channelGroup, false, &this->musicChannel);
 		this->startClock = std::chrono::steady_clock::now();
 	}
 	//auto betweenClock = std::chrono::duration_cast<std::chrono::microseconds>();
