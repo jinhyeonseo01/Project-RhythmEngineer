@@ -69,6 +69,9 @@ std::map<int, FMOD::Sound*> Resources::soundMap = std::map<int, FMOD::Sound*>();
 std::map<int, std::shared_ptr<Sprite>> Resources::spriteMap = std::map<int, std::shared_ptr<Sprite>>();
 
 FMOD::ChannelGroup* GameManager::channelGroup = nullptr;
+FMOD::DSP* GameManager::dsp = nullptr;
+int GameManager::fftSize = 640;//256
+FMOD_DSP_PARAMETER_FFT* GameManager::fftData = nullptr;
 
 void* GameManager::extradriverdata = nullptr;
 void GameManager::Init()
@@ -961,12 +964,27 @@ nlohmann::json JsonReader::Read(std::string path)
 	std::string s, total;
 	std::ifstream json_file;
 	json_file.open(path);
+
 	while (!json_file.eof())
 	{
 		json_file >> s;
 		total += s;
 	}
+	json = json.parse(total);
 	json_file.close();
 	*ConsoleDebug::console << total << "\n";
-	return json.parse(total);
+	return json;
+}
+
+void replaceAll(std::string& name, const char* findStr, const char* to)
+{
+	int pos;
+	while ((pos = name.find(findStr)) != std::string::npos)
+		name.replace(pos, strlen(findStr), to);
+}
+
+std::string JsonReader::stringFormat(std::string s)
+{
+	replaceAll(s, "<space>", " ");
+	return s;
 }

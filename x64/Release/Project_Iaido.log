@@ -24,23 +24,24 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(28
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(291,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(296,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(301,59): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(574,26): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(518,8): warning C4101: 'ChanPitch' :참조되지 않은 지역 변수입니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(633,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(635,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(636,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(650,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(652,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(567,26): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(627,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(629,10): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(631,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(632,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(649,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(651,10): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(653,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(666,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(704,28): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(865,30): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1071,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1072,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1158,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1184,81): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(654,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(668,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(706,28): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(867,30): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1077,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1078,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1164,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1190,81): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  1 of 4043 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  1 of 4052 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     54 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.

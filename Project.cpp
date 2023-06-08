@@ -335,6 +335,13 @@ void ProjectI::Init()
 		L"ko-kr",
 		&project->globalData.soundFont);
 
+	GameManager::soundSystem->getMasterChannelGroup(&GameManager::channelGroup);
+	GameManager::soundSystem->createDSPByType(FMOD_DSP_TYPE_FFT, &GameManager::dsp);
+	GameManager::channelGroup->addDSP(0, GameManager::dsp);
+	GameManager::dsp->setParameterInt(FMOD_DSP_FFT_WINDOWTYPE, FMOD_DSP_FFT_WINDOW_HANNING);
+	GameManager::dsp->setParameterInt(FMOD_DSP_FFT_WINDOWSIZE, GameManager::fftSize);
+	GameManager::dsp->setBypass(false);
+	GameManager::dsp->setActive(true);
 
 	this->inGame = std::make_shared<InGame>();
 	this->outGame = std::make_shared<OutGame>();
@@ -358,7 +365,6 @@ void OutGame::Init()
 	World::Init();
 }
 
-int WindowSize = 256;
 int TestAttackStack = 0;
 bool TestAttackAnim = false;
 std::chrono::steady_clock::time_point playerAnimTime;
@@ -477,7 +483,7 @@ void InGame::Init()
 	auto PP_OR = deadLineObj->AddComponent<OverlayRenderer>(std::make_shared<OverlayRenderer>());
 	PP_OR->SetSprite(Resources::GetSprite(sprite_Vignette_1));
 	PP_OR->zIndex = 80;
-	PP_OR->alphaValue = 0.87f;
+	PP_OR->alphaValue = 0.92f;
 	deadLineObj->transform->position = Eigen::Vector2d(0, 0);
 
 	auto progressBarObj = GameManager::mainWorld->CreateGameObject();
@@ -494,15 +500,15 @@ void InGame::Init()
 	progressGaugeSR.lock()->renderSize = Eigen::Vector2d(progressGaugeSR.lock()->sprite.lock()->spriteSize.x() * 3, progressGaugeSR.lock()->sprite.lock()->spriteSize.y() * 3);
 	progressGaugeObj->transform->position = Eigen::Vector2d(progressBarObj->transform->position.x() - (progressBarSR.lock()->renderSize.x() - 12.0) / 2, playerPosition.y() + 200);
 
-	for (int i = 0; i < WindowSize; i++)
+	for (int i = 0; i < GameManager::fftSize; i++)
 	{
 		deadLineObj = GameManager::mainWorld->CreateGameObject();
 		deadLine_R_SR = deadLineObj->AddComponent<SpriteRenderer>(std::make_shared<SpriteRenderer>());
 		deadLine_R_SR->SetSprite(Resources::GetSprite(sprite_FFT_1));
 		deadLine_R_SR->zIndex = -50;
-		deadLine_R_SR->renderSize = Eigen::Vector2d(GameManager::viewSize.right/((float)WindowSize) + 1, 0);
+		deadLine_R_SR->renderSize = Eigen::Vector2d(GameManager::viewSize.right/((float)GameManager::fftSize) + 1, 0);
 		FFTList.push_back(deadLine_R_SR);
-		deadLineObj->transform->position = Eigen::Vector2d(((playerPosition.x() - GameManager::viewSize.right / 2.0)) + (i * (GameManager::viewSize.right / (float)WindowSize)), playerPosition.y() + 3);
+		deadLineObj->transform->position = Eigen::Vector2d(((playerPosition.x() - GameManager::viewSize.right / 2.0)) + (i * (GameManager::viewSize.right / (float)GameManager::fftSize)), playerPosition.y() + 3);
 		//deadLineObj->transform->position = Eigen::Vector2d(0, 0);
 	}
 
@@ -511,23 +517,10 @@ void InGame::Init()
 }
 
 
-FMOD::DSP* dsp;
-FMOD_DSP_PARAMETER_FFT* data = NULL;
+//FMOD::DSP* dsp;
+//FMOD_DSP_PARAMETER_FFT* data = NULL;
 void InGame::StartNode(int musicCode, std::string name, nlohmann::json jsonData)
 {
-	float ChanPitch;
-	
-	FMOD::ChannelGroup* master;
-	GameManager::soundSystem->getMasterChannelGroup(&master);
-	GameManager::channelGroup = master;
-	GameManager::soundSystem->createDSPByType(FMOD_DSP_TYPE_FFT, &dsp);
-	//result = channel->addDSP(FMOD_DSP_PARAMETER_DATA_TYPE_FFT, dsp);
-	master->addDSP(0, dsp);
-	dsp->setParameterInt(FMOD_DSP_FFT_WINDOWTYPE, FMOD_DSP_FFT_WINDOW_HANNING);
-	dsp->setParameterInt(FMOD_DSP_FFT_WINDOWSIZE, WindowSize);
-	dsp->setBypass(false);
-	dsp->setActive(true);
-
 	nodeSystem->Start(Resources::GetSound(musicCode));
 	nodeDataList.clear();
 
@@ -614,52 +607,61 @@ void InGame::Update()
 		project->autoAttack = !project->autoAttack;
 	}
 	
-	dsp->getParameterData(FMOD_DSP_FFT_SPECTRUMDATA, (void**)(&data), 0, 0, 0);
+	GameManager::dsp->getParameterData(FMOD_DSP_FFT_SPECTRUMDATA, (void**)(&GameManager::fftData), 0, 0, 0);
 
-	if (data != nullptr)
+	if (GameManager::fftData != nullptr)
 	{
 		//*ConsoleDebug::console << data->spectrum[0][10] << "\n";
 		//*ConsoleDebug::console << data->length << "\n";
-		for (int i = 0; i < data->numchannels; i++)
+		for (int i = 0; i < GameManager::fftData->numchannels; i++)
 		{
-			float prevH = 0;
+			float prevH = 0, prevH2 = 0;
 			for (int i = 0; i < FFTList.size()/2; i++)
 			{
-				float h, nextH = 0;
+				float h, nextH = 0, nextH2 = 0;
 				if (i < FFTList.size() - 1)
-					nextH = data->spectrum[0][i+1];
-				h = data->spectrum[0][i];
-				h = sqrt(sqrt(h)) * 400;
+					nextH = GameManager::fftData->spectrum[0][i + 1];
+				if (i < FFTList.size() - 2)
+					nextH2 = GameManager::fftData->spectrum[0][i + 2];
+				h = GameManager::fftData->spectrum[0][i];
 				float h2 = (abs(h - prevH) * 0.5 + abs(h - nextH) * 0.5);
-
+				h2 = sqrt(sqrt(h2));
+				h2 = min(max((h2 - 0.045) * 1.06, 0), 1);
+				h2 = h2 * 600;
 				float prevX = FFTList[i].lock()->renderSize.x();
 				float prevY = FFTList[i].lock()->renderSize.y();
 				FFTList[i].lock()->renderSize = Eigen::Vector2d(prevX,
-					prevY + (h2 - prevY) / 5.0);
+					prevY + (h2 - prevY) / 3.0);
+				prevH2 = prevH;
 				prevH = h;
 			}
 
 			prevH = 0;
+			prevH2 = 0;
 			for (int i = 0; i < FFTList.size()/2; i++)
 			{
-				float h, nextH = 0;
+				float h, nextH = 0, nextH2 = 0;
 				if (i < FFTList.size() - 1)
-					nextH = data->spectrum[0][i + 1];
-				h = data->spectrum[0][i];
-				h = sqrt(sqrt(h)) * 400;
-				float h2 = (abs(h - prevH) * 0.5 + abs(h - nextH) * 0.5);
-
-				float prevX = FFTList[WindowSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.x();
-				float prevY = FFTList[WindowSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.y();
-				FFTList[WindowSize/2 + (FFTList.size()/2 - 1 - i)].lock()->renderSize = Eigen::Vector2d(prevX,
-					prevY + (h2 - prevY) / 5.0);
+					nextH = GameManager::fftData->spectrum[0][i + 1];
+				if (i < FFTList.size() - 2)
+					nextH2 = GameManager::fftData->spectrum[0][i + 2];
+				h = GameManager::fftData->spectrum[0][i];
+				float h2 = abs(h - prevH) * 0.35 + abs(h - nextH) * 0.35 + abs(prevH2 - prevH) * 0.15 + abs(nextH2 - nextH) * 0.15;
+				h2 = sqrt(sqrt(h2));
+				h2 = min(max((h2 - 0.045) * 1.06, 0), 1);
+				h2 = h2 * 600;
+				float prevX = FFTList[GameManager::fftSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.x();
+				float prevY = FFTList[GameManager::fftSize / 2 + (FFTList.size() / 2 - 1 - i)].lock()->renderSize.y();
+				FFTList[GameManager::fftSize /2 + (FFTList.size()/2 - 1 - i)].lock()->renderSize = Eigen::Vector2d(prevX,
+					prevY + (h2 - prevY) / 3.0);
+				prevH2 = prevH;
 				prevH = h;
 			}
 		}
 		//*ConsoleDebug::console << data->numchannels << "\n";
 	}
-	
-	if(data == nullptr || !nodeSystem->isStart)
+	/**/
+	if(GameManager::fftData == nullptr)
 	{
 		for (int i = 0; i < FFTList.size(); i++)
 		{
@@ -960,11 +962,15 @@ void InGame::Update()
 	}
 	if (InputManager::GetKeyDown('T'))
 	{
-		StartNode(music_Urgency, project->songJsonData["Node"]["Song_A"]["Name"].get<std::string>(), project->songJsonData["Node"]["Song_A"]["Datas"]);
+		nlohmann::json songData = project->songJsonData["Node"]["Song_A"];
+		std::string name = JsonReader::stringFormat(songData["Name"].get<std::string>());
+		StartNode(music_Urgency, name, songData["Datas"]);
 	}
 	if (InputManager::GetKeyDown('G'))
 	{
-		StartNode(music_Gloxinia_by_Ruxxi, project->songJsonData["Node"]["Song_B"]["Name"].get<std::string>(), project->songJsonData["Node"]["Song_B"]["Datas"]);
+		nlohmann::json songData = project->songJsonData["Node"]["Song_B"];
+		std::string name = JsonReader::stringFormat(songData["Name"].get<std::string>());
+		StartNode(music_Gloxinia_by_Ruxxi, name, songData["Datas"]);
 	}
 	if (InputManager::GetKeyDown('Y'))
 	{

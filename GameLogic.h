@@ -397,6 +397,9 @@ public:
 	static float SFXSound;
 
 	static FMOD::ChannelGroup* channelGroup;
+	static FMOD::DSP* dsp;
+	static int fftSize;
+	static FMOD_DSP_PARAMETER_FFT* fftData;
 
 	static void Init();
 	static void BeforeUpdate();
@@ -507,4 +510,5 @@ class JsonReader
 public:
 	nlohmann::json Read(std::string s);
 	void Write(std::string s, nlohmann::json json);
+	static std::string stringFormat(std::string s);
 };

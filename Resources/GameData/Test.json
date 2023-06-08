@@ -1,7 +1,7 @@
 {
     "Node": {
         "Song_A": {
-            "Name" : "Cytus2 : Urgency - SIHanatsuka",
+            "Name" : "Cytus2<space><space>:<space><space>Urgency<space><space>-<space><space>SIHanatsuka",
             "Datas":  [
               {
                 "ID": 0,
@@ -2823,7 +2823,7 @@
         },
         "Song_B": 
         {
-          "Name" : "DJMASX : Gloxinia by Ruxxi - Milkoi",
+          "Name" : "DJMAX<space><space>:<space><space>Gloxinia<space><space>by<space><space>Ruxxi<space><space>-<space><space>Milkoi",
           "Datas":   [
             {
               "ID": 0,
