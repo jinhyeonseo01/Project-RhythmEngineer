@@ -945,6 +945,14 @@ void NodeSystem::Stop()
 		delayTotalTime = 0;
 		this->musicChannel->stop();
 		this->musicChannel = nullptr;
+
+		GameManager::dsp->getParameterData(FMOD_DSP_FFT_SPECTRUMDATA, (void**)(&GameManager::fftData), 0, 0, 0);
+
+		if (GameManager::fftData != nullptr && GameManager::fftData->numchannels > 0)
+		{
+			for (int i = 0; i < GameManager::fftData->length; i++)
+				GameManager::fftData->spectrum[0][i] = 0;
+		}
 	}
 }
 

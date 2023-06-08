@@ -685,20 +685,25 @@ void InGame::Update()
 		float hitTimeRange = 0.16f;
 		float hitBadTimeRange = 0.28f;
 
-		if (InputManager::GetKey(VK_RIGHT))
+		if (InputManager::GetKeyDown(VK_RIGHT))
 		{
 			attackDir = 1;
 			keyDeltaTime = nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_RIGHT));
 		}
-		else if (InputManager::GetKey(VK_LEFT))
+		if (InputManager::GetKeyDown(VK_LEFT))
 		{
 			attackDir = -1;
 			keyDeltaTime = nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_LEFT));
 		}
-		else if (InputManager::GetKey(VK_DOWN))
+		if (InputManager::GetKeyDown(VK_DOWN))
 		{
 			attackDir = 2;
 			keyDeltaTime = nodeSystem->GetDeltaTime(InputManager::GetKeyDownTime(VK_DOWN));
+		}
+		if (InputManager::GetKeyDown(VK_RIGHT) && InputManager::GetKeyDown(VK_LEFT))
+		{
+			attackDir = 2;
+			*ConsoleDebug::console << "Double Push -> Dir = 2\n" << "\n";
 		}
 
 		if (project->autoAttack) // autoAttack
@@ -757,7 +762,6 @@ void InGame::Update()
 					attackDir = 1;
 			}
 		}
-
 		//--------Player Animation--------
 		if (attackDir == -1 || attackDir == 1)
 		{
@@ -828,6 +832,7 @@ void InGame::Update()
 			bool leftHit = false;
 			bool rightHit = false;
 			*ConsoleDebug::console << nodeSystem->GetMusicTime() << "\n";
+
 			for (int i = 0; i < EECList.size(); i++)
 			{
 				if (!EECList[i].expired())

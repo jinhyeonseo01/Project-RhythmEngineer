@@ -1,4 +1,4 @@
-﻿  Project.cpp
+﻿  GameLogic.cpp
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\Half.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\BFloat16.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen\Eigen\src\Core\arch\Default\GenericPacketMathFunctions.h(676,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
@@ -20,29 +20,111 @@ C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\ConsoleDebug.h(128,1): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.h(181,20): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.h(238,33): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(286,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(291,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(296,61): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(301,59): warning C4305: '인수': 'double'에서 'FLOAT'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(567,26): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(627,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(629,10): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(631,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(632,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(649,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(651,10): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(653,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(654,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(668,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(706,28): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(867,30): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1077,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1078,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1164,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1190,81): warning C4244: '+=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(488,34): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(489,69): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(568,11): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(569,11): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(576,31): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(579,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(580,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(581,13): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(582,13): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(583,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(584,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(585,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(586,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(587,22): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(588,22): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(589,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(590,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(600,18): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(607,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(607,53): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(608,68): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(608,54): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(614,59): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(614,26): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(613,12): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(612,12): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(611,50): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(611,37): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(632,14): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(632,14): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(632,33): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(632,33): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(633,23): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(633,23): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(633,51): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(633,51): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(634,23): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(634,23): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(634,51): warning C4838: 'double'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(634,51): warning C4244: '초기화 중': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(642,28): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(642,15): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(647,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(647,42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(647,32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(647,22): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(658,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(658,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(656,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(656,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(655,45): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(655,19): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(664,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(665,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(666,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(667,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(668,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(669,29): warning C4244: '+=': 'double'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(672,28): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(672,15): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(677,59): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(677,49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(677,45): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(677,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(695,11): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(696,11): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(703,31): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(705,22): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(706,22): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(707,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(708,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(710,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(711,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(712,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(713,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(723,202): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(723,147): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(723,98): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(723,49): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(727,60): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(727,30): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(728,107): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(728,60): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(729,80): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(729,65): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(739,90): warning C4244: '인수': 'LONG'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(739,61): warning C4244: '인수': 'LONG'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(752,34): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(753,69): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(764,10): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(765,10): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(774,30): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(776,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(777,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(780,177): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(780,130): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(780,89): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(780,48): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(783,77): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(783,62): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(789,71): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\GameLogic.cpp(990,34): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  1 of 4052 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    54 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\Project.cpp(1129): warning C4715: 'EnemyEntityComponent::TypeToHP': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  All 4052 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   코드를 생성했습니다.
   Project_Iaido.vcxproj -> C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Release\Project_Iaido.exe
