@@ -4,18 +4,26 @@
 
 * * *
 ## Workers
- - Jin Hyeon Seo (Clrain) : Main Develop & Art
- - Jung Jin Bong : Design & Sub Develop
+ - Jin Hyeon Seo (Clrain) : Main Develop & Main Art & Main Design
+ - Jung Jin Bong : Music Node Data Maker
   
 * * *
 ## Install & Execution 방법
-Eigen 라이브러리 연결 (두 방법중 하나 선택)
+#### Eigen 라이브러리 연결 (두 방법중 하나 선택)
 1. 프로젝트 속성 -> VC++ 디렉토리 -> 포함 디렉토리 -> ./lib/egien 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
 2. 프로젝트 탭 -> NuGen 패키지 관리 -> 찾아보기 "Eigen3" -> 최신버전 설치
    
-Direct2D 라이브러리 연결 (두 방법중 하나 선택)
+#### Direct2D 라이브러리 연결 (두 방법중 하나 선택)
 1. 프로젝트 탭 -> NuGen 패키지 관리 -> 찾아보기 "Direct2D" -> 최신버전 설치
-   
+
+#### Fmod 라이브러리 연결 (두 방법중 하나 선택)
+1. 프로젝트 속성 -> VC++ 디렉토리 -> 포함 디렉터리 -> ./lib/fmod/include 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
+2. 프로젝트 속성 -> VC++ 디렉토리 -> 라이브러리 디렉터리 -> ./lib/fmod/lib 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
+3. 프로젝트 속성 -> 링커 -> 추가 종속성 -> 아래 .lib들 추가
+>fmodL_vc.lib
+>fmod_vc.lib
+>fmodstudioL_vc.lib
+>fmodstudio_vc.lib
 * * *
 # Develop Log
 ## Day 1(23.5.15) Log
