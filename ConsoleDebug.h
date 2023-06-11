@@ -114,6 +114,12 @@ public:
 		cd.buffer += arg;
 		return cd;
 	}
+	friend ConsoleDebug& operator<<(ConsoleDebug& cd, std::wstring const& arg) noexcept {
+		if (!cd.Allocation || !ConsoleDebug::consoleActive) return cd;
+		WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), arg.c_str(), arg.size(), 0, 0);
+		cd.buffer += std::string(arg.begin(), arg.end());
+		return cd;
+	}
 
 	friend ConsoleDebug& operator<<(ConsoleDebug& cd, Eigen::MatrixXd& arg) noexcept {
 		if (!cd.Allocation || !ConsoleDebug::consoleActive) return cd;

@@ -167,14 +167,19 @@ public:
 };
 
 #define MAX_TEXT_SIZE 1000
-class TextComponent : public Renderer
+class TextRenderer : public Renderer
 {
 public:
 	IDWriteTextFormat* font;
 	ID2D1SolidColorBrush* brush;
 	TCHAR text[MAX_TEXT_SIZE];
-
 	DWRITE_TEXT_ALIGNMENT sortOrder;
+
+	bool alpha = true;
+	float alphaValue = 1.0;
+
+	Eigen::Vector2d renderSize = Eigen::Vector2d(400, 150);
+	Eigen::Vector2d pivot = Eigen::Vector2d(0.5, 0.5);
 
 	virtual void Start()
 	{
@@ -511,4 +516,5 @@ public:
 	nlohmann::json Read(std::string s);
 	void Write(std::string s, nlohmann::json json);
 	static std::string stringFormat(std::string s);
+	static std::wstring stringFormat(std::wstring s);
 };

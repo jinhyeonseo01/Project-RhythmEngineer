@@ -179,7 +179,6 @@ void FrameUpdate()
 }
 
 //--------Game--------
-
 void GameInit()
 {
 	debug(L"- Console Test Start -\n");

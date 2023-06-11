@@ -116,11 +116,6 @@ void GameManager::BeforeUpdate()
 		GameManager::targetFrame = 244;
 	if (InputManager::GetKey(VK_CONTROL) && InputManager::GetKeyDown('0'))
 		GameManager::targetFrameLock = !GameManager::targetFrameLock;
-	if (InputManager::GetKeyDown(MouseL))
-	{
-		if (InputManager::mousePos.x() > (GameManager::viewSize.right - 40) && InputManager::mousePos.y() < 40)
-			DestroyWindow(GameManager::mainHWnd);
-	}
 	if(GameManager::soundSystem != nullptr)
 		GameManager::soundSystem->update();
 }
@@ -728,8 +723,7 @@ void SpriteRenderer::Render(HDC hDC, Camera* camera)
 			* D2D1::Matrix3x2F::Translation((flip.x() == 0 ? 0 : 1) * (ScreenPos.x() * 2), (flip.y() == 0 ? 0 : 1) * (ScreenPos.y() * 2))
 			* D2D1::Matrix3x2F::Rotation(angle, D2D1::Point2F(ScreenPos.x(), ScreenPos.y())));
 		ID2D1Bitmap* bitmap = sprite->imageList[animationIndex];
-		GameManager::mainRT->DrawBitmap(bitmap, RectF, alphaValue, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, // 이 값이 보간 모드
-			RectF2);
+		GameManager::mainRT->DrawBitmap(bitmap, RectF, this->alphaValue, D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR, RectF2);
 	}
 }
 
@@ -754,7 +748,7 @@ void OverlayRenderer::LateUpdate()
 	}
 }
 
-void TextComponent::Render(HDC hdc, Camera* camera)
+void TextRenderer::Render(HDC hdc, Camera* camera)
 {
 	Eigen::Matrix3d m = this->gameObject.lock()->transform->GetL2WMat();
 	m = GameManager::mainCamera->ScreenTranslateMatrix()
@@ -765,16 +759,14 @@ void TextComponent::Render(HDC hdc, Camera* camera)
 	float y = this->gameObject.lock()->transform->position.y();
 	float z = 1;
 
-	Eigen::Vector2d pivot = Eigen::Vector2d(0.5, 0.5);
-
 	Eigen::Vector3d ScreenPos = Eigen::Vector3d(x, y, 1);
 	ScreenPos = (m * ScreenPos);
 	auto t = GameManager::mainCamera->gameObject.lock()->transform->GetW2LMatRotate()
 		* Eigen::Vector3d(cos(angle), sin(angle), 0);
 	angle = atan2(t.y(), t.x()) * R2D;
 
-	float sizex = 1000 * this->gameObject.lock()->transform->localScale.x();
-	float sizey = 100 * this->gameObject.lock()->transform->localScale.y();
+	float sizex = renderSize.x() * this->gameObject.lock()->transform->localScale.x();
+	float sizey = renderSize.y() * this->gameObject.lock()->transform->localScale.y();
 	Eigen::Vector3d stretch = Eigen::Vector3d(sizex, sizey, 0);
 
 	D2D1_RECT_F RectF = D2D1::RectF(ScreenPos.x() - stretch.x() * pivot.x(), ScreenPos.y() - stretch.y() * pivot.y(), ScreenPos.x() + stretch.x() * (1 - pivot.x()), ScreenPos.y() + stretch.y() * (1 - pivot.y()));
@@ -786,8 +778,11 @@ void TextComponent::Render(HDC hdc, Camera* camera)
 	//TCHAR tempConsole[100]; int indexY = 0;
 	//_stprintf_s(tempConsole, L"Cytus2 : Urgency-SIHanatsuka");
 	//GameManager::mainRT->DrawTextW(tempConsole, wcslen(tempConsole), font, RectF, GameManager::pBrush);
+	//GameManager::mainRT->
+	font->SetTextAlignment(this->sortOrder);
+	brush->SetOpacity(alphaValue);
 	GameManager::mainRT->DrawTextW(text, wcslen(text), font, RectF, brush);
-
+	brush->SetOpacity(1);
 }
 
 unsigned int InputManager::KeyMaskData[KeyDataSize];
@@ -980,6 +975,7 @@ nlohmann::json JsonReader::Read(std::string path)
 	}
 	json = json.parse(total);
 	json_file.close();
+	//*ConsoleDebug::console << std::wstring(total.begin(), total.end()).c_str() << "\n";
 	*ConsoleDebug::console << total << "\n";
 	return json;
 }
@@ -994,5 +990,19 @@ void replaceAll(std::string& name, const char* findStr, const char* to)
 std::string JsonReader::stringFormat(std::string s)
 {
 	replaceAll(s, "<space>", " ");
+	return s;
+}
+
+
+void replaceAll(std::wstring& name, const wchar_t* findStr, const wchar_t* to)
+{
+	int pos;
+	while ((pos = name.find(findStr)) != std::string::npos)
+		name.replace(pos, wcslen(findStr), to);
+}
+
+std::wstring JsonReader::stringFormat(std::wstring s)
+{
+	replaceAll(s, L"<space>", L" ");
 	return s;
 }

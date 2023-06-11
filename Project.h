@@ -14,6 +14,8 @@
 #include <map>
 #include <chrono>
 #include <algorithm>
+#include <locale>
+#include <codecvt>
 
 #include <Eigen/Dense>
 #include "ConsoleDebug.h"
@@ -31,6 +33,7 @@ class EnemyEntityComponent;
 class ProjectI;
 class GlobalData;
 class NodeData;
+class SongData;
 
 class GlobalData
 {
@@ -38,13 +41,26 @@ public:
 	IDWriteTextFormat* scoreFont;
 	IDWriteTextFormat* comboFont;
 	IDWriteTextFormat* soundFont;
+	IDWriteTextFormat* menuFont;
+	IDWriteTextFormat* menuRankFont;
+	IDWriteTextFormat* menuNameFont;
+	IDWriteTextFormat* menuLevelFont;
+	IDWriteTextFormat* menuScoreFont;
 
 	ID2D1SolidColorBrush* perfectBrush;
 	ID2D1SolidColorBrush* goodBrush;
 	ID2D1SolidColorBrush* normalBrush;
 	ID2D1SolidColorBrush* badBrush;
 
+	ID2D1SolidColorBrush* SBrush;
+	ID2D1SolidColorBrush* ABrush;
+	ID2D1SolidColorBrush* BBrush;
+	ID2D1SolidColorBrush* CBrush;
+	ID2D1SolidColorBrush* DBrush;
+	ID2D1SolidColorBrush* FBrush;
+
 	ID2D1SolidColorBrush* whiteBrush;
+	ID2D1SolidColorBrush* grayBrush;
 };
 
 
@@ -53,12 +69,17 @@ class ProjectI
 public:
 	std::shared_ptr<OutGame> outGame = nullptr;
 	std::shared_ptr<InGame> inGame = nullptr;
-	nlohmann::json songJsonData;
 	static float hardLatency;
 	bool autoAttack = false;
 	void Init();
 
+	JsonReader jsonReader;
 	GlobalData globalData;
+	nlohmann::json songTotalJsonData;
+	nlohmann::json songUserJsonData;
+	std::vector<SongData> songDataList;
+	void LoadSong();
+	void PushSong(SongData data);
 };
 
 class NodeData
@@ -73,11 +94,33 @@ public:
 	double reTime;
 };
 
+class SongData
+{
+public:
+	nlohmann::json songJson;
+	std::wstring name;
+	std::vector<NodeData> nodeDataList;
+	int level = 0;
+	int soundResourceCode = 0;
+	int soundImageResourceCode = -1;
+	int bestScore = 0;
+	int bestCombo = 0;
+	bool isLock = false;
+
+	void SetData(nlohmann::json songData);
+	void SaveData();
+};
+
 class OutGame : public World
 {
 public:
 	virtual void Init();
 	virtual void Update();
+
+	float animationTime = -2;
+	int animationEventIndex = 0;
+	std::weak_ptr<GameObject> animObj1;
+	std::weak_ptr<GameObject> animObj2;
 };
 class InGame : public World
 {
@@ -85,7 +128,8 @@ public:
 	virtual void Init();
 	virtual void Update();
 
-	void StartNode(int musicCode, std::string name, nlohmann::json jsonData);
+	void StartNode(SongData* songData);
+	SongData* nowSongData;
 
 	std::shared_ptr<SpriteRenderer> deadLine_L_SR;
 	std::shared_ptr<SpriteRenderer> deadLine_R_SR;
@@ -98,26 +142,78 @@ public:
 	std::weak_ptr<GameObject> scoreObj;
 	std::weak_ptr<GameObject> songObj;
 
-	std::weak_ptr<TextComponent> comboText;
-	std::weak_ptr<TextComponent> scoreText;
-	std::weak_ptr<TextComponent> songText;
+	std::weak_ptr<TextRenderer> comboText;
+	std::weak_ptr<TextRenderer> scoreText;
+	std::weak_ptr<TextRenderer> songText;
 
 	std::weak_ptr<SpriteRenderer> progressGaugeSR;
 	std::weak_ptr<SpriteRenderer> progressBarSR;
 
 	std::vector<std::weak_ptr<SpriteRenderer>> FFTList;
 
+	double globalSpeed = 200;
+	double playerHitDistance = 175;
+	int playerAttackStack = 0;
+	bool playerAttackAnim = false;
+	std::chrono::steady_clock::time_point playerAnimTime;
 	Eigen::Vector2d playerPosition = Eigen::Vector2d(0,100);
-	float globalSpeed = 200;
-	float HitDistance = 175;
-	int combo = 0;
-	float score = 0;
-	float scoreHitAdd = 0;
-	float scoreComboAdd = 0;
-	int hitPerfact = 0;
-	int maxComboLevel = -1;
-};
 
+	float power = 27;
+
+	int maxCombo = 0;
+	int combo = 0;
+	double score = 0;
+	double scoreHitAdd = 0;
+	double scoreComboAdd = 0;
+	int hitPerfact = 0;
+	float hitTimeRange = 0.16f;
+	float hitBadTimeRange = 0.28f;
+	int maxComboLevel = -1;
+
+	int attackDir = 0;
+
+	bool syncMode = false;
+	double syncTotalTime = 0;
+
+	int maxNodeLevel = 18;
+	int menuListCount = 7;
+	int selectMenuIndex = -1;
+	float menuAngle = 13 * D2R;
+	float menuDistance = 950;
+	float menuAlpha = 1;
+	bool menuMode = true;
+
+	float menuMusicTermTime = 0;
+
+	FMOD::Channel* menuMusicChannel = NULL;
+	Eigen::Vector2d menuOffset = Eigen::Vector2d(0, 0);
+	std::vector<std::weak_ptr<GameObject>> menuTableList;
+	std::vector<std::weak_ptr<GameObject>> menuTableImageList;
+	std::vector<std::weak_ptr<GameObject>> menuTableNameList;
+	std::vector<std::vector<std::weak_ptr<GameObject>>> menuLevelList;
+
+	std::weak_ptr<GameObject> menuSongObj;
+	std::weak_ptr<GameObject> menuSongInfoObj;
+	std::weak_ptr<GameObject> menuSongInfoNameObj;
+	std::weak_ptr<GameObject> menuSongInfoLevelObj;
+	std::weak_ptr<GameObject> menuSongInfoRankObj;
+	std::weak_ptr<GameObject> menuSongInfoBestScoreObj;
+	std::weak_ptr<GameObject> menuSongInfoBestScoreValueObj;
+	std::weak_ptr<GameObject> menuSongInfoBestComboObj;
+	std::weak_ptr<GameObject> menuSongInfoBestComboValueObj;
+
+	std::weak_ptr<GameObject> menuPause;
+	std::weak_ptr<GameObject> menuSongStart;
+	std::weak_ptr<GameObject> menuSongStartText;
+
+	std::weak_ptr<GameObject> menuSongInfoImageObj;
+	std::weak_ptr<GameObject> menuSongInfoImageRectObj;
+	std::weak_ptr<GameObject> menuSongInfoImageRect2Obj;
+	std::weak_ptr<GameObject> menuSongInfoImageRect3Obj;
+
+	float menuSelectLevel = 0;
+	std::vector<std::weak_ptr<GameObject>> menuSelectSongLevelList;
+};
 
 class TestComponent : public Component
 {
@@ -181,6 +277,12 @@ public:
 			limitTime = 1.5 + (rand() % 15) / 10.0f;
 			break;
 		}
+		case 11:
+		{
+			shockPower = Eigen::Vector2d(0, 0);
+			limitTime = 10;
+			break;
+		}
 		case 15:
 		{
 		
@@ -215,6 +317,8 @@ public:
 	std::weak_ptr<Camera> camera;
 	int shockType = 0;
 	int shockDir = 0;
+	float shockSpeed = 2.5;
+	float shockDirSpeed = 4;
 	bool shockSwing = true;
 	bool shockDirSwing = false;
 
@@ -233,9 +337,10 @@ public:
 			auto currentPos = trans->position + ((targetPosition - trans->position) / 5.0f) * (GameManager::deltaTime * 60);
 			if (shockPower.norm() <= 1)
 				shockPower = Eigen::Vector2d(0, 0);
-			shockPower = shockPower + ((Eigen::Vector2d(0,0) - shockPower) / 2.5f) * (GameManager::deltaTime * 60);
+			shockPower = shockPower + ((Eigen::Vector2d(0,0) - shockPower) / shockSpeed) * (GameManager::deltaTime * 60);
 			trans->position = currentPos + shockPower;
-			trans->rotationZ = -shockDir * (shockPower.norm()/4.0f*D2R);
+
+			trans->rotationZ = -shockDir * (shockPower.norm()/ shockDirSpeed *D2R);
 			if (shockSwing)
 			{
 				shockPower.x() = -shockPower.x();
@@ -260,6 +365,12 @@ public:
 		case 2:
 			shockDirSwing = true;
 			shockSwing = true;
+			break;
+		case 100:
+			shockDirSwing = true;
+			shockSwing = true;
+			shockDirSpeed = 10;
+			shockSpeed = 10;
 			break;
 		default:
 			shockDirSwing = false;

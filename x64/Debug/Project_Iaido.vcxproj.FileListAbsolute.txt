@@ -1,2 +1,0 @@
-C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\x64\Debug\Project_Iaido.exe
-C:\Custom File\VS File\Project_Iaido\x64\Debug\Project_Iaido.exe

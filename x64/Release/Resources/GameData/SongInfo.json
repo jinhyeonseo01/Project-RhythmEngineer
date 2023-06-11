@@ -1,0 +1,9196 @@
+{
+  "SongInfo": {
+    "Song_0": {
+      "Name": "박자<space><space>교정",
+      "Code": 0,
+      "LogoCode": 420,
+      "Level": 1,
+      "Datas": [
+        {
+          "ID": 0,
+          "Type": 0,
+          "Time": 3.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 1,
+          "Type": 0,
+          "Time": 3.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 2,
+          "Type": 0,
+          "Time": 4.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 3,
+          "Type": 0,
+          "Time": 4.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 4,
+          "Type": 0,
+          "Time": 5.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 5,
+          "Type": 0,
+          "Time": 5.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 6,
+          "Type": 0,
+          "Time": 6.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 7,
+          "Type": 0,
+          "Time": 6.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 8,
+          "Type": 0,
+          "Time": 7.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 9,
+          "Type": 0,
+          "Time": 7.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 10,
+          "Type": 0,
+          "Time": 8.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 11,
+          "Type": 0,
+          "Time": 8.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 12,
+          "Type": 0,
+          "Time": 9.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 13,
+          "Type": 0,
+          "Time": 9.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 14,
+          "Type": 0,
+          "Time": 10.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 15,
+          "Type": 0,
+          "Time": 10.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 16,
+          "Type": 0,
+          "Time": 11.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 17,
+          "Type": 0,
+          "Time": 11.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 18,
+          "Type": 0,
+          "Time": 12.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 19,
+          "Type": 0,
+          "Time": 12.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 20,
+          "Type": 0,
+          "Time": 13.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 21,
+          "Type": 0,
+          "Time": 13.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 22,
+          "Type": 0,
+          "Time": 14.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 23,
+          "Type": 0,
+          "Time": 14.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 24,
+          "Type": 0,
+          "Time": 15.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 25,
+          "Type": 0,
+          "Time": 15.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 26,
+          "Type": 0,
+          "Time": 16.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 27,
+          "Type": 0,
+          "Time": 16.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 28,
+          "Type": 0,
+          "Time": 17.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 29,
+          "Type": 0,
+          "Time": 17.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 30,
+          "Type": 0,
+          "Time": 18.051,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 31,
+          "Type": 0,
+          "Time": 18.551,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        }
+      ]
+    },
+    "Song_1": {
+      "Name": "Cytus2<space><space>:<space><space>Urgency<space><space>-<space><space>SIHanatsuka",
+      "Code": 1,
+      "LogoCode": 421,
+      "Level": 11,
+      "Datas": [
+        {
+          "ID": 0,
+          "Type": 0,
+          "Time": 4.225,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 1,
+          "Type": 0,
+          "Time": 4.225,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 2,
+          "Type": 0,
+          "Time": 4.75,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 3,
+          "Type": 0,
+          "Time": 5.25,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 4,
+          "Type": 0,
+          "Time": 5.8,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 5,
+          "Type": 0,
+          "Time": 6.3,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 6,
+          "Type": 2,
+          "Time": 6.795,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 7,
+          "Type": 0,
+          "Time": 7.5,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 8,
+          "Type": 0,
+          "Time": 8,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 9,
+          "Type": 0,
+          "Time": 8.5,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 10,
+          "Type": 0,
+          "Time": 9,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 11,
+          "Type": 1,
+          "Time": 9.35,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 12,
+          "Type": 0,
+          "Time": 9.7,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 13,
+          "Type": 0,
+          "Time": 10.225,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 14,
+          "Type": 0,
+          "Time": 10.75,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 15,
+          "Type": 0,
+          "Time": 11.25,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 16,
+          "Type": 0,
+          "Time": 11.8,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 17,
+          "Type": 2,
+          "Time": 12.107,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 18,
+          "Type": 0,
+          "Time": 12.453,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 19,
+          "Type": 0,
+          "Time": 12.9,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 20,
+          "Type": 0,
+          "Time": 13.408,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 21,
+          "Type": 0,
+          "Time": 13.93,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 22,
+          "Type": 0,
+          "Time": 14.5,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 23,
+          "Type": 1,
+          "Time": 14.8,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 24,
+          "Type": 0,
+          "Time": 15.13,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 25,
+          "Type": 0,
+          "Time": 15.13,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 26,
+          "Type": 0,
+          "Time": 15.456,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 27,
+          "Type": 0,
+          "Time": 15.64,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 28,
+          "Type": 0,
+          "Time": 15.823,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 29,
+          "Type": 0,
+          "Time": 15.986,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 30,
+          "Type": 0,
+          "Time": 16.169,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 31,
+          "Type": 0,
+          "Time": 16.689,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 32,
+          "Type": 0,
+          "Time": 16.842,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 33,
+          "Type": 0,
+          "Time": 17.025,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 34,
+          "Type": 0,
+          "Time": 17.188,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 35,
+          "Type": 0,
+          "Time": 17.535,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 36,
+          "Type": 0,
+          "Time": 17.708,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 37,
+          "Type": 0,
+          "Time": 18.044,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 38,
+          "Type": 0,
+          "Time": 18.217,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 39,
+          "Type": 0,
+          "Time": 18.391,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 40,
+          "Type": 0,
+          "Time": 18.574,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 41,
+          "Type": 0,
+          "Time": 18.91,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 42,
+          "Type": 0,
+          "Time": 19.073,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 43,
+          "Type": 0,
+          "Time": 19.613,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 44,
+          "Type": 1,
+          "Time": 19.939,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 45,
+          "Type": 1,
+          "Time": 20.255,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 46,
+          "Type": 0,
+          "Time": 20.642,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 47,
+          "Type": 0,
+          "Time": 20.978,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 48,
+          "Type": 0,
+          "Time": 21.131,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 49,
+          "Type": 0,
+          "Time": 21.305,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 50,
+          "Type": 0,
+          "Time": 21.651,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 51,
+          "Type": 0,
+          "Time": 21.977,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 52,
+          "Type": 1,
+          "Time": 22.16,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 53,
+          "Type": 0,
+          "Time": 22.344,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 54,
+          "Type": 0,
+          "Time": 22.517,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 55,
+          "Type": 0,
+          "Time": 22.68,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 56,
+          "Type": 0,
+          "Time": 23.026,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 57,
+          "Type": 0,
+          "Time": 23.21,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 58,
+          "Type": 1,
+          "Time": 23.352,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 59,
+          "Type": 1,
+          "Time": 23.709,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 60,
+          "Type": 1,
+          "Time": 24.055,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 61,
+          "Type": 1,
+          "Time": 24.402,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 62,
+          "Type": 0,
+          "Time": 24.738,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 63,
+          "Type": 0,
+          "Time": 24.738,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 64,
+          "Type": 2,
+          "Time": 25.599,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 65,
+          "Type": 0,
+          "Time": 25.945,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 66,
+          "Type": 0,
+          "Time": 26.144,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 67,
+          "Type": 0,
+          "Time": 26.857,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 68,
+          "Type": 0,
+          "Time": 27.168,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 69,
+          "Type": 0,
+          "Time": 27.881,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 70,
+          "Type": 2,
+          "Time": 28.248,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 71,
+          "Type": 2,
+          "Time": 28.564,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 72,
+          "Type": 0,
+          "Time": 28.842,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 73,
+          "Type": 0,
+          "Time": 29.369,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 74,
+          "Type": 0,
+          "Time": 30.008,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 75,
+          "Type": 0,
+          "Time": 30.383,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 76,
+          "Type": 2,
+          "Time": 30.996,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 77,
+          "Type": 1,
+          "Time": 31.233,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 78,
+          "Type": 0,
+          "Time": 31.59,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 79,
+          "Type": 0,
+          "Time": 32.097,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 80,
+          "Type": 0,
+          "Time": 32.616,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 81,
+          "Type": 0,
+          "Time": 33.136,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 82,
+          "Type": 2,
+          "Time": 33.648,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 83,
+          "Type": 0,
+          "Time": 33.798,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 84,
+          "Type": 0,
+          "Time": 33.989,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 85,
+          "Type": 0,
+          "Time": 34.089,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 86,
+          "Type": 0,
+          "Time": 34.328,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 87,
+          "Type": 0,
+          "Time": 34.718,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 88,
+          "Type": 0,
+          "Time": 35.36,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 89,
+          "Type": 0,
+          "Time": 35.803,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 90,
+          "Type": 2,
+          "Time": 36.391,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 91,
+          "Type": 2,
+          "Time": 36.791,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 92,
+          "Type": 0,
+          "Time": 37.196,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 93,
+          "Type": 0,
+          "Time": 37.583,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 94,
+          "Type": 0,
+          "Time": 38.605,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 95,
+          "Type": 0,
+          "Time": 38.959,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 96,
+          "Type": 1,
+          "Time": 39.345,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 97,
+          "Type": 1,
+          "Time": 39.701,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 98,
+          "Type": 0,
+          "Time": 39.998,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 99,
+          "Type": 0,
+          "Time": 40.327,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 100,
+          "Type": 0,
+          "Time": 40.849,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 101,
+          "Type": 0,
+          "Time": 41.346,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 102,
+          "Type": 2,
+          "Time": 41.903,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.15
+        },
+        {
+          "ID": 103,
+          "Type": 1,
+          "Time": 42.207,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 104,
+          "Type": 0,
+          "Time": 42.605,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 105,
+          "Type": 0,
+          "Time": 43.062,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 106,
+          "Type": 0,
+          "Time": 43.605,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 107,
+          "Type": 0,
+          "Time": 44.094,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 108,
+          "Type": 1,
+          "Time": 44.649,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.15
+        },
+        {
+          "ID": 109,
+          "Type": 1,
+          "Time": 44.952,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 110,
+          "Type": 0,
+          "Time": 45.459,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 111,
+          "Type": 0,
+          "Time": 45.803,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 112,
+          "Type": 0,
+          "Time": 46.015,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 113,
+          "Type": 0,
+          "Time": 46.664,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 114,
+          "Type": 0,
+          "Time": 46.756,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 115,
+          "Type": 0,
+          "Time": 46.817,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 116,
+          "Type": 0,
+          "Time": 47.005,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 117,
+          "Type": 0,
+          "Time": 47.693,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 118,
+          "Type": 0,
+          "Time": 47.743,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 119,
+          "Type": 0,
+          "Time": 48.192,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 120,
+          "Type": 0,
+          "Time": 48.562,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 121,
+          "Type": 0,
+          "Time": 48.562,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 122,
+          "Type": 0,
+          "Time": 49.076,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 123,
+          "Type": 0,
+          "Time": 49.076,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 124,
+          "Type": 0,
+          "Time": 49.41,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 125,
+          "Type": 0,
+          "Time": 49.52,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 126,
+          "Type": 0,
+          "Time": 49.61,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 127,
+          "Type": 0,
+          "Time": 49.924,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 128,
+          "Type": 0,
+          "Time": 50.093,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 129,
+          "Type": 0,
+          "Time": 50.793,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 130,
+          "Type": 0,
+          "Time": 51.303,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 131,
+          "Type": 0,
+          "Time": 51.303,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 132,
+          "Type": 0,
+          "Time": 51.812,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 133,
+          "Type": 0,
+          "Time": 51.812,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 134,
+          "Type": 0,
+          "Time": 52.426,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 135,
+          "Type": 0,
+          "Time": 52.502,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 136,
+          "Type": 0,
+          "Time": 53.103,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 137,
+          "Type": 0,
+          "Time": 53.103,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 138,
+          "Type": 0,
+          "Time": 53.348,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 139,
+          "Type": 0,
+          "Time": 53.348,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 140,
+          "Type": 0,
+          "Time": 53.531,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 141,
+          "Type": 0,
+          "Time": 53.531,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 142,
+          "Type": 0,
+          "Time": 53.817,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 143,
+          "Type": 0,
+          "Time": 53.995,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 144,
+          "Type": 0,
+          "Time": 54.372,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 145,
+          "Type": 0,
+          "Time": 54.499,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 146,
+          "Type": 0,
+          "Time": 54.891,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 147,
+          "Type": 0,
+          "Time": 54.891,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 148,
+          "Type": 0,
+          "Time": 55.233,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 149,
+          "Type": 0,
+          "Time": 55.37,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 150,
+          "Type": 0,
+          "Time": 55.752,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 151,
+          "Type": 0,
+          "Time": 55.915,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 152,
+          "Type": 0,
+          "Time": 56.267,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 153,
+          "Type": 0,
+          "Time": 56.267,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 154,
+          "Type": 2,
+          "Time": 56.603,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 155,
+          "Type": 2,
+          "Time": 57.129,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 156,
+          "Type": 0,
+          "Time": 57.63,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 157,
+          "Type": 0,
+          "Time": 57.63,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 158,
+          "Type": 1,
+          "Time": 57.979,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.15
+        },
+        {
+          "ID": 159,
+          "Type": 0,
+          "Time": 58.279,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 160,
+          "Type": 0,
+          "Time": 58.279,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 161,
+          "Type": 0,
+          "Time": 58.673,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 162,
+          "Type": 0,
+          "Time": 58.821,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 163,
+          "Type": 0,
+          "Time": 59.191,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 164,
+          "Type": 0,
+          "Time": 59.191,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 165,
+          "Type": 0,
+          "Time": 59.443,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 166,
+          "Type": 0,
+          "Time": 59.988,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 167,
+          "Type": 0,
+          "Time": 59.988,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 168,
+          "Type": 0,
+          "Time": 60.546,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 169,
+          "Type": 0,
+          "Time": 61.066,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 170,
+          "Type": 0,
+          "Time": 61.405,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 171,
+          "Type": 0,
+          "Time": 61.784,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 172,
+          "Type": 0,
+          "Time": 61.784,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 173,
+          "Type": 0,
+          "Time": 62.263,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 174,
+          "Type": 0,
+          "Time": 62.691,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 175,
+          "Type": 0,
+          "Time": 63.282,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 176,
+          "Type": 0,
+          "Time": 63.679,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 177,
+          "Type": 0,
+          "Time": 64.171,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 178,
+          "Type": 0,
+          "Time": 64.525,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 179,
+          "Type": 0,
+          "Time": 64.525,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 180,
+          "Type": 0,
+          "Time": 65.001,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 181,
+          "Type": 0,
+          "Time": 65.001,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 182,
+          "Type": 0,
+          "Time": 65.503,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 183,
+          "Type": 0,
+          "Time": 65.503,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 184,
+          "Type": 0,
+          "Time": 67.062,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 185,
+          "Type": 0,
+          "Time": 67.22,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 186,
+          "Type": 0,
+          "Time": 67.22,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 187,
+          "Type": 0,
+          "Time": 67.737,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 188,
+          "Type": 0,
+          "Time": 67.737,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 189,
+          "Type": 0,
+          "Time": 68.254,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 190,
+          "Type": 0,
+          "Time": 68.254,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 191,
+          "Type": 0,
+          "Time": 69.963,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 192,
+          "Type": 0,
+          "Time": 70.657,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 193,
+          "Type": 0,
+          "Time": 71.335,
+          "Speed": 3,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 194,
+          "Type": 0,
+          "Time": 72.029,
+          "Speed": 3,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 195,
+          "Type": 0,
+          "Time": 72.694,
+          "Speed": 3,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 196,
+          "Type": 0,
+          "Time": 73.389,
+          "Speed": 3,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 197,
+          "Type": 0,
+          "Time": 74.075,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 198,
+          "Type": 0,
+          "Time": 74.765,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 199,
+          "Type": 0,
+          "Time": 75.102,
+          "Speed": 3,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 200,
+          "Type": 0,
+          "Time": 75.455,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 201,
+          "Type": 0,
+          "Time": 75.796,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 202,
+          "Type": 0,
+          "Time": 76.137,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 203,
+          "Type": 0,
+          "Time": 76.49,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 204,
+          "Type": 0,
+          "Time": 76.782,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 205,
+          "Type": 0,
+          "Time": 76.983,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 206,
+          "Type": 0,
+          "Time": 77.337,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 207,
+          "Type": 0,
+          "Time": 77.678,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 208,
+          "Type": 0,
+          "Time": 78.36,
+          "Speed": 5.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 209,
+          "Type": 0,
+          "Time": 78.713,
+          "Speed": 5.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 210,
+          "Type": 0,
+          "Time": 79.046,
+          "Speed": 5.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 211,
+          "Type": 0,
+          "Time": 79.395,
+          "Speed": 5.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 212,
+          "Type": 0,
+          "Time": 79.572,
+          "Speed": 5.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 213,
+          "Type": 0,
+          "Time": 79.572,
+          "Speed": 5.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 214,
+          "Type": 1,
+          "Time": 80.952,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 215,
+          "Type": 0,
+          "Time": 81.349,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 216,
+          "Type": 0,
+          "Time": 81.349,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 217,
+          "Type": 1,
+          "Time": 81.976,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 218,
+          "Type": 0,
+          "Time": 82.416,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 219,
+          "Type": 0,
+          "Time": 82.416,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 220,
+          "Type": 0,
+          "Time": 82.758,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 221,
+          "Type": 0,
+          "Time": 82.758,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 222,
+          "Type": 0,
+          "Time": 83.346,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 223,
+          "Type": 0,
+          "Time": 83.491,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 224,
+          "Type": 0,
+          "Time": 83.853,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 227,
+          "Type": 0,
+          "Time": 84.204,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 228,
+          "Type": 0,
+          "Time": 84.543,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 229,
+          "Type": 0,
+          "Time": 84.543,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 230,
+          "Type": 0,
+          "Time": 84.719,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 231,
+          "Type": 0,
+          "Time": 84.719,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 232,
+          "Type": 0,
+          "Time": 85.056,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 233,
+          "Type": 0,
+          "Time": 85.212,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 234,
+          "Type": 0,
+          "Time": 85.405,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 235,
+          "Type": 0,
+          "Time": 85.75,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 236,
+          "Type": 0,
+          "Time": 85.75,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 237,
+          "Type": 0,
+          "Time": 86.087,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 238,
+          "Type": 0,
+          "Time": 86.446,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 239,
+          "Type": 0,
+          "Time": 86.446,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 240,
+          "Type": 0,
+          "Time": 86.945,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 241,
+          "Type": 0,
+          "Time": 86.945,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 242,
+          "Type": 0,
+          "Time": 87.462,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 243,
+          "Type": 0,
+          "Time": 87.462,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 244,
+          "Type": 1,
+          "Time": 87.972,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 245,
+          "Type": 1,
+          "Time": 88.31,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 246,
+          "Type": 0,
+          "Time": 88.718,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 247,
+          "Type": 0,
+          "Time": 88.957,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 248,
+          "Type": 0,
+          "Time": 89.174,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 249,
+          "Type": 0,
+          "Time": 89.174,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 250,
+          "Type": 0,
+          "Time": 89.691,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 251,
+          "Type": 0,
+          "Time": 89.997,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 252,
+          "Type": 0,
+          "Time": 90.368,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 253,
+          "Type": 0,
+          "Time": 90.878,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 254,
+          "Type": 0,
+          "Time": 91.199,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 255,
+          "Type": 0,
+          "Time": 91.55,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 256,
+          "Type": 0,
+          "Time": 91.718,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 257,
+          "Type": 0,
+          "Time": 91.937,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 258,
+          "Type": 0,
+          "Time": 91.937,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 259,
+          "Type": 1,
+          "Time": 92.939,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 260,
+          "Type": 0,
+          "Time": 93.277,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 261,
+          "Type": 0,
+          "Time": 94.016,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 262,
+          "Type": 2,
+          "Time": 94.285,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 263,
+          "Type": 1,
+          "Time": 94.651,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 264,
+          "Type": 1,
+          "Time": 94.651,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 265,
+          "Type": 0,
+          "Time": 95.169,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 266,
+          "Type": 0,
+          "Time": 95.169,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 267,
+          "Type": 0,
+          "Time": 95.681,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 268,
+          "Type": 0,
+          "Time": 95.681,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 269,
+          "Type": 0,
+          "Time": 96.032,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 270,
+          "Type": 0,
+          "Time": 96.263,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 271,
+          "Type": 0,
+          "Time": 96.725,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 272,
+          "Type": 1,
+          "Time": 97.037,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 273,
+          "Type": 0,
+          "Time": 97.408,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 274,
+          "Type": 0,
+          "Time": 97.408,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 275,
+          "Type": 0,
+          "Time": 97.74,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 276,
+          "Type": 0,
+          "Time": 97.9,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 277,
+          "Type": 0,
+          "Time": 98.417,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 278,
+          "Type": 0,
+          "Time": 98.417,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 279,
+          "Type": 0,
+          "Time": 98.925,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 280,
+          "Type": 0,
+          "Time": 99.502,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 281,
+          "Type": 1,
+          "Time": 99.783,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 282,
+          "Type": 0,
+          "Time": 100.15,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 283,
+          "Type": 0,
+          "Time": 100.15,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 284,
+          "Type": 0,
+          "Time": 100.637,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 285,
+          "Type": 0,
+          "Time": 101.209,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 286,
+          "Type": 0,
+          "Time": 101.209,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 287,
+          "Type": 0,
+          "Time": 101.907,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 288,
+          "Type": 0,
+          "Time": 102.224,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 289,
+          "Type": 0,
+          "Time": 102.621,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 290,
+          "Type": 0,
+          "Time": 102.917,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 291,
+          "Type": 0,
+          "Time": 102.917,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 292,
+          "Type": 0,
+          "Time": 103.61,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 293,
+          "Type": 0,
+          "Time": 103.61,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 294,
+          "Type": 0,
+          "Time": 103.956,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 295,
+          "Type": 0,
+          "Time": 103.956,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 296,
+          "Type": 1,
+          "Time": 104.172,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 297,
+          "Type": 1,
+          "Time": 104.463,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 298,
+          "Type": 0,
+          "Time": 105.674,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 299,
+          "Type": 0,
+          "Time": 106.216,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 300,
+          "Type": 2,
+          "Time": 106.367,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 301,
+          "Type": 0,
+          "Time": 106.723,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 302,
+          "Type": 0,
+          "Time": 106.723,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 303,
+          "Type": 0,
+          "Time": 107.712,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 304,
+          "Type": 1,
+          "Time": 108.425,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 305,
+          "Type": 1,
+          "Time": 109.088,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 306,
+          "Type": 0,
+          "Time": 109.636,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 307,
+          "Type": 0,
+          "Time": 109.636,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 308,
+          "Type": 2,
+          "Time": 110.123,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 309,
+          "Type": 0,
+          "Time": 111.157,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 310,
+          "Type": 0,
+          "Time": 111.157,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 311,
+          "Type": 0,
+          "Time": 111.674,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 312,
+          "Type": 0,
+          "Time": 111.981,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 313,
+          "Type": 0,
+          "Time": 112.192,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 314,
+          "Type": 0,
+          "Time": 112.192,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 315,
+          "Type": 0,
+          "Time": 112.719,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 316,
+          "Type": 0,
+          "Time": 113.176,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 317,
+          "Type": 0,
+          "Time": 113.552,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 318,
+          "Type": 0,
+          "Time": 113.936,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 319,
+          "Type": 0,
+          "Time": 113.936,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 320,
+          "Type": 0,
+          "Time": 114.587,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 321,
+          "Type": 0,
+          "Time": 114.587,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 322,
+          "Type": 0,
+          "Time": 114.923,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 323,
+          "Type": 0,
+          "Time": 114.923,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 324,
+          "Type": 2,
+          "Time": 115.943,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 325,
+          "Type": 2,
+          "Time": 116.224,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 326,
+          "Type": 0,
+          "Time": 116.636,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 327,
+          "Type": 0,
+          "Time": 117.158,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 328,
+          "Type": 0,
+          "Time": 117.158,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 329,
+          "Type": 0,
+          "Time": 117.655,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 332,
+          "Type": 0,
+          "Time": 118.182,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 334,
+          "Type": 0,
+          "Time": 118.695,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 335,
+          "Type": 0,
+          "Time": 119.031,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 336,
+          "Type": 0,
+          "Time": 119.031,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 337,
+          "Type": 1,
+          "Time": 119.382,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 338,
+          "Type": 1,
+          "Time": 119.714,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 339,
+          "Type": 2,
+          "Time": 120.146,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0.175
+        },
+        {
+          "ID": 340,
+          "Type": 0,
+          "Time": 120.502,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 341,
+          "Type": 0,
+          "Time": 120.652,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 342,
+          "Type": 0,
+          "Time": 120.802,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 343,
+          "Type": 0,
+          "Time": 121.004,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 344,
+          "Type": 0,
+          "Time": 121.341,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 345,
+          "Type": 0,
+          "Time": 121.542,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 346,
+          "Type": 0,
+          "Time": 121.542,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 347,
+          "Type": 0,
+          "Time": 121.888,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 348,
+          "Type": 0,
+          "Time": 122.029,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 349,
+          "Type": 0,
+          "Time": 122.029,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 350,
+          "Type": 0,
+          "Time": 122.536,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 351,
+          "Type": 0,
+          "Time": 122.722,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 352,
+          "Type": 0,
+          "Time": 122.722,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 353,
+          "Type": 0,
+          "Time": 123.058,
+          "Speed": 3.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 354,
+          "Type": 0,
+          "Time": 123.058,
+          "Speed": 3.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 355,
+          "Type": 0,
+          "Time": 124.786,
+          "Speed": 2.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 356,
+          "Type": 0,
+          "Time": 124.786,
+          "Speed": 2.5,
+          "Direction": "R",
+          "ReTime": 0
+        }
+      ]
+    },
+    "Song_2": {
+      "Name": "DJMAX<space><space>:<space><space>Gloxinia<space><space>by<space><space>Ruxxi<space><space>-<space><space>Milkoi",
+      "Code": 3,
+      "LogoCode": 422,
+      "Level": 15,
+      "Datas": [
+        {
+          "ID": 0,
+          "Type": 0,
+          "Time": 2.076,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 1,
+          "Type": 0,
+          "Time": 2.548,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 2,
+          "Type": 0,
+          "Time": 2.705,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 3,
+          "Type": 0,
+          "Time": 2.862,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 4,
+          "Type": 0,
+          "Time": 3.183,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 5,
+          "Type": 0,
+          "Time": 3.812,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 6,
+          "Type": 0,
+          "Time": 3.97,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 7,
+          "Type": 0,
+          "Time": 4.127,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 8,
+          "Type": 0,
+          "Time": 4.603,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 9,
+          "Type": 0,
+          "Time": 4.758,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 10,
+          "Type": 0,
+          "Time": 4.915,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 11,
+          "Type": 0,
+          "Time": 5.075,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 12,
+          "Type": 0,
+          "Time": 5.232,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 13,
+          "Type": 0,
+          "Time": 5.398,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 14,
+          "Type": 0,
+          "Time": 5.551,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 15,
+          "Type": 0,
+          "Time": 5.706,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 16,
+          "Type": 0,
+          "Time": 6.339,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 17,
+          "Type": 0,
+          "Time": 6.489,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 18,
+          "Type": 0,
+          "Time": 6.649,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 19,
+          "Type": 0,
+          "Time": 7.128,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 20,
+          "Type": 0,
+          "Time": 7.204,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 21,
+          "Type": 0,
+          "Time": 7.604,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 22,
+          "Type": 0,
+          "Time": 7.766,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 23,
+          "Type": 0,
+          "Time": 7.916,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 24,
+          "Type": 0,
+          "Time": 8.235,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 25,
+          "Type": 0,
+          "Time": 8.862,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 26,
+          "Type": 0,
+          "Time": 9.023,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 27,
+          "Type": 0,
+          "Time": 9.181,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 28,
+          "Type": 0,
+          "Time": 9.657,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 29,
+          "Type": 0,
+          "Time": 9.807,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 30,
+          "Type": 0,
+          "Time": 9.969,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 31,
+          "Type": 0,
+          "Time": 10.126,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 32,
+          "Type": 0,
+          "Time": 10.283,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 33,
+          "Type": 0,
+          "Time": 10.441,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 34,
+          "Type": 0,
+          "Time": 10.6,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 35,
+          "Type": 0,
+          "Time": 10.6,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 36,
+          "Type": 0,
+          "Time": 10.917,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 37,
+          "Type": 0,
+          "Time": 11.909,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 38,
+          "Type": 0,
+          "Time": 12.327,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 39,
+          "Type": 0,
+          "Time": 12.327,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 40,
+          "Type": 0,
+          "Time": 12.692,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 41,
+          "Type": 0,
+          "Time": 12.886,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 42,
+          "Type": 0,
+          "Time": 12.991,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 43,
+          "Type": 0,
+          "Time": 13.31,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 44,
+          "Type": 0,
+          "Time": 13.809,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 45,
+          "Type": 0,
+          "Time": 14.128,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 46,
+          "Type": 0,
+          "Time": 14.295,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 47,
+          "Type": 0,
+          "Time": 14.769,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 48,
+          "Type": 0,
+          "Time": 14.905,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 49,
+          "Type": 0,
+          "Time": 15.185,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 50,
+          "Type": 2,
+          "Time": 15.583,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.15
+        },
+        {
+          "ID": 51,
+          "Type": 0,
+          "Time": 16.109,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 52,
+          "Type": 2,
+          "Time": 16.491,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.167
+        },
+        {
+          "ID": 53,
+          "Type": 0,
+          "Time": 16.801,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 54,
+          "Type": 0,
+          "Time": 17.284,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 55,
+          "Type": 0,
+          "Time": 17.733,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 56,
+          "Type": 0,
+          "Time": 17.923,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 57,
+          "Type": 0,
+          "Time": 18.052,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 58,
+          "Type": 0,
+          "Time": 18.36,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 59,
+          "Type": 0,
+          "Time": 18.866,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 60,
+          "Type": 0,
+          "Time": 18.989,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 61,
+          "Type": 0,
+          "Time": 19.183,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 62,
+          "Type": 0,
+          "Time": 19.317,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 63,
+          "Type": 0,
+          "Time": 19.594,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 64,
+          "Type": 0,
+          "Time": 19.812,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 65,
+          "Type": 0,
+          "Time": 19.895,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 66,
+          "Type": 0,
+          "Time": 19.992,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 67,
+          "Type": 0,
+          "Time": 20.316,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 68,
+          "Type": 0,
+          "Time": 20.512,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 69,
+          "Type": 0,
+          "Time": 20.765,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 70,
+          "Type": 0,
+          "Time": 20.765,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 71,
+          "Type": 0,
+          "Time": 21.528,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 72,
+          "Type": 0,
+          "Time": 21.662,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 73,
+          "Type": 0,
+          "Time": 22.362,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 74,
+          "Type": 0,
+          "Time": 22.483,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 75,
+          "Type": 0,
+          "Time": 22.483,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 76,
+          "Type": 0,
+          "Time": 22.922,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 77,
+          "Type": 0,
+          "Time": 23.247,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 78,
+          "Type": 0,
+          "Time": 23.583,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 79,
+          "Type": 1,
+          "Time": 23.89,
+          "Speed": 3.5,
+          "Direction": "R",
+          "ReTime": 0.177
+        },
+        {
+          "ID": 80,
+          "Type": 0,
+          "Time": 24.225,
+          "Speed": 3.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 81,
+          "Type": 0,
+          "Time": 24.44,
+          "Speed": 3.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 82,
+          "Type": 0,
+          "Time": 24.673,
+          "Speed": 3.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 83,
+          "Type": 1,
+          "Time": 25.148,
+          "Speed": 3.75,
+          "Direction": "L",
+          "ReTime": 0.167
+        },
+        {
+          "ID": 84,
+          "Type": 0,
+          "Time": 25.464,
+          "Speed": 3.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 85,
+          "Type": 0,
+          "Time": 25.79,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 86,
+          "Type": 0,
+          "Time": 26.088,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 87,
+          "Type": 0,
+          "Time": 26.265,
+          "Speed": 4.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 88,
+          "Type": 0,
+          "Time": 26.414,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 89,
+          "Type": 0,
+          "Time": 26.507,
+          "Speed": 4.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 90,
+          "Type": 0,
+          "Time": 26.573,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 91,
+          "Type": 0,
+          "Time": 26.75,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 92,
+          "Type": 0,
+          "Time": 26.75,
+          "Speed": 4.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 93,
+          "Type": 0,
+          "Time": 27.355,
+          "Speed": 4.25,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 94,
+          "Type": 0,
+          "Time": 27.355,
+          "Speed": 4.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 95,
+          "Type": 0,
+          "Time": 27.476,
+          "Speed": 4.25,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 96,
+          "Type": 0,
+          "Time": 27.632,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 97,
+          "Type": 0,
+          "Time": 27.94,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 98,
+          "Type": 0,
+          "Time": 28.25,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 99,
+          "Type": 0,
+          "Time": 28.56,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 100,
+          "Type": 0,
+          "Time": 28.87,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 101,
+          "Type": 0,
+          "Time": 29.18,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 102,
+          "Type": 0,
+          "Time": 29.49,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 103,
+          "Type": 0,
+          "Time": 29.842,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 104,
+          "Type": 0,
+          "Time": 30.177,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 105,
+          "Type": 0,
+          "Time": 30.494,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 106,
+          "Type": 0,
+          "Time": 30.801,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 107,
+          "Type": 0,
+          "Time": 31.13,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 108,
+          "Type": 0,
+          "Time": 31.13,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 109,
+          "Type": 0,
+          "Time": 31.447,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 110,
+          "Type": 0,
+          "Time": 31.447,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 111,
+          "Type": 0,
+          "Time": 31.757,
+          "Speed": 4.75,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 112,
+          "Type": 0,
+          "Time": 31.757,
+          "Speed": 4.75,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 113,
+          "Type": 0,
+          "Time": 32.492,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 114,
+          "Type": 0,
+          "Time": 32.492,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 115,
+          "Type": 0,
+          "Time": 32.765,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 116,
+          "Type": 0,
+          "Time": 32.833,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 117,
+          "Type": 0,
+          "Time": 33.054,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 118,
+          "Type": 0,
+          "Time": 33.114,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 119,
+          "Type": 0,
+          "Time": 33.403,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 120,
+          "Type": 0,
+          "Time": 33.703,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 121,
+          "Type": 0,
+          "Time": 33.966,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 122,
+          "Type": 0,
+          "Time": 34.12,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 123,
+          "Type": 0,
+          "Time": 34.372,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 124,
+          "Type": 0,
+          "Time": 34.597,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 125,
+          "Type": 0,
+          "Time": 34.97,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 126,
+          "Type": 0,
+          "Time": 34.97,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 127,
+          "Type": 0,
+          "Time": 35.303,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 128,
+          "Type": 0,
+          "Time": 35.552,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 129,
+          "Type": 0,
+          "Time": 35.664,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 130,
+          "Type": 0,
+          "Time": 35.871,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 131,
+          "Type": 0,
+          "Time": 36.173,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 132,
+          "Type": 0,
+          "Time": 36.499,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 133,
+          "Type": 0,
+          "Time": 36.579,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 134,
+          "Type": 0,
+          "Time": 37.491,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 135,
+          "Type": 0,
+          "Time": 37.491,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 136,
+          "Type": 1,
+          "Time": 37.759,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0.161
+        },
+        {
+          "ID": 137,
+          "Type": 1,
+          "Time": 38.227,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0.158
+        },
+        {
+          "ID": 138,
+          "Type": 0,
+          "Time": 38.704,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 139,
+          "Type": 0,
+          "Time": 39.023,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 140,
+          "Type": 0,
+          "Time": 39.174,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 141,
+          "Type": 0,
+          "Time": 39.34,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 142,
+          "Type": 0,
+          "Time": 39.652,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 143,
+          "Type": 0,
+          "Time": 39.973,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 144,
+          "Type": 0,
+          "Time": 39.973,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 145,
+          "Type": 0,
+          "Time": 40.28,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 146,
+          "Type": 2,
+          "Time": 40.599,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0.154
+        },
+        {
+          "ID": 147,
+          "Type": 0,
+          "Time": 40.918,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 148,
+          "Type": 0,
+          "Time": 41.235,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 149,
+          "Type": 0,
+          "Time": 41.325,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 150,
+          "Type": 0,
+          "Time": 41.525,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 151,
+          "Type": 0,
+          "Time": 41.525,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 152,
+          "Type": 0,
+          "Time": 41.886,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 153,
+          "Type": 0,
+          "Time": 41.886,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 154,
+          "Type": 0,
+          "Time": 42.569,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 155,
+          "Type": 0,
+          "Time": 42.569,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 156,
+          "Type": 0,
+          "Time": 42.797,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 157,
+          "Type": 0,
+          "Time": 42.96,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 158,
+          "Type": 0,
+          "Time": 43.442,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 159,
+          "Type": 0,
+          "Time": 43.656,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 160,
+          "Type": 0,
+          "Time": 43.928,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 161,
+          "Type": 0,
+          "Time": 44.073,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 162,
+          "Type": 0,
+          "Time": 44.233,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 163,
+          "Type": 0,
+          "Time": 44.403,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 164,
+          "Type": 0,
+          "Time": 44.587,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 165,
+          "Type": 0,
+          "Time": 44.687,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 166,
+          "Type": 0,
+          "Time": 44.783,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 167,
+          "Type": 0,
+          "Time": 44.848,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 168,
+          "Type": 0,
+          "Time": 44.925,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 169,
+          "Type": 0,
+          "Time": 45.327,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 170,
+          "Type": 0,
+          "Time": 45.455,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 171,
+          "Type": 0,
+          "Time": 45.695,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 172,
+          "Type": 0,
+          "Time": 45.791,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 173,
+          "Type": 0,
+          "Time": 46.007,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 174,
+          "Type": 0,
+          "Time": 46.193,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 175,
+          "Type": 0,
+          "Time": 46.335,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 176,
+          "Type": 0,
+          "Time": 46.44,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 177,
+          "Type": 0,
+          "Time": 46.603,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 178,
+          "Type": 0,
+          "Time": 46.785,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 179,
+          "Type": 0,
+          "Time": 47.101,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 180,
+          "Type": 0,
+          "Time": 47.635,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 181,
+          "Type": 0,
+          "Time": 47.635,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 182,
+          "Type": 0,
+          "Time": 47.881,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 183,
+          "Type": 0,
+          "Time": 48.056,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 184,
+          "Type": 0,
+          "Time": 48.165,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 185,
+          "Type": 0,
+          "Time": 48.34,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 186,
+          "Type": 0,
+          "Time": 48.801,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 187,
+          "Type": 0,
+          "Time": 49.064,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 188,
+          "Type": 0,
+          "Time": 49.306,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 189,
+          "Type": 0,
+          "Time": 49.436,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 190,
+          "Type": 0,
+          "Time": 49.513,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 191,
+          "Type": 0,
+          "Time": 49.627,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 192,
+          "Type": 0,
+          "Time": 49.718,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 193,
+          "Type": 0,
+          "Time": 49.849,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 194,
+          "Type": 2,
+          "Time": 50.391,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0.156
+        },
+        {
+          "ID": 195,
+          "Type": 0,
+          "Time": 50.745,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 196,
+          "Type": 0,
+          "Time": 50.868,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 197,
+          "Type": 0,
+          "Time": 51.092,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 198,
+          "Type": 0,
+          "Time": 51.392,
+          "Speed": 5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 199,
+          "Type": 0,
+          "Time": 51.392,
+          "Speed": 5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 200,
+          "Type": 0,
+          "Time": 52.605,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 201,
+          "Type": 0,
+          "Time": 52.605,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 202,
+          "Type": 0,
+          "Time": 52.69,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 203,
+          "Type": 0,
+          "Time": 52.785,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 204,
+          "Type": 0,
+          "Time": 52.869,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 205,
+          "Type": 0,
+          "Time": 53.026,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 206,
+          "Type": 0,
+          "Time": 53.121,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 207,
+          "Type": 0,
+          "Time": 53.204,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 208,
+          "Type": 0,
+          "Time": 53.31,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 209,
+          "Type": 0,
+          "Time": 53.412,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 210,
+          "Type": 0,
+          "Time": 53.729,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 211,
+          "Type": 0,
+          "Time": 54.046,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 212,
+          "Type": 0,
+          "Time": 54.115,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 213,
+          "Type": 0,
+          "Time": 54.284,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 214,
+          "Type": 0,
+          "Time": 54.365,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 215,
+          "Type": 0,
+          "Time": 54.45,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 216,
+          "Type": 0,
+          "Time": 54.563,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 217,
+          "Type": 0,
+          "Time": 54.668,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 218,
+          "Type": 0,
+          "Time": 54.732,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 219,
+          "Type": 0,
+          "Time": 54.989,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 220,
+          "Type": 0,
+          "Time": 55.197,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 221,
+          "Type": 0,
+          "Time": 55.308,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 222,
+          "Type": 0,
+          "Time": 55.551,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 223,
+          "Type": 0,
+          "Time": 55.62,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 224,
+          "Type": 0,
+          "Time": 55.701,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 225,
+          "Type": 0,
+          "Time": 55.824,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 226,
+          "Type": 0,
+          "Time": 55.946,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 227,
+          "Type": 0,
+          "Time": 56.002,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 228,
+          "Type": 0,
+          "Time": 56.251,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 229,
+          "Type": 0,
+          "Time": 56.573,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 230,
+          "Type": 0,
+          "Time": 56.656,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 231,
+          "Type": 0,
+          "Time": 56.788,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 232,
+          "Type": 0,
+          "Time": 56.885,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 233,
+          "Type": 0,
+          "Time": 57.098,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 234,
+          "Type": 0,
+          "Time": 57.327,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 235,
+          "Type": 0,
+          "Time": 57.553,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 236,
+          "Type": 0,
+          "Time": 57.865,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 237,
+          "Type": 0,
+          "Time": 57.928,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 238,
+          "Type": 0,
+          "Time": 58.034,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 239,
+          "Type": 0,
+          "Time": 58.157,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 240,
+          "Type": 0,
+          "Time": 58.353,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 241,
+          "Type": 0,
+          "Time": 58.534,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 242,
+          "Type": 0,
+          "Time": 58.781,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 243,
+          "Type": 0,
+          "Time": 59.091,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 244,
+          "Type": 0,
+          "Time": 59.183,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 245,
+          "Type": 0,
+          "Time": 59.301,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 246,
+          "Type": 0,
+          "Time": 59.412,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 247,
+          "Type": 0,
+          "Time": 59.609,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 248,
+          "Type": 0,
+          "Time": 59.81,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 249,
+          "Type": 0,
+          "Time": 60.046,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 250,
+          "Type": 0,
+          "Time": 60.251,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 251,
+          "Type": 0,
+          "Time": 60.357,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 252,
+          "Type": 0,
+          "Time": 60.568,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 253,
+          "Type": 0,
+          "Time": 60.668,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 254,
+          "Type": 0,
+          "Time": 60.88,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 255,
+          "Type": 0,
+          "Time": 60.985,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 256,
+          "Type": 0,
+          "Time": 61.186,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 257,
+          "Type": 0,
+          "Time": 61.315,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 258,
+          "Type": 0,
+          "Time": 61.519,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 259,
+          "Type": 0,
+          "Time": 61.625,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 260,
+          "Type": 0,
+          "Time": 61.829,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 261,
+          "Type": 0,
+          "Time": 61.937,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 262,
+          "Type": 0,
+          "Time": 62.15,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 263,
+          "Type": 0,
+          "Time": 62.469,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 264,
+          "Type": 0,
+          "Time": 62.743,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 265,
+          "Type": 0,
+          "Time": 62.97,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 266,
+          "Type": 0,
+          "Time": 63.135,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 267,
+          "Type": 0,
+          "Time": 63.205,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 268,
+          "Type": 0,
+          "Time": 63.276,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 269,
+          "Type": 0,
+          "Time": 63.409,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 270,
+          "Type": 0,
+          "Time": 63.513,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 271,
+          "Type": 0,
+          "Time": 63.604,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 272,
+          "Type": 0,
+          "Time": 63.737,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 273,
+          "Type": 0,
+          "Time": 63.845,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 274,
+          "Type": 0,
+          "Time": 64.153,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 275,
+          "Type": 0,
+          "Time": 64.24,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 276,
+          "Type": 0,
+          "Time": 64.392,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 277,
+          "Type": 0,
+          "Time": 64.446,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 278,
+          "Type": 0,
+          "Time": 64.676,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 279,
+          "Type": 0,
+          "Time": 64.791,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 280,
+          "Type": 0,
+          "Time": 64.843,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 281,
+          "Type": 0,
+          "Time": 64.991,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 282,
+          "Type": 0,
+          "Time": 65.106,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 283,
+          "Type": 0,
+          "Time": 65.414,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 284,
+          "Type": 0,
+          "Time": 65.627,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 285,
+          "Type": 0,
+          "Time": 65.738,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 286,
+          "Type": 0,
+          "Time": 66.048,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 287,
+          "Type": 0,
+          "Time": 66.263,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 288,
+          "Type": 0,
+          "Time": 66.363,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 289,
+          "Type": 0,
+          "Time": 66.998,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 290,
+          "Type": 0,
+          "Time": 67.202,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 291,
+          "Type": 0,
+          "Time": 67.311,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 292,
+          "Type": 0,
+          "Time": 67.517,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 293,
+          "Type": 0,
+          "Time": 67.628,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 294,
+          "Type": 0,
+          "Time": 67.847,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 295,
+          "Type": 1,
+          "Time": 67.951,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0.2
+        },
+        {
+          "ID": 296,
+          "Type": 0,
+          "Time": 68.259,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 297,
+          "Type": 0,
+          "Time": 68.47,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 298,
+          "Type": 0,
+          "Time": 68.65,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 299,
+          "Type": 0,
+          "Time": 68.897,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 300,
+          "Type": 0,
+          "Time": 69.203,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 301,
+          "Type": 0,
+          "Time": 69.421,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 302,
+          "Type": 0,
+          "Time": 69.525,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 303,
+          "Type": 0,
+          "Time": 69.735,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 304,
+          "Type": 0,
+          "Time": 69.833,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 305,
+          "Type": 0,
+          "Time": 70.05,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 306,
+          "Type": 0,
+          "Time": 70.152,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 307,
+          "Type": 0,
+          "Time": 70.406,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 308,
+          "Type": 0,
+          "Time": 70.493,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 309,
+          "Type": 0,
+          "Time": 70.688,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 310,
+          "Type": 0,
+          "Time": 70.79,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 311,
+          "Type": 0,
+          "Time": 70.981,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 312,
+          "Type": 0,
+          "Time": 71.183,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 313,
+          "Type": 0,
+          "Time": 71.413,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 314,
+          "Type": 0,
+          "Time": 71.736,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 315,
+          "Type": 0,
+          "Time": 71.803,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 316,
+          "Type": 0,
+          "Time": 71.947,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 317,
+          "Type": 0,
+          "Time": 72.049,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 318,
+          "Type": 0,
+          "Time": 72.257,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 319,
+          "Type": 0,
+          "Time": 72.363,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 320,
+          "Type": 0,
+          "Time": 72.57,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 321,
+          "Type": 0,
+          "Time": 72.886,
+          "Speed": 4.5,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 322,
+          "Type": 0,
+          "Time": 72.886,
+          "Speed": 4.5,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 323,
+          "Type": 0,
+          "Time": 82.624,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 324,
+          "Type": 0,
+          "Time": 82.785,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 325,
+          "Type": 0,
+          "Time": 83,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 326,
+          "Type": 0,
+          "Time": 83.104,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 327,
+          "Type": 0,
+          "Time": 83.265,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 328,
+          "Type": 0,
+          "Time": 83.421,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 329,
+          "Type": 0,
+          "Time": 83.575,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 330,
+          "Type": 1,
+          "Time": 83.898,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.324
+        },
+        {
+          "ID": 331,
+          "Type": 0,
+          "Time": 84.517,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 332,
+          "Type": 0,
+          "Time": 84.862,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 333,
+          "Type": 0,
+          "Time": 85.172,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 334,
+          "Type": 0,
+          "Time": 85.316,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 335,
+          "Type": 0,
+          "Time": 85.483,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 336,
+          "Type": 0,
+          "Time": 85.632,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 337,
+          "Type": 0,
+          "Time": 85.8,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 338,
+          "Type": 0,
+          "Time": 85.945,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 339,
+          "Type": 0,
+          "Time": 86.132,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 340,
+          "Type": 0,
+          "Time": 86.26,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 341,
+          "Type": 0,
+          "Time": 86.433,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 342,
+          "Type": 2,
+          "Time": 86.741,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.317
+        },
+        {
+          "ID": 343,
+          "Type": 0,
+          "Time": 87.377,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 344,
+          "Type": 0,
+          "Time": 87.516,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 345,
+          "Type": 0,
+          "Time": 87.694,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 346,
+          "Type": 0,
+          "Time": 88.052,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 347,
+          "Type": 0,
+          "Time": 88.052,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 348,
+          "Type": 0,
+          "Time": 88.291,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 349,
+          "Type": 0,
+          "Time": 88.291,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 350,
+          "Type": 0,
+          "Time": 88.523,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 351,
+          "Type": 0,
+          "Time": 88.523,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 352,
+          "Type": 0,
+          "Time": 88.753,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 353,
+          "Type": 0,
+          "Time": 88.753,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 354,
+          "Type": 0,
+          "Time": 88.919,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 355,
+          "Type": 0,
+          "Time": 88.919,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 356,
+          "Type": 0,
+          "Time": 89.23,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 357,
+          "Type": 0,
+          "Time": 89.23,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 358,
+          "Type": 0,
+          "Time": 89.464,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 359,
+          "Type": 0,
+          "Time": 89.464,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 360,
+          "Type": 0,
+          "Time": 89.706,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 361,
+          "Type": 0,
+          "Time": 89.706,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 362,
+          "Type": 0,
+          "Time": 89.945,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 363,
+          "Type": 0,
+          "Time": 89.945,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 364,
+          "Type": 0,
+          "Time": 90.177,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 365,
+          "Type": 0,
+          "Time": 90.177,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 366,
+          "Type": 0,
+          "Time": 90.483,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 367,
+          "Type": 0,
+          "Time": 90.708,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 368,
+          "Type": 0,
+          "Time": 90.914,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 369,
+          "Type": 0,
+          "Time": 91.125,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 370,
+          "Type": 0,
+          "Time": 91.332,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 371,
+          "Type": 0,
+          "Time": 91.545,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 372,
+          "Type": 0,
+          "Time": 91.75,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 373,
+          "Type": 0,
+          "Time": 91.75,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 374,
+          "Type": 0,
+          "Time": 92.392,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 375,
+          "Type": 0,
+          "Time": 92.392,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 376,
+          "Type": 0,
+          "Time": 92.759,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 377,
+          "Type": 0,
+          "Time": 92.759,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 378,
+          "Type": 0,
+          "Time": 93.023,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 379,
+          "Type": 0,
+          "Time": 93.023,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 380,
+          "Type": 0,
+          "Time": 93.657,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 381,
+          "Type": 0,
+          "Time": 93.817,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 382,
+          "Type": 0,
+          "Time": 94.002,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 383,
+          "Type": 0,
+          "Time": 94.125,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 384,
+          "Type": 0,
+          "Time": 94.125,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 385,
+          "Type": 0,
+          "Time": 94.445,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 386,
+          "Type": 0,
+          "Time": 94.445,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 387,
+          "Type": 0,
+          "Time": 95.004,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 388,
+          "Type": 0,
+          "Time": 95.102,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 389,
+          "Type": 0,
+          "Time": 95.246,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 390,
+          "Type": 0,
+          "Time": 95.403,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 391,
+          "Type": 0,
+          "Time": 95.55,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 392,
+          "Type": 0,
+          "Time": 95.55,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 393,
+          "Type": 2,
+          "Time": 96.178,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.163
+        },
+        {
+          "ID": 394,
+          "Type": 1,
+          "Time": 96.652,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.475
+        },
+        {
+          "ID": 395,
+          "Type": 1,
+          "Time": 96.652,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.475
+        },
+        {
+          "ID": 396,
+          "Type": 0,
+          "Time": 97.45,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 397,
+          "Type": 0,
+          "Time": 97.6,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 398,
+          "Type": 0,
+          "Time": 97.765,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 399,
+          "Type": 0,
+          "Time": 97.923,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 400,
+          "Type": 0,
+          "Time": 98.078,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 401,
+          "Type": 0,
+          "Time": 98.078,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 402,
+          "Type": 0,
+          "Time": 98.716,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 403,
+          "Type": 0,
+          "Time": 98.865,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 404,
+          "Type": 0,
+          "Time": 99.018,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 405,
+          "Type": 0,
+          "Time": 99.178,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 406,
+          "Type": 0,
+          "Time": 99.336,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 407,
+          "Type": 0,
+          "Time": 99.498,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 408,
+          "Type": 0,
+          "Time": 99.661,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 409,
+          "Type": 0,
+          "Time": 99.815,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 410,
+          "Type": 0,
+          "Time": 99.971,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 411,
+          "Type": 0,
+          "Time": 99.971,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 412,
+          "Type": 0,
+          "Time": 100.602,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 413,
+          "Type": 0,
+          "Time": 100.7,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 414,
+          "Type": 0,
+          "Time": 100.812,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 415,
+          "Type": 0,
+          "Time": 100.949,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 416,
+          "Type": 0,
+          "Time": 101.104,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 417,
+          "Type": 0,
+          "Time": 101.266,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 418,
+          "Type": 0,
+          "Time": 101.71,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 419,
+          "Type": 0,
+          "Time": 101.71,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 420,
+          "Type": 0,
+          "Time": 102.341,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 421,
+          "Type": 0,
+          "Time": 102.498,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 422,
+          "Type": 0,
+          "Time": 102.815,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 423,
+          "Type": 0,
+          "Time": 102.976,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 424,
+          "Type": 0,
+          "Time": 103.13,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 425,
+          "Type": 0,
+          "Time": 103.325,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 426,
+          "Type": 0,
+          "Time": 103.47,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 427,
+          "Type": 0,
+          "Time": 103.613,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 428,
+          "Type": 0,
+          "Time": 103.778,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 429,
+          "Type": 0,
+          "Time": 104.101,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 430,
+          "Type": 2,
+          "Time": 104.414,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.319
+        },
+        {
+          "ID": 431,
+          "Type": 0,
+          "Time": 105.098,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 432,
+          "Type": 0,
+          "Time": 105.367,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 433,
+          "Type": 0,
+          "Time": 105.523,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 434,
+          "Type": 0,
+          "Time": 105.692,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 435,
+          "Type": 0,
+          "Time": 105.822,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 436,
+          "Type": 0,
+          "Time": 106.048,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 437,
+          "Type": 0,
+          "Time": 106.376,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 438,
+          "Type": 0,
+          "Time": 106.678,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 439,
+          "Type": 0,
+          "Time": 106.942,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 440,
+          "Type": 0,
+          "Time": 107.261,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 441,
+          "Type": 0,
+          "Time": 107.624,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 442,
+          "Type": 0,
+          "Time": 107.893,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 443,
+          "Type": 0,
+          "Time": 108.24,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 444,
+          "Type": 0,
+          "Time": 108.24,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 445,
+          "Type": 0,
+          "Time": 108.485,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 446,
+          "Type": 0,
+          "Time": 108.485,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 447,
+          "Type": 0,
+          "Time": 108.735,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 448,
+          "Type": 0,
+          "Time": 108.735,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 449,
+          "Type": 0,
+          "Time": 108.967,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 450,
+          "Type": 0,
+          "Time": 108.967,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 451,
+          "Type": 0,
+          "Time": 109.202,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 452,
+          "Type": 0,
+          "Time": 109.202,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 453,
+          "Type": 0,
+          "Time": 109.512,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 454,
+          "Type": 0,
+          "Time": 109.512,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 455,
+          "Type": 0,
+          "Time": 109.749,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 456,
+          "Type": 0,
+          "Time": 109.749,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 457,
+          "Type": 0,
+          "Time": 109.983,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 458,
+          "Type": 0,
+          "Time": 109.983,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 459,
+          "Type": 0,
+          "Time": 110.226,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 460,
+          "Type": 0,
+          "Time": 110.226,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 461,
+          "Type": 0,
+          "Time": 110.456,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 462,
+          "Type": 0,
+          "Time": 110.456,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 463,
+          "Type": 0,
+          "Time": 110.771,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 464,
+          "Type": 0,
+          "Time": 110.771,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 465,
+          "Type": 0,
+          "Time": 110.99,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 466,
+          "Type": 0,
+          "Time": 110.99,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 467,
+          "Type": 0,
+          "Time": 111.194,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 468,
+          "Type": 0,
+          "Time": 111.194,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 469,
+          "Type": 0,
+          "Time": 111.411,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 470,
+          "Type": 0,
+          "Time": 111.411,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 471,
+          "Type": 0,
+          "Time": 111.617,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 472,
+          "Type": 0,
+          "Time": 111.617,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 473,
+          "Type": 0,
+          "Time": 111.817,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 474,
+          "Type": 0,
+          "Time": 111.817,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 475,
+          "Type": 0,
+          "Time": 112.601,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 476,
+          "Type": 0,
+          "Time": 112.601,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 477,
+          "Type": 0,
+          "Time": 112.919,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 478,
+          "Type": 0,
+          "Time": 112.919,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 479,
+          "Type": 0,
+          "Time": 113.235,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 480,
+          "Type": 0,
+          "Time": 113.235,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 481,
+          "Type": 0,
+          "Time": 113.575,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 482,
+          "Type": 0,
+          "Time": 113.74,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 483,
+          "Type": 0,
+          "Time": 114.046,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 484,
+          "Type": 0,
+          "Time": 114.213,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 485,
+          "Type": 0,
+          "Time": 114.302,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 486,
+          "Type": 0,
+          "Time": 114.432,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 487,
+          "Type": 0,
+          "Time": 114.586,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 488,
+          "Type": 2,
+          "Time": 114.855,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.148
+        },
+        {
+          "ID": 489,
+          "Type": 0,
+          "Time": 115.467,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 490,
+          "Type": 0,
+          "Time": 115.467,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 491,
+          "Type": 0,
+          "Time": 116.105,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 492,
+          "Type": 0,
+          "Time": 116.251,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 493,
+          "Type": 0,
+          "Time": 116.585,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 494,
+          "Type": 0,
+          "Time": 116.676,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 495,
+          "Type": 0,
+          "Time": 116.765,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 496,
+          "Type": 0,
+          "Time": 116.936,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 497,
+          "Type": 0,
+          "Time": 117.06,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 498,
+          "Type": 1,
+          "Time": 117.253,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.146
+        },
+        {
+          "ID": 499,
+          "Type": 0,
+          "Time": 117.996,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 500,
+          "Type": 0,
+          "Time": 117.996,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 501,
+          "Type": 0,
+          "Time": 118.612,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 502,
+          "Type": 0,
+          "Time": 118.786,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 503,
+          "Type": 0,
+          "Time": 119.096,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 504,
+          "Type": 0,
+          "Time": 119.233,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 505,
+          "Type": 0,
+          "Time": 119.309,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 506,
+          "Type": 0,
+          "Time": 119.5,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 507,
+          "Type": 0,
+          "Time": 119.612,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 508,
+          "Type": 1,
+          "Time": 119.89,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.12
+        },
+        {
+          "ID": 509,
+          "Type": 0,
+          "Time": 120.524,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 510,
+          "Type": 0,
+          "Time": 120.524,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 511,
+          "Type": 0,
+          "Time": 121.158,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 512,
+          "Type": 0,
+          "Time": 121.316,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 513,
+          "Type": 0,
+          "Time": 121.509,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 514,
+          "Type": 0,
+          "Time": 121.789,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 515,
+          "Type": 0,
+          "Time": 121.039,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 516,
+          "Type": 0,
+          "Time": 122.132,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 517,
+          "Type": 0,
+          "Time": 122.405,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 518,
+          "Type": 0,
+          "Time": 122.959,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 519,
+          "Type": 0,
+          "Time": 123.21,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 520,
+          "Type": 0,
+          "Time": 123.69,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 521,
+          "Type": 0,
+          "Time": 123.788,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 522,
+          "Type": 0,
+          "Time": 124.061,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 523,
+          "Type": 2,
+          "Time": 124.322,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.315
+        },
+        {
+          "ID": 524,
+          "Type": 1,
+          "Time": 125.105,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.476
+        },
+        {
+          "ID": 525,
+          "Type": 0,
+          "Time": 126.201,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 526,
+          "Type": 0,
+          "Time": 126.371,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 527,
+          "Type": 0,
+          "Time": 126.525,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 528,
+          "Type": 2,
+          "Time": 126.859,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.194
+        },
+        {
+          "ID": 529,
+          "Type": 1,
+          "Time": 127.526,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.461
+        },
+        {
+          "ID": 530,
+          "Type": 1,
+          "Time": 128.457,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.259
+        },
+        {
+          "ID": 531,
+          "Type": 1,
+          "Time": 129.09,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.265
+        },
+        {
+          "ID": 532,
+          "Type": 0,
+          "Time": 129.728,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 533,
+          "Type": 0,
+          "Time": 129.728,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 534,
+          "Type": 0,
+          "Time": 129.966,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 535,
+          "Type": 0,
+          "Time": 130.343,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 536,
+          "Type": 0,
+          "Time": 130.343,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 537,
+          "Type": 0,
+          "Time": 130.617,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 538,
+          "Type": 0,
+          "Time": 130.99,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 539,
+          "Type": 0,
+          "Time": 130.99,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 540,
+          "Type": 0,
+          "Time": 131.258,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 541,
+          "Type": 0,
+          "Time": 131.614,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 542,
+          "Type": 0,
+          "Time": 131.614,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 543,
+          "Type": 0,
+          "Time": 131.873,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 544,
+          "Type": 0,
+          "Time": 132.261,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 545,
+          "Type": 0,
+          "Time": 132.331,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 546,
+          "Type": 0,
+          "Time": 132.539,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 547,
+          "Type": 0,
+          "Time": 132.539,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 548,
+          "Type": 0,
+          "Time": 132.734,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 549,
+          "Type": 0,
+          "Time": 132.894,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 550,
+          "Type": 0,
+          "Time": 133.632,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 551,
+          "Type": 0,
+          "Time": 138.614,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        }
+      ]
+    },
+    "Song_3": {
+      "Name": "DJMAX<space><space>:<space><space>너에게로<space><space>갈래<space><space>-<space><space>SOPHI",
+      "Code": 4,
+      "LogoCode": 423,
+      "Level": 6,
+      "Datas":  [
+        {
+          "ID": 0,
+          "Type": 0,
+          "Time": 3.277,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 1,
+          "Type": 0,
+          "Time": 3.543,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 2,
+          "Type": 0,
+          "Time": 3.802,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 3,
+          "Type": 0,
+          "Time": 4.0809999999999995,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 4,
+          "Type": 0,
+          "Time": 7.505,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 5,
+          "Type": 0,
+          "Time": 7.844,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 6,
+          "Type": 0,
+          "Time": 8.093,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 7,
+          "Type": 0,
+          "Time": 8.371,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 8,
+          "Type": 0,
+          "Time": 11.856,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 9,
+          "Type": 0,
+          "Time": 12.111,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 10,
+          "Type": 1,
+          "Time": 12.383000000000001,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.211
+        },
+        {
+          "ID": 11,
+          "Type": 0,
+          "Time": 16.13,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 12,
+          "Type": 0,
+          "Time": 16.415,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 13,
+          "Type": 2,
+          "Time": 16.662,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.278
+        },
+        {
+          "ID": 14,
+          "Type": 0,
+          "Time": 20.169999999999998,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 15,
+          "Type": 0,
+          "Time": 20.65,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 16,
+          "Type": 0,
+          "Time": 21.238,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 17,
+          "Type": 0,
+          "Time": 21.782,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 18,
+          "Type": 0,
+          "Time": 22.314999999999998,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 19,
+          "Type": 0,
+          "Time": 22.852999999999998,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 20,
+          "Type": 0,
+          "Time": 23.386,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 21,
+          "Type": 0,
+          "Time": 23.927,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 22,
+          "Type": 0,
+          "Time": 24.445999999999998,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 23,
+          "Type": 0,
+          "Time": 24.926,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 24,
+          "Type": 1,
+          "Time": 25.517,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.55
+        },
+        {
+          "ID": 25,
+          "Type": 0,
+          "Time": 26.602,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 26,
+          "Type": 0,
+          "Time": 27.128999999999998,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 27,
+          "Type": 1,
+          "Time": 27.668,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.541
+        },
+        {
+          "ID": 28,
+          "Type": 0,
+          "Time": 28.735999999999997,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 29,
+          "Type": 1,
+          "Time": 29.212999999999997,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.505
+        },
+        {
+          "ID": 30,
+          "Type": 0,
+          "Time": 30.858,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 31,
+          "Type": 0,
+          "Time": 31.394,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 32,
+          "Type": 0,
+          "Time": 31.937,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 33,
+          "Type": 0,
+          "Time": 32.463,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 34,
+          "Type": 0,
+          "Time": 33.006,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 35,
+          "Type": 0,
+          "Time": 33.249,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 36,
+          "Type": 0,
+          "Time": 33.463,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 37,
+          "Type": 0,
+          "Time": 33.769,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 38,
+          "Type": 0,
+          "Time": 34.08,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 39,
+          "Type": 0,
+          "Time": 34.309,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 40,
+          "Type": 0,
+          "Time": 34.607,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 41,
+          "Type": 0,
+          "Time": 34.857,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 42,
+          "Type": 0,
+          "Time": 35.046,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 43,
+          "Type": 0,
+          "Time": 35.347,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 44,
+          "Type": 0,
+          "Time": 35.681,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 45,
+          "Type": 0,
+          "Time": 35.95,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 46,
+          "Type": 0,
+          "Time": 37.467,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 47,
+          "Type": 0,
+          "Time": 37.821,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 48,
+          "Type": 0,
+          "Time": 38.092,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 49,
+          "Type": 0,
+          "Time": 38.36,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 50,
+          "Type": 0,
+          "Time": 39.637,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 51,
+          "Type": 0,
+          "Time": 40.301,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 52,
+          "Type": 0,
+          "Time": 40.473,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 53,
+          "Type": 0,
+          "Time": 41.675,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 54,
+          "Type": 0,
+          "Time": 42.108,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 55,
+          "Type": 0,
+          "Time": 42.463,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 56,
+          "Type": 0,
+          "Time": 42.687,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 57,
+          "Type": 0,
+          "Time": 43.991,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 58,
+          "Type": 2,
+          "Time": 44.572,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.21
+        },
+        {
+          "ID": 59,
+          "Type": 0,
+          "Time": 46.129,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 60,
+          "Type": 0,
+          "Time": 46.392,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 61,
+          "Type": 0,
+          "Time": 46.695,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 62,
+          "Type": 0,
+          "Time": 46.838,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 63,
+          "Type": 0,
+          "Time": 48.348,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 64,
+          "Type": 1,
+          "Time": 48.856,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.165
+        },
+        {
+          "ID": 65,
+          "Type": 0,
+          "Time": 50.355,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 66,
+          "Type": 0,
+          "Time": 50.683,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 67,
+          "Type": 0,
+          "Time": 51.032,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 68,
+          "Type": 0,
+          "Time": 51.28,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 69,
+          "Type": 0,
+          "Time": 52.533,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 70,
+          "Type": 2,
+          "Time": 53.157,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.165
+        },
+        {
+          "ID": 71,
+          "Type": 0,
+          "Time": 54.974,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 72,
+          "Type": 0,
+          "Time": 56.039,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 73,
+          "Type": 0,
+          "Time": 57.144,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 74,
+          "Type": 0,
+          "Time": 58.183,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 75,
+          "Type": 0,
+          "Time": 59.255,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 76,
+          "Type": 0,
+          "Time": 60.36,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 77,
+          "Type": 0,
+          "Time": 61.414,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 78,
+          "Type": 0,
+          "Time": 62.487,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 79,
+          "Type": 0,
+          "Time": 63.538,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 80,
+          "Type": 0,
+          "Time": 64.627,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 81,
+          "Type": 0,
+          "Time": 65.715,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 82,
+          "Type": 0,
+          "Time": 66.764,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 83,
+          "Type": 0,
+          "Time": 67.819,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 84,
+          "Type": 0,
+          "Time": 68.916,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 85,
+          "Type": 0,
+          "Time": 69.981,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 86,
+          "Type": 0,
+          "Time": 71.039,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 87,
+          "Type": 0,
+          "Time": 71.571,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 88,
+          "Type": 0,
+          "Time": 72.344,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 89,
+          "Type": 0,
+          "Time": 72.763,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 90,
+          "Type": 1,
+          "Time": 73.099,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.357
+        },
+        {
+          "ID": 91,
+          "Type": 0,
+          "Time": 73.701,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 92,
+          "Type": 0,
+          "Time": 74.494,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 93,
+          "Type": 0,
+          "Time": 74.897,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 94,
+          "Type": 1,
+          "Time": 75.281,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.525
+        },
+        {
+          "ID": 95,
+          "Type": 0,
+          "Time": 76.035,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 96,
+          "Type": 0,
+          "Time": 76.632,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 97,
+          "Type": 0,
+          "Time": 77.034,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 98,
+          "Type": 1,
+          "Time": 77.419,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.564
+        },
+        {
+          "ID": 99,
+          "Type": 1,
+          "Time": 78.781,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.534
+        },
+        {
+          "ID": 100,
+          "Type": 0,
+          "Time": 80.396,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 101,
+          "Type": 0,
+          "Time": 80.683,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 102,
+          "Type": 0,
+          "Time": 80.923,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 103,
+          "Type": 0,
+          "Time": 81.195,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 104,
+          "Type": 0,
+          "Time": 82.441,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 105,
+          "Type": 2,
+          "Time": 83.062,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.199
+        },
+        {
+          "ID": 106,
+          "Type": 0,
+          "Time": 84.68,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 107,
+          "Type": 0,
+          "Time": 84.91,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 108,
+          "Type": 0,
+          "Time": 85.207,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 109,
+          "Type": 0,
+          "Time": 85.478,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 110,
+          "Type": 0,
+          "Time": 86.852,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 111,
+          "Type": 0,
+          "Time": 87.35,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 112,
+          "Type": 0,
+          "Time": 87.6,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 113,
+          "Type": 0,
+          "Time": 88.738,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 114,
+          "Type": 0,
+          "Time": 89.266,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 115,
+          "Type": 1,
+          "Time": 89.803,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.542
+        },
+        {
+          "ID": 116,
+          "Type": 0,
+          "Time": 91.413,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 117,
+          "Type": 0,
+          "Time": 91.952,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 118,
+          "Type": 1,
+          "Time": 92.489,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.536
+        },
+        {
+          "ID": 119,
+          "Type": 0,
+          "Time": 93.562,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 120,
+          "Type": 0,
+          "Time": 94.09,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 121,
+          "Type": 2,
+          "Time": 94.632,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.534
+        },
+        {
+          "ID": 123,
+          "Type": 0,
+          "Time": 95.702,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 124,
+          "Type": 0,
+          "Time": 96.236,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 125,
+          "Type": 2,
+          "Time": 96.77,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.525
+        },
+        {
+          "ID": 126,
+          "Type": 0,
+          "Time": 98.374,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 127,
+          "Type": 0,
+          "Time": 98.919,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 128,
+          "Type": 0,
+          "Time": 99.444,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 129,
+          "Type": 0,
+          "Time": 100.523,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 130,
+          "Type": 0,
+          "Time": 101.062,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 131,
+          "Type": 0,
+          "Time": 101.593,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 132,
+          "Type": 2,
+          "Time": 101.861,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.271
+        },
+        {
+          "ID": 133,
+          "Type": 2,
+          "Time": 102.395,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.277
+        },
+        {
+          "ID": 134,
+          "Type": 0,
+          "Time": 102.932,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 135,
+          "Type": 0,
+          "Time": 103.203,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 136,
+          "Type": 2,
+          "Time": 103.463,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.271
+        },
+        {
+          "ID": 137,
+          "Type": 2,
+          "Time": 104.008,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.265
+        },
+        {
+          "ID": 138,
+          "Type": 0,
+          "Time": 104.539,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 139,
+          "Type": 0,
+          "Time": 106.402,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 140,
+          "Type": 0,
+          "Time": 106.402,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 141,
+          "Type": 0,
+          "Time": 107.487,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 142,
+          "Type": 0,
+          "Time": 107.487,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 143,
+          "Type": 0,
+          "Time": 108.543,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 144,
+          "Type": 0,
+          "Time": 108.543,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 145,
+          "Type": 0,
+          "Time": 109.633,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 146,
+          "Type": 0,
+          "Time": 109.633,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 147,
+          "Type": 0,
+          "Time": 110.698,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 148,
+          "Type": 0,
+          "Time": 110.698,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 149,
+          "Type": 0,
+          "Time": 111.774,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 150,
+          "Type": 0,
+          "Time": 111.774,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 151,
+          "Type": 0,
+          "Time": 112.835,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 152,
+          "Type": 0,
+          "Time": 112.835,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 153,
+          "Type": 0,
+          "Time": 113.914,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 154,
+          "Type": 0,
+          "Time": 113.914,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 155,
+          "Type": 0,
+          "Time": 114.623,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 156,
+          "Type": 0,
+          "Time": 114.968,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 157,
+          "Type": 0,
+          "Time": 115.204,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 158,
+          "Type": 0,
+          "Time": 115.502,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 159,
+          "Type": 0,
+          "Time": 116.836,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 160,
+          "Type": 0,
+          "Time": 117.399,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 161,
+          "Type": 0,
+          "Time": 117.657,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 162,
+          "Type": 0,
+          "Time": 118.862,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 163,
+          "Type": 0,
+          "Time": 119.254,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 164,
+          "Type": 0,
+          "Time": 119.55,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 165,
+          "Type": 0,
+          "Time": 119.831,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 166,
+          "Type": 0,
+          "Time": 121.121,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 167,
+          "Type": 0,
+          "Time": 121.697,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 168,
+          "Type": 0,
+          "Time": 121.924,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 169,
+          "Type": 0,
+          "Time": 122.219,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 170,
+          "Type": 0,
+          "Time": 122.474,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 171,
+          "Type": 2,
+          "Time": 122.74,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.265
+        },
+        {
+          "ID": 172,
+          "Type": 0,
+          "Time": 123.536,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 173,
+          "Type": 0,
+          "Time": 123.805,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 174,
+          "Type": 0,
+          "Time": 124.342,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 175,
+          "Type": 2,
+          "Time": 124.613,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.271
+        },
+        {
+          "ID": 177,
+          "Type": 0,
+          "Time": 125.15,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 178,
+          "Type": 0,
+          "Time": 125.681,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 179,
+          "Type": 0,
+          "Time": 125.956,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 180,
+          "Type": 0,
+          "Time": 126.351,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 181,
+          "Type": 1,
+          "Time": 126.622,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.278
+        },
+        {
+          "ID": 182,
+          "Type": 0,
+          "Time": 127.297,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 183,
+          "Type": 0,
+          "Time": 127.822,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 184,
+          "Type": 0,
+          "Time": 128.099,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 185,
+          "Type": 0,
+          "Time": 128.634,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 186,
+          "Type": 0,
+          "Time": 128.888,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 187,
+          "Type": 0,
+          "Time": 129.168,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 188,
+          "Type": 0,
+          "Time": 129.439,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 189,
+          "Type": 2,
+          "Time": 129.962,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.28
+        },
+        {
+          "ID": 190,
+          "Type": 0,
+          "Time": 130.636,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 191,
+          "Type": 2,
+          "Time": 131.171,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.405
+        },
+        {
+          "ID": 192,
+          "Type": 0,
+          "Time": 132.114,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 193,
+          "Type": 0,
+          "Time": 132.379,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 194,
+          "Type": 0,
+          "Time": 132.919,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 195,
+          "Type": 0,
+          "Time": 133.45,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 196,
+          "Type": 1,
+          "Time": 133.717,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0.527
+        },
+        {
+          "ID": 197,
+          "Type": 0,
+          "Time": 134.52,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 198,
+          "Type": 1,
+          "Time": 134.926,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0.271
+        },
+        {
+          "ID": 199,
+          "Type": 0,
+          "Time": 135.88,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 200,
+          "Type": 0,
+          "Time": 136.397,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 201,
+          "Type": 0,
+          "Time": 136.655,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 202,
+          "Type": 0,
+          "Time": 137.2,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 203,
+          "Type": 0,
+          "Time": 137.594,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 204,
+          "Type": 0,
+          "Time": 137.737,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 205,
+          "Type": 0,
+          "Time": 138.006,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 206,
+          "Type": 0,
+          "Time": 138.531,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 207,
+          "Type": 0,
+          "Time": 138.813,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 208,
+          "Type": 0,
+          "Time": 139.206,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        },
+        {
+          "ID": 209,
+          "Type": 0,
+          "Time": 139.477,
+          "Speed": 4,
+          "Direction": "R",
+          "ReTime": 0
+        },
+        {
+          "ID": 210,
+          "Type": 0,
+          "Time": 139.871,
+          "Speed": 4,
+          "Direction": "L",
+          "ReTime": 0
+        }
+      ]
+    }
+  }
+}
