@@ -1844,7 +1844,7 @@ void InGame::Update()
 								combo++;
 								comboObj.lock()->GetComponent<EffectComponent>()->Execute(0);
 								GameManager::mainCamera->gameObject.lock()->
-									GetComponent<CameraControl>()->HolyEffect(14.0, 0.10f, 0);
+									GetComponent<CameraControl>()->HolyEffect(14.0, 0.15f, 0);
 								score += scoreHitAdd * (0.5 + 0.5 * ((2.0 - hitPerfact) / 2.0));
 
 								//*ConsoleDebug::console << hitPerfact << "\n";
