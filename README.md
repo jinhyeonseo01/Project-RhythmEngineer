@@ -3,6 +3,21 @@
 2D Pipeline Process Develop Project
 
 * * *
+
+## 조작키
+Ctrl + Q : 종료
+Ctrl + 1 : 타겟 프레임 30 설정
+Ctrl + 2 : 타겟 프레임 60 설정
+Ctrl + 3 : 타겟 프레임 144 설정
+Ctrl + 4 : 타겟 프레임 244 설정
+Ctrl + 0 : 프레임 제한 설정/해제
+Y : 게임 일시정지
+U : 게임 일시정지 해제
+I : 게임 정지
+L : 오토 공격 켜기/끄기
+로고 화면 + S : 로고 스킵.
+
+* * *
 ## Workers
  - Jin Hyeon Seo (Clrain) : Main Develop & Main Art & Main Design
  - Jung Jin Bong : Music Node Data Maker

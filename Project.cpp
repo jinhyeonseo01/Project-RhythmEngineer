@@ -1337,10 +1337,6 @@ void InGame::Update()
 			}
 		}
 
-		if (InputManager::GetKey('U'))
-			menuOffset.x() += 10;
-		if (InputManager::GetKey('I'))
-			menuOffset.x() -= 10;
 		float maxAngle = menuTableList.size() * menuAngle;
 		offsetAngle += menuMoveVelocity * D2R;
 		menuMoveVelocity = menuMoveVelocity *= 0.85;
