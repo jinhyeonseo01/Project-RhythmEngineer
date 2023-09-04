@@ -2,8 +2,8 @@
 2023 University(한국공학대학교) Win32 Project (2.1 Grade)
 2D Pipeline Process Develop Project
 
-[![Result](https://img.youtube.com/vi/temw8YyZNhk/0.jpg)]([https://youtu.be/temw8YyZNhk?t=0s])
-
+[![Result](https://img.youtube.com/vi/temw8YyZNhk/0.jpg)]([https://youtu.be/temw8YyZNhk])
+https://youtu.be/temw8YyZNhk
 * * *
 
 ## 조작키
