@@ -995,7 +995,7 @@ void InGame::Init()
 	auto PP_OR = deadLineObj->AddComponent<OverlayRenderer>(std::make_shared<OverlayRenderer>());
 	PP_OR->SetSprite(Resources::GetSprite(sprite_Vignette_1));
 	PP_OR->zIndex = 80;
-	PP_OR->alphaValue = 1.0f;
+	PP_OR->alphaValue = 0.8f;
 	deadLineObj->transform->position = Eigen::Vector2d(0, 0);
 
 	auto progressBarObj = GameManager::mainWorld->CreateGameObject();
