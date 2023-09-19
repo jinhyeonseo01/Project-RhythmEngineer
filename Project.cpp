@@ -333,7 +333,7 @@ void ProjectI::Init()
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\", L"MenuTable", 1, L".png",
 		1, image_Menu_Table_1, sprite_Menu_Table_1);
 	sprite = spriteWeak.lock();
-	sprite->pivot = Eigen::Vector2d(0, 0.5);
+	sprite->pivot = Eigen::Vector2d(0.042, 0.5);
 	sprite->time = 1.0f;
 
 	spriteWeak = SpriteGroupLoad(L".\\Resources\\Image\\", L"Object\\Menu\\", L"SongTitleBase_", 0, L".png",
