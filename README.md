@@ -1,31 +1,49 @@
-# Project : Iaido
-2023 University(한국공학대학교) Win32 Project (2.1 Grade)
-2D Pipeline Process Develop Project
+# Project : Rhythm Engineer
 
-[![Result](https://img.youtube.com/vi/temw8YyZNhk/0.jpg)]([https://youtu.be/temw8YyZNhk])
-https://youtu.be/temw8YyZNhk
-* * *
+**C++에서 WinAPI와 Direct2D를 이용해 Rendering Pipeline을 설계한 2D 리듬게임 프로젝트**  
+2023 University(한국공학대학교) Win32 Project (2_1 Grade) 2D Pipeline Process Develop Project  
 
-## 조작키
-Ctrl + Q : 종료
-Ctrl + 1 : 타겟 프레임 30 설정
-Ctrl + 2 : 타겟 프레임 60 설정
-Ctrl + 3 : 타겟 프레임 144 설정
-Ctrl + 4 : 타겟 프레임 244 설정
-Ctrl + 0 : 프레임 제한 설정/해제
-Y : 게임 일시정지
-U : 게임 일시정지 해제
-I : 게임 정지
-L : 오토 공격 켜기/끄기
-로고 화면 + S : 로고 스킵.
+## 3rd Party Stack
+ - **WinAPI** // Windows Graphic API
+ - **Direct2D** // GPU Graphic API
+ - **FMOD** // Sound
+ - **Eigen3** // Math:Matrix
+
+![img](./docs/f_1.gif)
+[https://youtu.be/temw8YyZNhk](https://youtu.be/temw8YyZNhk)
 
 * * *
 ## Workers
  - Jin Hyeon Seo (Clrain) : Main Develop & Main Art & Main Design
  - Jung Jin Bong : Music Node Data Maker
+
+* * *
+
+## 조작키
+
+<details>
+<summary>접기/펼치기</summary>
+
+Ctrl + Q : 종료
+Ctrl + 1 : 타겟 프레임 30 설정  
+Ctrl + 2 : 타겟 프레임 60 설정  
+Ctrl + 3 : 타겟 프레임 144 설정  
+Ctrl + 4 : 타겟 프레임 244 설정  
+Ctrl + 0 : 프레임 제한 설정/해제  
+Y : 게임 일시정지  
+U : 게임 일시정지 해제  
+I : 게임 정지  
+L : 오토 공격 켜기/끄기  
+로고 화면 + S : 로고 스킵.  
+
+</details>
+
   
 * * *
 ## Install & Execution 방법
+<details>
+<summary>접기/펼치기</summary>
+
 #### Eigen 라이브러리 연결 (두 방법중 하나 선택)
 1. 프로젝트 속성 -> VC++ 디렉토리 -> 포함 디렉토리 -> ./lib/egien 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
 2. 프로젝트 탭 -> NuGen 패키지 관리 -> 찾아보기 "Eigen3" -> 최신버전 설치
@@ -41,6 +59,9 @@ L : 오토 공격 켜기/끄기
 >fmod_vc.lib
 >fmodstudioL_vc.lib
 >fmodstudio_vc.lib
+
+</details>
+
 * * *
 # Develop Log
 ## Day 1(23.5.15) Log
@@ -217,3 +238,20 @@ Frame Lock을 걸면 해당 프레임 이상 솓구치지 않는 것을 확인�
 </details>
 
 * * *
+
+## Day ~ Final (23.6.9)
+### 구체적인 기록을 못해서, 그 뒤 작업 내역
+<details>
+*허가받지 않은 이미지 이용, 이 자리를 빌어 죄송하단 말씀 올립니다...*
+
+![img1](./docs/10.gif)
+
+![img2](./docs/11.gif)
+
+![img3](./docs/12.gif)
+
+![img3](./docs/13.gif)
+
+![img4](./docs/14.gif)
+
+</details>
