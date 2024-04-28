@@ -24,6 +24,7 @@
 <details>
 <summary>접기/펼치기</summary>
 
+![img](./docs/control.png)
 Ctrl + Q : 종료
 Ctrl + 1 : 타겟 프레임 30 설정  
 Ctrl + 2 : 타겟 프레임 60 설정  
