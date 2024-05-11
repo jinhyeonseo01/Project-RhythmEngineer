@@ -10,7 +10,9 @@
  - **Eigen3** // Math:Matrix
 
 ![img](./docs/f_1.gif)
-[https://youtu.be/temw8YyZNhk](https://youtu.be/temw8YyZNhk)
+[https://youtu.be/temw8YyZNhk](https://youtu.be/temw8YyZNhk)  
+[Node 작업 Google Sheet](https://docs.google.com/spreadsheets/d/1XC7WaIaXhewO1Sn5aK0LbLGpy6XT9koK-jMesOznveg/edit?usp=sharing)  
+</br>
 
 * * *
 ## Workers
@@ -243,16 +245,24 @@ Frame Lock을 걸면 해당 프레임 이상 솓구치지 않는 것을 확인�
 ## Day ~ Final (23.6.9)
 ### 구체적인 기록을 못해서, 그 뒤 작업 내역
 <details>
-*허가받지 않은 이미지 이용, 이 자리를 빌어 죄송하단 말씀 올립니다...*
+<summary>구체적인 기록을 못해서, 그 뒤 작업 내역</summary>
 
+#### Animation System 적용
+*허가받지 않은 이미지 이용, 이 자리를 빌어 죄송하단 말씀 올립니다...*
 ![img1](./docs/10.gif)
 
+#### Google Sheet를 통한 Json Serialize 연동 작업
+![img](./docs/sheet1.png)
+[Node 작업 Google Sheet](https://docs.google.com/spreadsheets/d/1XC7WaIaXhewO1Sn5aK0LbLGpy6XT9koK-jMesOznveg/edit?usp=sharing)
 ![img2](./docs/11.gif)
 
+#### VFX 1차 작업
 ![img3](./docs/12.gif)
 
+#### FMOD를 활용한 FFT 기반 사운드 스펙트럼 기능 추가 & VFX 2차 작업
 ![img3](./docs/13.gif)
 
+#### UI 기능 및 Rotating 레코드 스크롤 메뉴
 ![img4](./docs/14.gif)
 
 </details>
