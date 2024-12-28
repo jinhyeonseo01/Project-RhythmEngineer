@@ -4,12 +4,13 @@
 2023 University(한국공학대학교) Win32 Project (2_1 Grade) 2D Pipeline Process Develop Project  
 
 ## 3rd Party Stack
+ - **MFC/ATL** // Visual Studio Package
  - **WinAPI** // Windows Graphic API
  - **Direct2D** // GPU Graphic API
  - **FMOD** // Sound
  - **Eigen3** // Math:Matrix
 
-![img](./docs/f_1.gif)
+![img](./docs/f_1.gif)  
 [https://youtu.be/temw8YyZNhk](https://youtu.be/temw8YyZNhk)  
 [Node 작업 Google Sheet](https://docs.google.com/spreadsheets/d/1XC7WaIaXhewO1Sn5aK0LbLGpy6XT9koK-jMesOznveg/edit?usp=sharing)  
 </br>

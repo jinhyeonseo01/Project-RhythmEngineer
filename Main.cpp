@@ -8,7 +8,7 @@
 #include <stack>
 #include <cmath>
 #include <time.h>
-#include <atlImage.h>
+#include <atlimage.h>
 #include <map>
 #include <chrono>
 #include <Thread>

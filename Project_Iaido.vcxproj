@@ -71,14 +71,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\fmod\include;C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen;$(IncludePath)</IncludePath>
-    <ExternalIncludePath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\fmod\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)lib\fmod\include;$(SolutionDir)lib\eigen;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)lib\eigen;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)lib\fmod\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\fmod\include;C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen;$(IncludePath)</IncludePath>
-    <ExternalIncludePath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\eigen;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\UserFile\VS Project\University\WindowProgramming\Project_Iaido\lib\fmod\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)lib\fmod\include;$(SolutionDir)lib\eigen;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>$(SolutionDir)lib\eigen;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>$(SolutionDir)lib\fmod\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
