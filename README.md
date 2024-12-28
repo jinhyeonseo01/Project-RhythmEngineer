@@ -48,21 +48,12 @@ L : 오토 공격 켜기/끄기
 <details>
 <summary>접기/펼치기</summary>
 
-#### Eigen 라이브러리 연결 (두 방법중 하나 선택)
-1. 프로젝트 속성 -> VC++ 디렉토리 -> 포함 디렉토리 -> ./lib/egien 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
-2. 프로젝트 탭 -> NuGen 패키지 관리 -> 찾아보기 "Eigen3" -> 최신버전 설치
-   
-#### Direct2D 라이브러리 연결 (두 방법중 하나 선택)
-1. 프로젝트 탭 -> NuGen 패키지 관리 -> 찾아보기 "Direct2D" -> 최신버전 설치
-
-#### Fmod 라이브러리 연결 (두 방법중 하나 선택)
-1. 프로젝트 속성 -> VC++ 디렉토리 -> 포함 디렉터리 -> ./lib/fmod/include 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
-2. 프로젝트 속성 -> VC++ 디렉토리 -> 라이브러리 디렉터리 -> ./lib/fmod/lib 폴더 선택 후 추가 (반드시 Debug/Releace 둘다 적용할 것)
-3. 프로젝트 속성 -> 링커 -> 추가 종속성 -> 아래 .lib들 추가
->fmodL_vc.lib
->fmod_vc.lib
->fmodstudioL_vc.lib
->fmodstudio_vc.lib
+``` c++
+#include <atlImage.h>
+```
+을 찾을 수 없을 경우 (Not Found).
+Visual Studio Installer에서
+개별 구성요소 -> MFC/ATL 모듈 구성 요소를 설치할 것.
 
 </details>
 

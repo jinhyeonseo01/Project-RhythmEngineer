@@ -26,3 +26,12 @@
 //#pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "winmm.lib")
 
+#ifdef _DEBUG
+    // 디버그 빌드 시
+#pragma comment(lib, "fmodL_vc.lib")
+#pragma comment(lib, "fmodstudioL_vc.lib")
+#else
+    // 릴리스 빌드 시
+#pragma comment(lib, "fmod_vc.lib")
+#pragma comment(lib, "fmodstudio_vc.lib")
+#endif
